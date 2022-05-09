@@ -5,8 +5,6 @@ package memento;
 import "google/protobuf/empty.proto";
 import "memento/types.proto";
 
-option java_outer_classname = "KeywordProto";
-
 service KeywordService {
     rpc ListKeywordHistories(ListKeywordHistoriesRequest) returns (ListKeywordHistoriesResponse);
     rpc UpdateSolutionURL(UpdateSolutionURLRequest) returns (google.protobuf.Empty);
@@ -19,7 +17,7 @@ message ListKeywordHistoriesRequest {
 }
 
 message ListKeywordHistoriesResponse {
-    repeated History histories = 1;
+    repeated Url urls = 1;
 }
 
 message UpdateSolutionURLRequest {

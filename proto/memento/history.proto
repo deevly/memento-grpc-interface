@@ -4,8 +4,6 @@ package memento;
 
 import "memento/types.proto";
 
-option java_outer_classname = "HistoryProto";
-
 service HistoryService {
     rpc ListHistories(ListHitoriesRequest) returns (ListHistoriesResponse);
     rpc ListKeywords(ListKeywordsRequest) returns (ListKeywordsResponse);
@@ -16,7 +14,7 @@ message ListHitoriesRequest {
 }
 
 message ListHistoriesResponse {
-    repeated History histories = 1;
+    repeated Url urls = 1;
 }
 
 message ListKeywordsRequest {
