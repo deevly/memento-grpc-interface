@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package memento;
+
+import "google/protobuf/timestamp.proto";
+
+message History {
+    string url = 1;
+    google.protobuf.Timestamp visit_time = 2;
+    string keyword = 3;
+    optional bool resolved = 4;
+}

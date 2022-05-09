@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package memento;
+
+import "memento/types.proto";
+
+option java_outer_classname = "HistoryProto";
+
+service HistoryService {
+    rpc ListHistories(ListHitoriesRequest) returns (ListHistoriesResponse);
+    rpc ListKeywords(ListKeywordsRequest) returns (ListKeywordsResponse);
+}
+
+message ListHitoriesRequest {
+    string username = 1;
+}
+
+message ListHistoriesResponse {
+    repeated History histories = 1;
+}
+
+message ListKeywordsRequest {
+    string username = 1;
+    bool resolved = 2;
+    enum SortOption {
+        URL_COUNT_ASC = 0;
+        URL_COUNT_DESC = 1;
+        RECENT_TIME = 2;
+        ALPHABETICAL_ORDER = 3;
+    }
+    SortOption sort_option = 3;
+    int32 guid_cursor = 4;
+}
+
+message ListKeywordsResponse {
+    repeated string keywords = 1;
+    int32 guid_cursor = 2;
+}

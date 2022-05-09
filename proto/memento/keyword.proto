@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package memento;
+
+import "google/protobuf/empty.proto";
+import "memento/types.proto";
+
+option java_outer_classname = "KeywordProto";
+
+service KeywordService {
+    rpc ListKeywordHistories(ListKeywordHistoriesRequest) returns (ListKeywordHistoriesResponse);
+    rpc UpdateSolutionURL(UpdateSolutionURLRequest) returns (google.protobuf.Empty);
+    rpc UpdateResolvedURL(UpdateResolvedURLRequest) returns (google.protobuf.Empty);
+}
+
+message ListKeywordHistoriesRequest {
+    string username = 1;
+    string keyword = 2;
+}
+
+message ListKeywordHistoriesResponse {
+    repeated History histories = 1;
+}
+
+message UpdateSolutionURLRequest {
+    string username = 1;
+    string keyword = 2;
+    string url = 3;
+}
+
+message UpdateResolvedURLRequest {
+    string username = 1;
+    string keyword = 2;
+    string url = 3;
+    bool resolved = 4;
+}
