@@ -4,3 +4,7 @@ plugins:
     out: gen/kotlin/proto
   - remote: buf.build/grpc/plugins/kotlin:v1.2.1-1
     out: gen/kotlin/proto
+  - remote: buf.build/protocolbuffers/plugins/java:v3.20.1-1
+    out: gen/java/proto
+  - remote: buf.build/grpc/plugins/java:v1.46.0-1
+    out: gen/java/proto
