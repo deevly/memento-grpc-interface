@@ -3,24 +3,24 @@
 
 package memento;
 
-@kotlin.jvm.JvmName("-initializelistKeywordsResponse")
-public inline fun listKeywordsResponse(block: memento.ListKeywordsResponseKt.Dsl.() -> kotlin.Unit): memento.Keyword.ListKeywordsResponse =
-  memento.ListKeywordsResponseKt.Dsl._create(memento.Keyword.ListKeywordsResponse.newBuilder()).apply { block() }._build()
-public object ListKeywordsResponseKt {
+@kotlin.jvm.JvmName("-initializesearchKeywordsResponse")
+public inline fun searchKeywordsResponse(block: memento.SearchKeywordsResponseKt.Dsl.() -> kotlin.Unit): memento.Keyword.SearchKeywordsResponse =
+  memento.SearchKeywordsResponseKt.Dsl._create(memento.Keyword.SearchKeywordsResponse.newBuilder()).apply { block() }._build()
+public object SearchKeywordsResponseKt {
   @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
   @com.google.protobuf.kotlin.ProtoDslMarker
   public class Dsl private constructor(
-    private val _builder: memento.Keyword.ListKeywordsResponse.Builder
+    private val _builder: memento.Keyword.SearchKeywordsResponse.Builder
   ) {
     public companion object {
       @kotlin.jvm.JvmSynthetic
       @kotlin.PublishedApi
-      internal fun _create(builder: memento.Keyword.ListKeywordsResponse.Builder): Dsl = Dsl(builder)
+      internal fun _create(builder: memento.Keyword.SearchKeywordsResponse.Builder): Dsl = Dsl(builder)
     }
 
     @kotlin.jvm.JvmSynthetic
     @kotlin.PublishedApi
-    internal fun _build(): memento.Keyword.ListKeywordsResponse = _builder.build()
+    internal fun _build(): memento.Keyword.SearchKeywordsResponse = _builder.build()
 
     /**
      * An uninstantiable, behaviorless type to represent the field in
@@ -93,9 +93,9 @@ public object ListKeywordsResponseKt {
       _builder.clearKeywords()
     }
     /**
-     * <code>.memento.KeywordCursor cursor = 2 [json_name = "cursor"];</code>
+     * <code>string cursor = 2 [json_name = "cursor"];</code>
      */
-    public var cursor: memento.Types.KeywordCursor
+    public var cursor: kotlin.String
       @JvmName("getCursor")
       get() = _builder.getCursor()
       @JvmName("setCursor")
@@ -103,24 +103,14 @@ public object ListKeywordsResponseKt {
         _builder.setCursor(value)
       }
     /**
-     * <code>.memento.KeywordCursor cursor = 2 [json_name = "cursor"];</code>
+     * <code>string cursor = 2 [json_name = "cursor"];</code>
      */
     public fun clearCursor() {
       _builder.clearCursor()
     }
-    /**
-     * <code>.memento.KeywordCursor cursor = 2 [json_name = "cursor"];</code>
-     * @return Whether the cursor field is set.
-     */
-    public fun hasCursor(): kotlin.Boolean {
-      return _builder.hasCursor()
-    }
   }
 }
 @kotlin.jvm.JvmSynthetic
-public inline fun memento.Keyword.ListKeywordsResponse.copy(block: memento.ListKeywordsResponseKt.Dsl.() -> kotlin.Unit): memento.Keyword.ListKeywordsResponse =
-  memento.ListKeywordsResponseKt.Dsl._create(this.toBuilder()).apply { block() }._build()
-
-val memento.Keyword.ListKeywordsResponseOrBuilder.cursorOrNull: memento.Types.KeywordCursor?
-  get() = if (hasCursor()) getCursor() else null
+public inline fun memento.Keyword.SearchKeywordsResponse.copy(block: memento.SearchKeywordsResponseKt.Dsl.() -> kotlin.Unit): memento.Keyword.SearchKeywordsResponse =
+  memento.SearchKeywordsResponseKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

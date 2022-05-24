@@ -4,9 +4,28 @@ package memento;
 
 import "google/protobuf/timestamp.proto";
 
-message Url {
+message URL {
     string address = 1;
     google.protobuf.Timestamp visit_time = 2;
     string keyword = 3;
-    optional bool resolved = 4;
+}
+
+message URLCursor {
+    enum SortType {
+        RECENT_TIME = 0;
+        ALPHABETICAL_ORDER = 1;
+    }
+    SortType type = 1;
+    string value = 2;
+}
+
+message KeywordCursor {
+    enum SortType {
+        URL_COUNT_ASC = 0;
+        URL_COUNT_DESC = 1;
+        RECENT_TIME = 2;
+        ALPHABETICAL_ORDER = 3;
+    }
+    SortType type = 1;
+    string value = 2;
 }

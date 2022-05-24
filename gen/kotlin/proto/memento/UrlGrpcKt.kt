@@ -23,38 +23,37 @@ import kotlin.coroutines.CoroutineContext
 import kotlin.coroutines.EmptyCoroutineContext
 import kotlin.jvm.JvmOverloads
 import kotlin.jvm.JvmStatic
-import memento.HistoryServiceGrpc.getServiceDescriptor
+import memento.UrlServiceGrpc.getServiceDescriptor
 
 /**
- * Holder for Kotlin coroutine-based client and server APIs for memento.HistoryService.
+ * Holder for Kotlin coroutine-based client and server APIs for memento.UrlService.
  */
-object HistoryServiceGrpcKt {
-  const val SERVICE_NAME: String = HistoryServiceGrpc.SERVICE_NAME
+object UrlServiceGrpcKt {
+  const val SERVICE_NAME: String = UrlServiceGrpc.SERVICE_NAME
 
   @JvmStatic
   val serviceDescriptor: ServiceDescriptor
-    get() = HistoryServiceGrpc.getServiceDescriptor()
+    get() = UrlServiceGrpc.getServiceDescriptor()
 
-  val listHistoriesMethod: MethodDescriptor<History.ListHitoriesRequest,
-      History.ListHistoriesResponse>
+  val listUrlsMethod: MethodDescriptor<Url.ListUrlsRequest, Url.ListUrlsResponse>
     @JvmStatic
-    get() = HistoryServiceGrpc.getListHistoriesMethod()
+    get() = UrlServiceGrpc.getListUrlsMethod()
 
-  val listKeywordsMethod: MethodDescriptor<History.ListKeywordsRequest,
-      History.ListKeywordsResponse>
+  val listUrlsByKeywordMethod: MethodDescriptor<Url.ListUrlsByKeywordRequest,
+      Url.ListUrlsByKeywordResponse>
     @JvmStatic
-    get() = HistoryServiceGrpc.getListKeywordsMethod()
+    get() = UrlServiceGrpc.getListUrlsByKeywordMethod()
 
   /**
-   * A stub for issuing RPCs to a(n) memento.HistoryService service as suspending coroutines.
+   * A stub for issuing RPCs to a(n) memento.UrlService service as suspending coroutines.
    */
-  @StubFor(HistoryServiceGrpc::class)
-  class HistoryServiceCoroutineStub @JvmOverloads constructor(
+  @StubFor(UrlServiceGrpc::class)
+  class UrlServiceCoroutineStub @JvmOverloads constructor(
     channel: Channel,
     callOptions: CallOptions = DEFAULT
-  ) : AbstractCoroutineStub<HistoryServiceCoroutineStub>(channel, callOptions) {
-    override fun build(channel: Channel, callOptions: CallOptions): HistoryServiceCoroutineStub =
-        HistoryServiceCoroutineStub(channel, callOptions)
+  ) : AbstractCoroutineStub<UrlServiceCoroutineStub>(channel, callOptions) {
+    override fun build(channel: Channel, callOptions: CallOptions): UrlServiceCoroutineStub =
+        UrlServiceCoroutineStub(channel, callOptions)
 
     /**
      * Executes this RPC and returns the response message, suspending until the RPC completes
@@ -68,10 +67,10 @@ object HistoryServiceGrpcKt {
      *
      * @return The single response from the server.
      */
-    suspend fun listHistories(request: History.ListHitoriesRequest, headers: Metadata = Metadata()):
-        History.ListHistoriesResponse = unaryRpc(
+    suspend fun listUrls(request: Url.ListUrlsRequest, headers: Metadata = Metadata()):
+        Url.ListUrlsResponse = unaryRpc(
       channel,
-      HistoryServiceGrpc.getListHistoriesMethod(),
+      UrlServiceGrpc.getListUrlsMethod(),
       request,
       callOptions,
       headers
@@ -88,23 +87,23 @@ object HistoryServiceGrpcKt {
      *
      * @return The single response from the server.
      */
-    suspend fun listKeywords(request: History.ListKeywordsRequest, headers: Metadata = Metadata()):
-        History.ListKeywordsResponse = unaryRpc(
+    suspend fun listUrlsByKeyword(request: Url.ListUrlsByKeywordRequest, headers: Metadata =
+        Metadata()): Url.ListUrlsByKeywordResponse = unaryRpc(
       channel,
-      HistoryServiceGrpc.getListKeywordsMethod(),
+      UrlServiceGrpc.getListUrlsByKeywordMethod(),
       request,
       callOptions,
       headers
     )}
 
   /**
-   * Skeletal implementation of the memento.HistoryService service based on Kotlin coroutines.
+   * Skeletal implementation of the memento.UrlService service based on Kotlin coroutines.
    */
-  abstract class HistoryServiceCoroutineImplBase(
+  abstract class UrlServiceCoroutineImplBase(
     coroutineContext: CoroutineContext = EmptyCoroutineContext
   ) : AbstractCoroutineServerImpl(coroutineContext) {
     /**
-     * Returns the response to an RPC for memento.HistoryService.ListHistories.
+     * Returns the response to an RPC for memento.UrlService.ListUrls.
      *
      * If this method fails with a [StatusException], the RPC will fail with the corresponding
      * [Status].  If this method fails with a [java.util.concurrent.CancellationException], the RPC
@@ -114,12 +113,11 @@ object HistoryServiceGrpcKt {
      *
      * @param request The request from the client.
      */
-    open suspend fun listHistories(request: History.ListHitoriesRequest):
-        History.ListHistoriesResponse = throw
-        StatusException(UNIMPLEMENTED.withDescription("Method memento.HistoryService.ListHistories is unimplemented"))
+    open suspend fun listUrls(request: Url.ListUrlsRequest): Url.ListUrlsResponse = throw
+        StatusException(UNIMPLEMENTED.withDescription("Method memento.UrlService.ListUrls is unimplemented"))
 
     /**
-     * Returns the response to an RPC for memento.HistoryService.ListKeywords.
+     * Returns the response to an RPC for memento.UrlService.ListUrlsByKeyword.
      *
      * If this method fails with a [StatusException], the RPC will fail with the corresponding
      * [Status].  If this method fails with a [java.util.concurrent.CancellationException], the RPC
@@ -129,20 +127,20 @@ object HistoryServiceGrpcKt {
      *
      * @param request The request from the client.
      */
-    open suspend fun listKeywords(request: History.ListKeywordsRequest):
-        History.ListKeywordsResponse = throw
-        StatusException(UNIMPLEMENTED.withDescription("Method memento.HistoryService.ListKeywords is unimplemented"))
+    open suspend fun listUrlsByKeyword(request: Url.ListUrlsByKeywordRequest):
+        Url.ListUrlsByKeywordResponse = throw
+        StatusException(UNIMPLEMENTED.withDescription("Method memento.UrlService.ListUrlsByKeyword is unimplemented"))
 
     final override fun bindService(): ServerServiceDefinition = builder(getServiceDescriptor())
       .addMethod(unaryServerMethodDefinition(
       context = this.context,
-      descriptor = HistoryServiceGrpc.getListHistoriesMethod(),
-      implementation = ::listHistories
+      descriptor = UrlServiceGrpc.getListUrlsMethod(),
+      implementation = ::listUrls
     ))
       .addMethod(unaryServerMethodDefinition(
       context = this.context,
-      descriptor = HistoryServiceGrpc.getListKeywordsMethod(),
-      implementation = ::listKeywords
+      descriptor = UrlServiceGrpc.getListUrlsByKeywordMethod(),
+      implementation = ::listUrlsByKeyword
     )).build()
   }
 }

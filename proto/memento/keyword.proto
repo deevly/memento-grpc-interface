@@ -6,29 +6,26 @@ import "google/protobuf/empty.proto";
 import "memento/types.proto";
 
 service KeywordService {
-    rpc ListKeywordHistories(ListKeywordHistoriesRequest) returns (ListKeywordHistoriesResponse);
-    rpc UpdateSolutionURL(UpdateSolutionURLRequest) returns (google.protobuf.Empty);
-    rpc UpdateResolvedURL(UpdateResolvedURLRequest) returns (google.protobuf.Empty);
+    rpc ListKeywords(ListKeywordsRequest) returns (ListKeywordsResponse);
+    rpc SearchKeywords(SearchKeywordsRequest) returns (SearchKeywordsResponse);
 }
 
-message ListKeywordHistoriesRequest {
+message ListKeywordsRequest {
     string username = 1;
-    string keyword = 2;
+    KeywordCursor cursor = 2;
 }
 
-message ListKeywordHistoriesResponse {
-    repeated Url urls = 1;
+message ListKeywordsResponse {
+    repeated string keywords = 1;
+    KeywordCursor cursor = 2;
 }
 
-message UpdateSolutionURLRequest {
-    string username = 1;
-    string keyword = 2;
-    string url = 3;
+message SearchKeywordsRequest {
+    string regex = 1;
+    string cursor = 2;
 }
 
-message UpdateResolvedURLRequest {
-    string username = 1;
-    string keyword = 2;
-    string url = 3;
-    bool resolved = 4;
+message SearchKeywordsResponse {
+    repeated string keywords = 1;
+    string cursor = 2;
 }

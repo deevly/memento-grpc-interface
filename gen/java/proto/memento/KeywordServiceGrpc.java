@@ -15,97 +15,66 @@ public final class KeywordServiceGrpc {
   public static final String SERVICE_NAME = "memento.KeywordService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<memento.Keyword.ListKeywordHistoriesRequest,
-      memento.Keyword.ListKeywordHistoriesResponse> getListKeywordHistoriesMethod;
+  private static volatile io.grpc.MethodDescriptor<memento.Keyword.ListKeywordsRequest,
+      memento.Keyword.ListKeywordsResponse> getListKeywordsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListKeywordHistories",
-      requestType = memento.Keyword.ListKeywordHistoriesRequest.class,
-      responseType = memento.Keyword.ListKeywordHistoriesResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "ListKeywords",
+      requestType = memento.Keyword.ListKeywordsRequest.class,
+      responseType = memento.Keyword.ListKeywordsResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<memento.Keyword.ListKeywordHistoriesRequest,
-      memento.Keyword.ListKeywordHistoriesResponse> getListKeywordHistoriesMethod() {
-    io.grpc.MethodDescriptor<memento.Keyword.ListKeywordHistoriesRequest, memento.Keyword.ListKeywordHistoriesResponse> getListKeywordHistoriesMethod;
-    if ((getListKeywordHistoriesMethod = KeywordServiceGrpc.getListKeywordHistoriesMethod) == null) {
+  public static io.grpc.MethodDescriptor<memento.Keyword.ListKeywordsRequest,
+      memento.Keyword.ListKeywordsResponse> getListKeywordsMethod() {
+    io.grpc.MethodDescriptor<memento.Keyword.ListKeywordsRequest, memento.Keyword.ListKeywordsResponse> getListKeywordsMethod;
+    if ((getListKeywordsMethod = KeywordServiceGrpc.getListKeywordsMethod) == null) {
       synchronized (KeywordServiceGrpc.class) {
-        if ((getListKeywordHistoriesMethod = KeywordServiceGrpc.getListKeywordHistoriesMethod) == null) {
-          KeywordServiceGrpc.getListKeywordHistoriesMethod = getListKeywordHistoriesMethod =
-              io.grpc.MethodDescriptor.<memento.Keyword.ListKeywordHistoriesRequest, memento.Keyword.ListKeywordHistoriesResponse>newBuilder()
+        if ((getListKeywordsMethod = KeywordServiceGrpc.getListKeywordsMethod) == null) {
+          KeywordServiceGrpc.getListKeywordsMethod = getListKeywordsMethod =
+              io.grpc.MethodDescriptor.<memento.Keyword.ListKeywordsRequest, memento.Keyword.ListKeywordsResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListKeywordHistories"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListKeywords"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  memento.Keyword.ListKeywordHistoriesRequest.getDefaultInstance()))
+                  memento.Keyword.ListKeywordsRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  memento.Keyword.ListKeywordHistoriesResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new KeywordServiceMethodDescriptorSupplier("ListKeywordHistories"))
+                  memento.Keyword.ListKeywordsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new KeywordServiceMethodDescriptorSupplier("ListKeywords"))
               .build();
         }
       }
     }
-    return getListKeywordHistoriesMethod;
+    return getListKeywordsMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<memento.Keyword.UpdateSolutionURLRequest,
-      com.google.protobuf.Empty> getUpdateSolutionURLMethod;
+  private static volatile io.grpc.MethodDescriptor<memento.Keyword.SearchKeywordsRequest,
+      memento.Keyword.SearchKeywordsResponse> getSearchKeywordsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "UpdateSolutionURL",
-      requestType = memento.Keyword.UpdateSolutionURLRequest.class,
-      responseType = com.google.protobuf.Empty.class,
+      fullMethodName = SERVICE_NAME + '/' + "SearchKeywords",
+      requestType = memento.Keyword.SearchKeywordsRequest.class,
+      responseType = memento.Keyword.SearchKeywordsResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<memento.Keyword.UpdateSolutionURLRequest,
-      com.google.protobuf.Empty> getUpdateSolutionURLMethod() {
-    io.grpc.MethodDescriptor<memento.Keyword.UpdateSolutionURLRequest, com.google.protobuf.Empty> getUpdateSolutionURLMethod;
-    if ((getUpdateSolutionURLMethod = KeywordServiceGrpc.getUpdateSolutionURLMethod) == null) {
+  public static io.grpc.MethodDescriptor<memento.Keyword.SearchKeywordsRequest,
+      memento.Keyword.SearchKeywordsResponse> getSearchKeywordsMethod() {
+    io.grpc.MethodDescriptor<memento.Keyword.SearchKeywordsRequest, memento.Keyword.SearchKeywordsResponse> getSearchKeywordsMethod;
+    if ((getSearchKeywordsMethod = KeywordServiceGrpc.getSearchKeywordsMethod) == null) {
       synchronized (KeywordServiceGrpc.class) {
-        if ((getUpdateSolutionURLMethod = KeywordServiceGrpc.getUpdateSolutionURLMethod) == null) {
-          KeywordServiceGrpc.getUpdateSolutionURLMethod = getUpdateSolutionURLMethod =
-              io.grpc.MethodDescriptor.<memento.Keyword.UpdateSolutionURLRequest, com.google.protobuf.Empty>newBuilder()
+        if ((getSearchKeywordsMethod = KeywordServiceGrpc.getSearchKeywordsMethod) == null) {
+          KeywordServiceGrpc.getSearchKeywordsMethod = getSearchKeywordsMethod =
+              io.grpc.MethodDescriptor.<memento.Keyword.SearchKeywordsRequest, memento.Keyword.SearchKeywordsResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateSolutionURL"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SearchKeywords"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  memento.Keyword.UpdateSolutionURLRequest.getDefaultInstance()))
+                  memento.Keyword.SearchKeywordsRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.protobuf.Empty.getDefaultInstance()))
-              .setSchemaDescriptor(new KeywordServiceMethodDescriptorSupplier("UpdateSolutionURL"))
+                  memento.Keyword.SearchKeywordsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new KeywordServiceMethodDescriptorSupplier("SearchKeywords"))
               .build();
         }
       }
     }
-    return getUpdateSolutionURLMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<memento.Keyword.UpdateResolvedURLRequest,
-      com.google.protobuf.Empty> getUpdateResolvedURLMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "UpdateResolvedURL",
-      requestType = memento.Keyword.UpdateResolvedURLRequest.class,
-      responseType = com.google.protobuf.Empty.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<memento.Keyword.UpdateResolvedURLRequest,
-      com.google.protobuf.Empty> getUpdateResolvedURLMethod() {
-    io.grpc.MethodDescriptor<memento.Keyword.UpdateResolvedURLRequest, com.google.protobuf.Empty> getUpdateResolvedURLMethod;
-    if ((getUpdateResolvedURLMethod = KeywordServiceGrpc.getUpdateResolvedURLMethod) == null) {
-      synchronized (KeywordServiceGrpc.class) {
-        if ((getUpdateResolvedURLMethod = KeywordServiceGrpc.getUpdateResolvedURLMethod) == null) {
-          KeywordServiceGrpc.getUpdateResolvedURLMethod = getUpdateResolvedURLMethod =
-              io.grpc.MethodDescriptor.<memento.Keyword.UpdateResolvedURLRequest, com.google.protobuf.Empty>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateResolvedURL"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  memento.Keyword.UpdateResolvedURLRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.protobuf.Empty.getDefaultInstance()))
-              .setSchemaDescriptor(new KeywordServiceMethodDescriptorSupplier("UpdateResolvedURL"))
-              .build();
-        }
-      }
-    }
-    return getUpdateResolvedURLMethod;
+    return getSearchKeywordsMethod;
   }
 
   /**
@@ -158,48 +127,34 @@ public final class KeywordServiceGrpc {
 
     /**
      */
-    public void listKeywordHistories(memento.Keyword.ListKeywordHistoriesRequest request,
-        io.grpc.stub.StreamObserver<memento.Keyword.ListKeywordHistoriesResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListKeywordHistoriesMethod(), responseObserver);
+    public void listKeywords(memento.Keyword.ListKeywordsRequest request,
+        io.grpc.stub.StreamObserver<memento.Keyword.ListKeywordsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListKeywordsMethod(), responseObserver);
     }
 
     /**
      */
-    public void updateSolutionURL(memento.Keyword.UpdateSolutionURLRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateSolutionURLMethod(), responseObserver);
-    }
-
-    /**
-     */
-    public void updateResolvedURL(memento.Keyword.UpdateResolvedURLRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateResolvedURLMethod(), responseObserver);
+    public void searchKeywords(memento.Keyword.SearchKeywordsRequest request,
+        io.grpc.stub.StreamObserver<memento.Keyword.SearchKeywordsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSearchKeywordsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            getListKeywordHistoriesMethod(),
+            getListKeywordsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                memento.Keyword.ListKeywordHistoriesRequest,
-                memento.Keyword.ListKeywordHistoriesResponse>(
-                  this, METHODID_LIST_KEYWORD_HISTORIES)))
+                memento.Keyword.ListKeywordsRequest,
+                memento.Keyword.ListKeywordsResponse>(
+                  this, METHODID_LIST_KEYWORDS)))
           .addMethod(
-            getUpdateSolutionURLMethod(),
+            getSearchKeywordsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                memento.Keyword.UpdateSolutionURLRequest,
-                com.google.protobuf.Empty>(
-                  this, METHODID_UPDATE_SOLUTION_URL)))
-          .addMethod(
-            getUpdateResolvedURLMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                memento.Keyword.UpdateResolvedURLRequest,
-                com.google.protobuf.Empty>(
-                  this, METHODID_UPDATE_RESOLVED_URL)))
+                memento.Keyword.SearchKeywordsRequest,
+                memento.Keyword.SearchKeywordsResponse>(
+                  this, METHODID_SEARCH_KEYWORDS)))
           .build();
     }
   }
@@ -220,26 +175,18 @@ public final class KeywordServiceGrpc {
 
     /**
      */
-    public void listKeywordHistories(memento.Keyword.ListKeywordHistoriesRequest request,
-        io.grpc.stub.StreamObserver<memento.Keyword.ListKeywordHistoriesResponse> responseObserver) {
+    public void listKeywords(memento.Keyword.ListKeywordsRequest request,
+        io.grpc.stub.StreamObserver<memento.Keyword.ListKeywordsResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getListKeywordHistoriesMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getListKeywordsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void updateSolutionURL(memento.Keyword.UpdateSolutionURLRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+    public void searchKeywords(memento.Keyword.SearchKeywordsRequest request,
+        io.grpc.stub.StreamObserver<memento.Keyword.SearchKeywordsResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getUpdateSolutionURLMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void updateResolvedURL(memento.Keyword.UpdateResolvedURLRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getUpdateResolvedURLMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getSearchKeywordsMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -259,23 +206,16 @@ public final class KeywordServiceGrpc {
 
     /**
      */
-    public memento.Keyword.ListKeywordHistoriesResponse listKeywordHistories(memento.Keyword.ListKeywordHistoriesRequest request) {
+    public memento.Keyword.ListKeywordsResponse listKeywords(memento.Keyword.ListKeywordsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListKeywordHistoriesMethod(), getCallOptions(), request);
+          getChannel(), getListKeywordsMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public com.google.protobuf.Empty updateSolutionURL(memento.Keyword.UpdateSolutionURLRequest request) {
+    public memento.Keyword.SearchKeywordsResponse searchKeywords(memento.Keyword.SearchKeywordsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateSolutionURLMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public com.google.protobuf.Empty updateResolvedURL(memento.Keyword.UpdateResolvedURLRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateResolvedURLMethod(), getCallOptions(), request);
+          getChannel(), getSearchKeywordsMethod(), getCallOptions(), request);
     }
   }
 
@@ -295,32 +235,23 @@ public final class KeywordServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<memento.Keyword.ListKeywordHistoriesResponse> listKeywordHistories(
-        memento.Keyword.ListKeywordHistoriesRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<memento.Keyword.ListKeywordsResponse> listKeywords(
+        memento.Keyword.ListKeywordsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getListKeywordHistoriesMethod(), getCallOptions()), request);
+          getChannel().newCall(getListKeywordsMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> updateSolutionURL(
-        memento.Keyword.UpdateSolutionURLRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<memento.Keyword.SearchKeywordsResponse> searchKeywords(
+        memento.Keyword.SearchKeywordsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getUpdateSolutionURLMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> updateResolvedURL(
-        memento.Keyword.UpdateResolvedURLRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getUpdateResolvedURLMethod(), getCallOptions()), request);
+          getChannel().newCall(getSearchKeywordsMethod(), getCallOptions()), request);
     }
   }
 
-  private static final int METHODID_LIST_KEYWORD_HISTORIES = 0;
-  private static final int METHODID_UPDATE_SOLUTION_URL = 1;
-  private static final int METHODID_UPDATE_RESOLVED_URL = 2;
+  private static final int METHODID_LIST_KEYWORDS = 0;
+  private static final int METHODID_SEARCH_KEYWORDS = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -339,17 +270,13 @@ public final class KeywordServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_LIST_KEYWORD_HISTORIES:
-          serviceImpl.listKeywordHistories((memento.Keyword.ListKeywordHistoriesRequest) request,
-              (io.grpc.stub.StreamObserver<memento.Keyword.ListKeywordHistoriesResponse>) responseObserver);
+        case METHODID_LIST_KEYWORDS:
+          serviceImpl.listKeywords((memento.Keyword.ListKeywordsRequest) request,
+              (io.grpc.stub.StreamObserver<memento.Keyword.ListKeywordsResponse>) responseObserver);
           break;
-        case METHODID_UPDATE_SOLUTION_URL:
-          serviceImpl.updateSolutionURL((memento.Keyword.UpdateSolutionURLRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
-          break;
-        case METHODID_UPDATE_RESOLVED_URL:
-          serviceImpl.updateResolvedURL((memento.Keyword.UpdateResolvedURLRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+        case METHODID_SEARCH_KEYWORDS:
+          serviceImpl.searchKeywords((memento.Keyword.SearchKeywordsRequest) request,
+              (io.grpc.stub.StreamObserver<memento.Keyword.SearchKeywordsResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -412,9 +339,8 @@ public final class KeywordServiceGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new KeywordServiceFileDescriptorSupplier())
-              .addMethod(getListKeywordHistoriesMethod())
-              .addMethod(getUpdateSolutionURLMethod())
-              .addMethod(getUpdateResolvedURLMethod())
+              .addMethod(getListKeywordsMethod())
+              .addMethod(getSearchKeywordsMethod())
               .build();
         }
       }
