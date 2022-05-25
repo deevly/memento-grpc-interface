@@ -14,8 +14,8 @@ public final class Keyword {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface ListKeywordHistoriesRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:memento.ListKeywordHistoriesRequest)
+  public interface ListKeywordsRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:memento.ListKeywordsRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -31,39 +31,41 @@ public final class Keyword {
         getUsernameBytes();
 
     /**
-     * <code>string keyword = 2 [json_name = "keyword"];</code>
-     * @return The keyword.
+     * <code>.memento.KeywordCursor cursor = 2 [json_name = "cursor"];</code>
+     * @return Whether the cursor field is set.
      */
-    java.lang.String getKeyword();
+    boolean hasCursor();
     /**
-     * <code>string keyword = 2 [json_name = "keyword"];</code>
-     * @return The bytes for keyword.
+     * <code>.memento.KeywordCursor cursor = 2 [json_name = "cursor"];</code>
+     * @return The cursor.
      */
-    com.google.protobuf.ByteString
-        getKeywordBytes();
+    memento.Types.KeywordCursor getCursor();
+    /**
+     * <code>.memento.KeywordCursor cursor = 2 [json_name = "cursor"];</code>
+     */
+    memento.Types.KeywordCursorOrBuilder getCursorOrBuilder();
   }
   /**
-   * Protobuf type {@code memento.ListKeywordHistoriesRequest}
+   * Protobuf type {@code memento.ListKeywordsRequest}
    */
-  public static final class ListKeywordHistoriesRequest extends
+  public static final class ListKeywordsRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:memento.ListKeywordHistoriesRequest)
-      ListKeywordHistoriesRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:memento.ListKeywordsRequest)
+      ListKeywordsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use ListKeywordHistoriesRequest.newBuilder() to construct.
-    private ListKeywordHistoriesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ListKeywordsRequest.newBuilder() to construct.
+    private ListKeywordsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ListKeywordHistoriesRequest() {
+    private ListKeywordsRequest() {
       username_ = "";
-      keyword_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new ListKeywordHistoriesRequest();
+      return new ListKeywordsRequest();
     }
 
     @java.lang.Override
@@ -71,7 +73,7 @@ public final class Keyword {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ListKeywordHistoriesRequest(
+    private ListKeywordsRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -96,9 +98,16 @@ public final class Keyword {
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+              memento.Types.KeywordCursor.Builder subBuilder = null;
+              if (cursor_ != null) {
+                subBuilder = cursor_.toBuilder();
+              }
+              cursor_ = input.readMessage(memento.Types.KeywordCursor.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(cursor_);
+                cursor_ = subBuilder.buildPartial();
+              }
 
-              keyword_ = s;
               break;
             }
             default: {
@@ -124,15 +133,15 @@ public final class Keyword {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return memento.Keyword.internal_static_memento_ListKeywordHistoriesRequest_descriptor;
+      return memento.Keyword.internal_static_memento_ListKeywordsRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return memento.Keyword.internal_static_memento_ListKeywordHistoriesRequest_fieldAccessorTable
+      return memento.Keyword.internal_static_memento_ListKeywordsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              memento.Keyword.ListKeywordHistoriesRequest.class, memento.Keyword.ListKeywordHistoriesRequest.Builder.class);
+              memento.Keyword.ListKeywordsRequest.class, memento.Keyword.ListKeywordsRequest.Builder.class);
     }
 
     public static final int USERNAME_FIELD_NUMBER = 1;
@@ -173,42 +182,30 @@ public final class Keyword {
       }
     }
 
-    public static final int KEYWORD_FIELD_NUMBER = 2;
-    private volatile java.lang.Object keyword_;
+    public static final int CURSOR_FIELD_NUMBER = 2;
+    private memento.Types.KeywordCursor cursor_;
     /**
-     * <code>string keyword = 2 [json_name = "keyword"];</code>
-     * @return The keyword.
+     * <code>.memento.KeywordCursor cursor = 2 [json_name = "cursor"];</code>
+     * @return Whether the cursor field is set.
      */
     @java.lang.Override
-    public java.lang.String getKeyword() {
-      java.lang.Object ref = keyword_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        keyword_ = s;
-        return s;
-      }
+    public boolean hasCursor() {
+      return cursor_ != null;
     }
     /**
-     * <code>string keyword = 2 [json_name = "keyword"];</code>
-     * @return The bytes for keyword.
+     * <code>.memento.KeywordCursor cursor = 2 [json_name = "cursor"];</code>
+     * @return The cursor.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getKeywordBytes() {
-      java.lang.Object ref = keyword_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        keyword_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public memento.Types.KeywordCursor getCursor() {
+      return cursor_ == null ? memento.Types.KeywordCursor.getDefaultInstance() : cursor_;
+    }
+    /**
+     * <code>.memento.KeywordCursor cursor = 2 [json_name = "cursor"];</code>
+     */
+    @java.lang.Override
+    public memento.Types.KeywordCursorOrBuilder getCursorOrBuilder() {
+      return getCursor();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -228,8 +225,8 @@ public final class Keyword {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, username_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyword_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, keyword_);
+      if (cursor_ != null) {
+        output.writeMessage(2, getCursor());
       }
       unknownFields.writeTo(output);
     }
@@ -243,8 +240,9 @@ public final class Keyword {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, username_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyword_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, keyword_);
+      if (cursor_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getCursor());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -256,15 +254,18 @@ public final class Keyword {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof memento.Keyword.ListKeywordHistoriesRequest)) {
+      if (!(obj instanceof memento.Keyword.ListKeywordsRequest)) {
         return super.equals(obj);
       }
-      memento.Keyword.ListKeywordHistoriesRequest other = (memento.Keyword.ListKeywordHistoriesRequest) obj;
+      memento.Keyword.ListKeywordsRequest other = (memento.Keyword.ListKeywordsRequest) obj;
 
       if (!getUsername()
           .equals(other.getUsername())) return false;
-      if (!getKeyword()
-          .equals(other.getKeyword())) return false;
+      if (hasCursor() != other.hasCursor()) return false;
+      if (hasCursor()) {
+        if (!getCursor()
+            .equals(other.getCursor())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -278,76 +279,78 @@ public final class Keyword {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + USERNAME_FIELD_NUMBER;
       hash = (53 * hash) + getUsername().hashCode();
-      hash = (37 * hash) + KEYWORD_FIELD_NUMBER;
-      hash = (53 * hash) + getKeyword().hashCode();
+      if (hasCursor()) {
+        hash = (37 * hash) + CURSOR_FIELD_NUMBER;
+        hash = (53 * hash) + getCursor().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static memento.Keyword.ListKeywordHistoriesRequest parseFrom(
+    public static memento.Keyword.ListKeywordsRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static memento.Keyword.ListKeywordHistoriesRequest parseFrom(
+    public static memento.Keyword.ListKeywordsRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static memento.Keyword.ListKeywordHistoriesRequest parseFrom(
+    public static memento.Keyword.ListKeywordsRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static memento.Keyword.ListKeywordHistoriesRequest parseFrom(
+    public static memento.Keyword.ListKeywordsRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static memento.Keyword.ListKeywordHistoriesRequest parseFrom(byte[] data)
+    public static memento.Keyword.ListKeywordsRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static memento.Keyword.ListKeywordHistoriesRequest parseFrom(
+    public static memento.Keyword.ListKeywordsRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static memento.Keyword.ListKeywordHistoriesRequest parseFrom(java.io.InputStream input)
+    public static memento.Keyword.ListKeywordsRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static memento.Keyword.ListKeywordHistoriesRequest parseFrom(
+    public static memento.Keyword.ListKeywordsRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static memento.Keyword.ListKeywordHistoriesRequest parseDelimitedFrom(java.io.InputStream input)
+    public static memento.Keyword.ListKeywordsRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static memento.Keyword.ListKeywordHistoriesRequest parseDelimitedFrom(
+    public static memento.Keyword.ListKeywordsRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static memento.Keyword.ListKeywordHistoriesRequest parseFrom(
+    public static memento.Keyword.ListKeywordsRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static memento.Keyword.ListKeywordHistoriesRequest parseFrom(
+    public static memento.Keyword.ListKeywordsRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -360,7 +363,7 @@ public final class Keyword {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(memento.Keyword.ListKeywordHistoriesRequest prototype) {
+    public static Builder newBuilder(memento.Keyword.ListKeywordsRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -376,26 +379,26 @@ public final class Keyword {
       return builder;
     }
     /**
-     * Protobuf type {@code memento.ListKeywordHistoriesRequest}
+     * Protobuf type {@code memento.ListKeywordsRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:memento.ListKeywordHistoriesRequest)
-        memento.Keyword.ListKeywordHistoriesRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:memento.ListKeywordsRequest)
+        memento.Keyword.ListKeywordsRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return memento.Keyword.internal_static_memento_ListKeywordHistoriesRequest_descriptor;
+        return memento.Keyword.internal_static_memento_ListKeywordsRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return memento.Keyword.internal_static_memento_ListKeywordHistoriesRequest_fieldAccessorTable
+        return memento.Keyword.internal_static_memento_ListKeywordsRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                memento.Keyword.ListKeywordHistoriesRequest.class, memento.Keyword.ListKeywordHistoriesRequest.Builder.class);
+                memento.Keyword.ListKeywordsRequest.class, memento.Keyword.ListKeywordsRequest.Builder.class);
       }
 
-      // Construct using memento.Keyword.ListKeywordHistoriesRequest.newBuilder()
+      // Construct using memento.Keyword.ListKeywordsRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -415,25 +418,29 @@ public final class Keyword {
         super.clear();
         username_ = "";
 
-        keyword_ = "";
-
+        if (cursorBuilder_ == null) {
+          cursor_ = null;
+        } else {
+          cursor_ = null;
+          cursorBuilder_ = null;
+        }
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return memento.Keyword.internal_static_memento_ListKeywordHistoriesRequest_descriptor;
+        return memento.Keyword.internal_static_memento_ListKeywordsRequest_descriptor;
       }
 
       @java.lang.Override
-      public memento.Keyword.ListKeywordHistoriesRequest getDefaultInstanceForType() {
-        return memento.Keyword.ListKeywordHistoriesRequest.getDefaultInstance();
+      public memento.Keyword.ListKeywordsRequest getDefaultInstanceForType() {
+        return memento.Keyword.ListKeywordsRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public memento.Keyword.ListKeywordHistoriesRequest build() {
-        memento.Keyword.ListKeywordHistoriesRequest result = buildPartial();
+      public memento.Keyword.ListKeywordsRequest build() {
+        memento.Keyword.ListKeywordsRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -441,10 +448,14 @@ public final class Keyword {
       }
 
       @java.lang.Override
-      public memento.Keyword.ListKeywordHistoriesRequest buildPartial() {
-        memento.Keyword.ListKeywordHistoriesRequest result = new memento.Keyword.ListKeywordHistoriesRequest(this);
+      public memento.Keyword.ListKeywordsRequest buildPartial() {
+        memento.Keyword.ListKeywordsRequest result = new memento.Keyword.ListKeywordsRequest(this);
         result.username_ = username_;
-        result.keyword_ = keyword_;
+        if (cursorBuilder_ == null) {
+          result.cursor_ = cursor_;
+        } else {
+          result.cursor_ = cursorBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -483,23 +494,22 @@ public final class Keyword {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof memento.Keyword.ListKeywordHistoriesRequest) {
-          return mergeFrom((memento.Keyword.ListKeywordHistoriesRequest)other);
+        if (other instanceof memento.Keyword.ListKeywordsRequest) {
+          return mergeFrom((memento.Keyword.ListKeywordsRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(memento.Keyword.ListKeywordHistoriesRequest other) {
-        if (other == memento.Keyword.ListKeywordHistoriesRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(memento.Keyword.ListKeywordsRequest other) {
+        if (other == memento.Keyword.ListKeywordsRequest.getDefaultInstance()) return this;
         if (!other.getUsername().isEmpty()) {
           username_ = other.username_;
           onChanged();
         }
-        if (!other.getKeyword().isEmpty()) {
-          keyword_ = other.keyword_;
-          onChanged();
+        if (other.hasCursor()) {
+          mergeCursor(other.getCursor());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -516,11 +526,11 @@ public final class Keyword {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        memento.Keyword.ListKeywordHistoriesRequest parsedMessage = null;
+        memento.Keyword.ListKeywordsRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (memento.Keyword.ListKeywordHistoriesRequest) e.getUnfinishedMessage();
+          parsedMessage = (memento.Keyword.ListKeywordsRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -606,80 +616,123 @@ public final class Keyword {
         return this;
       }
 
-      private java.lang.Object keyword_ = "";
+      private memento.Types.KeywordCursor cursor_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          memento.Types.KeywordCursor, memento.Types.KeywordCursor.Builder, memento.Types.KeywordCursorOrBuilder> cursorBuilder_;
       /**
-       * <code>string keyword = 2 [json_name = "keyword"];</code>
-       * @return The keyword.
+       * <code>.memento.KeywordCursor cursor = 2 [json_name = "cursor"];</code>
+       * @return Whether the cursor field is set.
        */
-      public java.lang.String getKeyword() {
-        java.lang.Object ref = keyword_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          keyword_ = s;
-          return s;
+      public boolean hasCursor() {
+        return cursorBuilder_ != null || cursor_ != null;
+      }
+      /**
+       * <code>.memento.KeywordCursor cursor = 2 [json_name = "cursor"];</code>
+       * @return The cursor.
+       */
+      public memento.Types.KeywordCursor getCursor() {
+        if (cursorBuilder_ == null) {
+          return cursor_ == null ? memento.Types.KeywordCursor.getDefaultInstance() : cursor_;
         } else {
-          return (java.lang.String) ref;
+          return cursorBuilder_.getMessage();
         }
       }
       /**
-       * <code>string keyword = 2 [json_name = "keyword"];</code>
-       * @return The bytes for keyword.
+       * <code>.memento.KeywordCursor cursor = 2 [json_name = "cursor"];</code>
        */
-      public com.google.protobuf.ByteString
-          getKeywordBytes() {
-        java.lang.Object ref = keyword_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          keyword_ = b;
-          return b;
+      public Builder setCursor(memento.Types.KeywordCursor value) {
+        if (cursorBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          cursor_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          cursorBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.memento.KeywordCursor cursor = 2 [json_name = "cursor"];</code>
+       */
+      public Builder setCursor(
+          memento.Types.KeywordCursor.Builder builderForValue) {
+        if (cursorBuilder_ == null) {
+          cursor_ = builderForValue.build();
+          onChanged();
+        } else {
+          cursorBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.memento.KeywordCursor cursor = 2 [json_name = "cursor"];</code>
+       */
+      public Builder mergeCursor(memento.Types.KeywordCursor value) {
+        if (cursorBuilder_ == null) {
+          if (cursor_ != null) {
+            cursor_ =
+              memento.Types.KeywordCursor.newBuilder(cursor_).mergeFrom(value).buildPartial();
+          } else {
+            cursor_ = value;
+          }
+          onChanged();
+        } else {
+          cursorBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.memento.KeywordCursor cursor = 2 [json_name = "cursor"];</code>
+       */
+      public Builder clearCursor() {
+        if (cursorBuilder_ == null) {
+          cursor_ = null;
+          onChanged();
+        } else {
+          cursor_ = null;
+          cursorBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.memento.KeywordCursor cursor = 2 [json_name = "cursor"];</code>
+       */
+      public memento.Types.KeywordCursor.Builder getCursorBuilder() {
+        
+        onChanged();
+        return getCursorFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.memento.KeywordCursor cursor = 2 [json_name = "cursor"];</code>
+       */
+      public memento.Types.KeywordCursorOrBuilder getCursorOrBuilder() {
+        if (cursorBuilder_ != null) {
+          return cursorBuilder_.getMessageOrBuilder();
+        } else {
+          return cursor_ == null ?
+              memento.Types.KeywordCursor.getDefaultInstance() : cursor_;
         }
       }
       /**
-       * <code>string keyword = 2 [json_name = "keyword"];</code>
-       * @param value The keyword to set.
-       * @return This builder for chaining.
+       * <code>.memento.KeywordCursor cursor = 2 [json_name = "cursor"];</code>
        */
-      public Builder setKeyword(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        keyword_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string keyword = 2 [json_name = "keyword"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKeyword() {
-        
-        keyword_ = getDefaultInstance().getKeyword();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string keyword = 2 [json_name = "keyword"];</code>
-       * @param value The bytes for keyword to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKeywordBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        keyword_ = value;
-        onChanged();
-        return this;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          memento.Types.KeywordCursor, memento.Types.KeywordCursor.Builder, memento.Types.KeywordCursorOrBuilder> 
+          getCursorFieldBuilder() {
+        if (cursorBuilder_ == null) {
+          cursorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              memento.Types.KeywordCursor, memento.Types.KeywordCursor.Builder, memento.Types.KeywordCursorOrBuilder>(
+                  getCursor(),
+                  getParentForChildren(),
+                  isClean());
+          cursor_ = null;
+        }
+        return cursorBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -694,95 +747,111 @@ public final class Keyword {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:memento.ListKeywordHistoriesRequest)
+      // @@protoc_insertion_point(builder_scope:memento.ListKeywordsRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:memento.ListKeywordHistoriesRequest)
-    private static final memento.Keyword.ListKeywordHistoriesRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:memento.ListKeywordsRequest)
+    private static final memento.Keyword.ListKeywordsRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new memento.Keyword.ListKeywordHistoriesRequest();
+      DEFAULT_INSTANCE = new memento.Keyword.ListKeywordsRequest();
     }
 
-    public static memento.Keyword.ListKeywordHistoriesRequest getDefaultInstance() {
+    public static memento.Keyword.ListKeywordsRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ListKeywordHistoriesRequest>
-        PARSER = new com.google.protobuf.AbstractParser<ListKeywordHistoriesRequest>() {
+    private static final com.google.protobuf.Parser<ListKeywordsRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ListKeywordsRequest>() {
       @java.lang.Override
-      public ListKeywordHistoriesRequest parsePartialFrom(
+      public ListKeywordsRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ListKeywordHistoriesRequest(input, extensionRegistry);
+        return new ListKeywordsRequest(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<ListKeywordHistoriesRequest> parser() {
+    public static com.google.protobuf.Parser<ListKeywordsRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ListKeywordHistoriesRequest> getParserForType() {
+    public com.google.protobuf.Parser<ListKeywordsRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public memento.Keyword.ListKeywordHistoriesRequest getDefaultInstanceForType() {
+    public memento.Keyword.ListKeywordsRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface ListKeywordHistoriesResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:memento.ListKeywordHistoriesResponse)
+  public interface ListKeywordsResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:memento.ListKeywordsResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .memento.Url urls = 1 [json_name = "urls"];</code>
+     * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+     * @return A list containing the keywords.
      */
-    java.util.List<memento.Types.Url> 
-        getUrlsList();
+    java.util.List<java.lang.String>
+        getKeywordsList();
     /**
-     * <code>repeated .memento.Url urls = 1 [json_name = "urls"];</code>
+     * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+     * @return The count of keywords.
      */
-    memento.Types.Url getUrls(int index);
+    int getKeywordsCount();
     /**
-     * <code>repeated .memento.Url urls = 1 [json_name = "urls"];</code>
+     * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+     * @param index The index of the element to return.
+     * @return The keywords at the given index.
      */
-    int getUrlsCount();
+    java.lang.String getKeywords(int index);
     /**
-     * <code>repeated .memento.Url urls = 1 [json_name = "urls"];</code>
+     * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the keywords at the given index.
      */
-    java.util.List<? extends memento.Types.UrlOrBuilder> 
-        getUrlsOrBuilderList();
+    com.google.protobuf.ByteString
+        getKeywordsBytes(int index);
+
     /**
-     * <code>repeated .memento.Url urls = 1 [json_name = "urls"];</code>
+     * <code>.memento.KeywordCursor cursor = 2 [json_name = "cursor"];</code>
+     * @return Whether the cursor field is set.
      */
-    memento.Types.UrlOrBuilder getUrlsOrBuilder(
-        int index);
+    boolean hasCursor();
+    /**
+     * <code>.memento.KeywordCursor cursor = 2 [json_name = "cursor"];</code>
+     * @return The cursor.
+     */
+    memento.Types.KeywordCursor getCursor();
+    /**
+     * <code>.memento.KeywordCursor cursor = 2 [json_name = "cursor"];</code>
+     */
+    memento.Types.KeywordCursorOrBuilder getCursorOrBuilder();
   }
   /**
-   * Protobuf type {@code memento.ListKeywordHistoriesResponse}
+   * Protobuf type {@code memento.ListKeywordsResponse}
    */
-  public static final class ListKeywordHistoriesResponse extends
+  public static final class ListKeywordsResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:memento.ListKeywordHistoriesResponse)
-      ListKeywordHistoriesResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:memento.ListKeywordsResponse)
+      ListKeywordsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use ListKeywordHistoriesResponse.newBuilder() to construct.
-    private ListKeywordHistoriesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use ListKeywordsResponse.newBuilder() to construct.
+    private ListKeywordsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ListKeywordHistoriesResponse() {
-      urls_ = java.util.Collections.emptyList();
+    private ListKeywordsResponse() {
+      keywords_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new ListKeywordHistoriesResponse();
+      return new ListKeywordsResponse();
     }
 
     @java.lang.Override
@@ -790,7 +859,7 @@ public final class Keyword {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ListKeywordHistoriesResponse(
+    private ListKeywordsResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -810,12 +879,25 @@ public final class Keyword {
               done = true;
               break;
             case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                urls_ = new java.util.ArrayList<memento.Types.Url>();
+                keywords_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000001;
               }
-              urls_.add(
-                  input.readMessage(memento.Types.Url.parser(), extensionRegistry));
+              keywords_.add(s);
+              break;
+            }
+            case 18: {
+              memento.Types.KeywordCursor.Builder subBuilder = null;
+              if (cursor_ != null) {
+                subBuilder = cursor_.toBuilder();
+              }
+              cursor_ = input.readMessage(memento.Types.KeywordCursor.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(cursor_);
+                cursor_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -836,7 +918,7 @@ public final class Keyword {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          urls_ = java.util.Collections.unmodifiableList(urls_);
+          keywords_ = keywords_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -844,55 +926,76 @@ public final class Keyword {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return memento.Keyword.internal_static_memento_ListKeywordHistoriesResponse_descriptor;
+      return memento.Keyword.internal_static_memento_ListKeywordsResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return memento.Keyword.internal_static_memento_ListKeywordHistoriesResponse_fieldAccessorTable
+      return memento.Keyword.internal_static_memento_ListKeywordsResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              memento.Keyword.ListKeywordHistoriesResponse.class, memento.Keyword.ListKeywordHistoriesResponse.Builder.class);
+              memento.Keyword.ListKeywordsResponse.class, memento.Keyword.ListKeywordsResponse.Builder.class);
     }
 
-    public static final int URLS_FIELD_NUMBER = 1;
-    private java.util.List<memento.Types.Url> urls_;
+    public static final int KEYWORDS_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList keywords_;
     /**
-     * <code>repeated .memento.Url urls = 1 [json_name = "urls"];</code>
+     * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+     * @return A list containing the keywords.
      */
-    @java.lang.Override
-    public java.util.List<memento.Types.Url> getUrlsList() {
-      return urls_;
+    public com.google.protobuf.ProtocolStringList
+        getKeywordsList() {
+      return keywords_;
     }
     /**
-     * <code>repeated .memento.Url urls = 1 [json_name = "urls"];</code>
+     * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+     * @return The count of keywords.
      */
-    @java.lang.Override
-    public java.util.List<? extends memento.Types.UrlOrBuilder> 
-        getUrlsOrBuilderList() {
-      return urls_;
+    public int getKeywordsCount() {
+      return keywords_.size();
     }
     /**
-     * <code>repeated .memento.Url urls = 1 [json_name = "urls"];</code>
+     * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+     * @param index The index of the element to return.
+     * @return The keywords at the given index.
      */
-    @java.lang.Override
-    public int getUrlsCount() {
-      return urls_.size();
+    public java.lang.String getKeywords(int index) {
+      return keywords_.get(index);
     }
     /**
-     * <code>repeated .memento.Url urls = 1 [json_name = "urls"];</code>
+     * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the keywords at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getKeywordsBytes(int index) {
+      return keywords_.getByteString(index);
+    }
+
+    public static final int CURSOR_FIELD_NUMBER = 2;
+    private memento.Types.KeywordCursor cursor_;
+    /**
+     * <code>.memento.KeywordCursor cursor = 2 [json_name = "cursor"];</code>
+     * @return Whether the cursor field is set.
      */
     @java.lang.Override
-    public memento.Types.Url getUrls(int index) {
-      return urls_.get(index);
+    public boolean hasCursor() {
+      return cursor_ != null;
     }
     /**
-     * <code>repeated .memento.Url urls = 1 [json_name = "urls"];</code>
+     * <code>.memento.KeywordCursor cursor = 2 [json_name = "cursor"];</code>
+     * @return The cursor.
      */
     @java.lang.Override
-    public memento.Types.UrlOrBuilder getUrlsOrBuilder(
-        int index) {
-      return urls_.get(index);
+    public memento.Types.KeywordCursor getCursor() {
+      return cursor_ == null ? memento.Types.KeywordCursor.getDefaultInstance() : cursor_;
+    }
+    /**
+     * <code>.memento.KeywordCursor cursor = 2 [json_name = "cursor"];</code>
+     */
+    @java.lang.Override
+    public memento.Types.KeywordCursorOrBuilder getCursorOrBuilder() {
+      return getCursor();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -909,8 +1012,11 @@ public final class Keyword {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < urls_.size(); i++) {
-        output.writeMessage(1, urls_.get(i));
+      for (int i = 0; i < keywords_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, keywords_.getRaw(i));
+      }
+      if (cursor_ != null) {
+        output.writeMessage(2, getCursor());
       }
       unknownFields.writeTo(output);
     }
@@ -921,9 +1027,17 @@ public final class Keyword {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < urls_.size(); i++) {
+      {
+        int dataSize = 0;
+        for (int i = 0; i < keywords_.size(); i++) {
+          dataSize += computeStringSizeNoTag(keywords_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getKeywordsList().size();
+      }
+      if (cursor_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, urls_.get(i));
+          .computeMessageSize(2, getCursor());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -935,13 +1049,18 @@ public final class Keyword {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof memento.Keyword.ListKeywordHistoriesResponse)) {
+      if (!(obj instanceof memento.Keyword.ListKeywordsResponse)) {
         return super.equals(obj);
       }
-      memento.Keyword.ListKeywordHistoriesResponse other = (memento.Keyword.ListKeywordHistoriesResponse) obj;
+      memento.Keyword.ListKeywordsResponse other = (memento.Keyword.ListKeywordsResponse) obj;
 
-      if (!getUrlsList()
-          .equals(other.getUrlsList())) return false;
+      if (!getKeywordsList()
+          .equals(other.getKeywordsList())) return false;
+      if (hasCursor() != other.hasCursor()) return false;
+      if (hasCursor()) {
+        if (!getCursor()
+            .equals(other.getCursor())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -953,78 +1072,82 @@ public final class Keyword {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getUrlsCount() > 0) {
-        hash = (37 * hash) + URLS_FIELD_NUMBER;
-        hash = (53 * hash) + getUrlsList().hashCode();
+      if (getKeywordsCount() > 0) {
+        hash = (37 * hash) + KEYWORDS_FIELD_NUMBER;
+        hash = (53 * hash) + getKeywordsList().hashCode();
+      }
+      if (hasCursor()) {
+        hash = (37 * hash) + CURSOR_FIELD_NUMBER;
+        hash = (53 * hash) + getCursor().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static memento.Keyword.ListKeywordHistoriesResponse parseFrom(
+    public static memento.Keyword.ListKeywordsResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static memento.Keyword.ListKeywordHistoriesResponse parseFrom(
+    public static memento.Keyword.ListKeywordsResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static memento.Keyword.ListKeywordHistoriesResponse parseFrom(
+    public static memento.Keyword.ListKeywordsResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static memento.Keyword.ListKeywordHistoriesResponse parseFrom(
+    public static memento.Keyword.ListKeywordsResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static memento.Keyword.ListKeywordHistoriesResponse parseFrom(byte[] data)
+    public static memento.Keyword.ListKeywordsResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static memento.Keyword.ListKeywordHistoriesResponse parseFrom(
+    public static memento.Keyword.ListKeywordsResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static memento.Keyword.ListKeywordHistoriesResponse parseFrom(java.io.InputStream input)
+    public static memento.Keyword.ListKeywordsResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static memento.Keyword.ListKeywordHistoriesResponse parseFrom(
+    public static memento.Keyword.ListKeywordsResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static memento.Keyword.ListKeywordHistoriesResponse parseDelimitedFrom(java.io.InputStream input)
+    public static memento.Keyword.ListKeywordsResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static memento.Keyword.ListKeywordHistoriesResponse parseDelimitedFrom(
+    public static memento.Keyword.ListKeywordsResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static memento.Keyword.ListKeywordHistoriesResponse parseFrom(
+    public static memento.Keyword.ListKeywordsResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static memento.Keyword.ListKeywordHistoriesResponse parseFrom(
+    public static memento.Keyword.ListKeywordsResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1037,7 +1160,7 @@ public final class Keyword {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(memento.Keyword.ListKeywordHistoriesResponse prototype) {
+    public static Builder newBuilder(memento.Keyword.ListKeywordsResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1053,26 +1176,26 @@ public final class Keyword {
       return builder;
     }
     /**
-     * Protobuf type {@code memento.ListKeywordHistoriesResponse}
+     * Protobuf type {@code memento.ListKeywordsResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:memento.ListKeywordHistoriesResponse)
-        memento.Keyword.ListKeywordHistoriesResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:memento.ListKeywordsResponse)
+        memento.Keyword.ListKeywordsResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return memento.Keyword.internal_static_memento_ListKeywordHistoriesResponse_descriptor;
+        return memento.Keyword.internal_static_memento_ListKeywordsResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return memento.Keyword.internal_static_memento_ListKeywordHistoriesResponse_fieldAccessorTable
+        return memento.Keyword.internal_static_memento_ListKeywordsResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                memento.Keyword.ListKeywordHistoriesResponse.class, memento.Keyword.ListKeywordHistoriesResponse.Builder.class);
+                memento.Keyword.ListKeywordsResponse.class, memento.Keyword.ListKeywordsResponse.Builder.class);
       }
 
-      // Construct using memento.Keyword.ListKeywordHistoriesResponse.newBuilder()
+      // Construct using memento.Keyword.ListKeywordsResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1085,17 +1208,18 @@ public final class Keyword {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getUrlsFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (urlsBuilder_ == null) {
-          urls_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        keywords_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (cursorBuilder_ == null) {
+          cursor_ = null;
         } else {
-          urlsBuilder_.clear();
+          cursor_ = null;
+          cursorBuilder_ = null;
         }
         return this;
       }
@@ -1103,17 +1227,17 @@ public final class Keyword {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return memento.Keyword.internal_static_memento_ListKeywordHistoriesResponse_descriptor;
+        return memento.Keyword.internal_static_memento_ListKeywordsResponse_descriptor;
       }
 
       @java.lang.Override
-      public memento.Keyword.ListKeywordHistoriesResponse getDefaultInstanceForType() {
-        return memento.Keyword.ListKeywordHistoriesResponse.getDefaultInstance();
+      public memento.Keyword.ListKeywordsResponse getDefaultInstanceForType() {
+        return memento.Keyword.ListKeywordsResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public memento.Keyword.ListKeywordHistoriesResponse build() {
-        memento.Keyword.ListKeywordHistoriesResponse result = buildPartial();
+      public memento.Keyword.ListKeywordsResponse build() {
+        memento.Keyword.ListKeywordsResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1121,17 +1245,18 @@ public final class Keyword {
       }
 
       @java.lang.Override
-      public memento.Keyword.ListKeywordHistoriesResponse buildPartial() {
-        memento.Keyword.ListKeywordHistoriesResponse result = new memento.Keyword.ListKeywordHistoriesResponse(this);
+      public memento.Keyword.ListKeywordsResponse buildPartial() {
+        memento.Keyword.ListKeywordsResponse result = new memento.Keyword.ListKeywordsResponse(this);
         int from_bitField0_ = bitField0_;
-        if (urlsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            urls_ = java.util.Collections.unmodifiableList(urls_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.urls_ = urls_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          keywords_ = keywords_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.keywords_ = keywords_;
+        if (cursorBuilder_ == null) {
+          result.cursor_ = cursor_;
         } else {
-          result.urls_ = urlsBuilder_.build();
+          result.cursor_ = cursorBuilder_.build();
         }
         onBuilt();
         return result;
@@ -1171,41 +1296,28 @@ public final class Keyword {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof memento.Keyword.ListKeywordHistoriesResponse) {
-          return mergeFrom((memento.Keyword.ListKeywordHistoriesResponse)other);
+        if (other instanceof memento.Keyword.ListKeywordsResponse) {
+          return mergeFrom((memento.Keyword.ListKeywordsResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(memento.Keyword.ListKeywordHistoriesResponse other) {
-        if (other == memento.Keyword.ListKeywordHistoriesResponse.getDefaultInstance()) return this;
-        if (urlsBuilder_ == null) {
-          if (!other.urls_.isEmpty()) {
-            if (urls_.isEmpty()) {
-              urls_ = other.urls_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureUrlsIsMutable();
-              urls_.addAll(other.urls_);
-            }
-            onChanged();
+      public Builder mergeFrom(memento.Keyword.ListKeywordsResponse other) {
+        if (other == memento.Keyword.ListKeywordsResponse.getDefaultInstance()) return this;
+        if (!other.keywords_.isEmpty()) {
+          if (keywords_.isEmpty()) {
+            keywords_ = other.keywords_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureKeywordsIsMutable();
+            keywords_.addAll(other.keywords_);
           }
-        } else {
-          if (!other.urls_.isEmpty()) {
-            if (urlsBuilder_.isEmpty()) {
-              urlsBuilder_.dispose();
-              urlsBuilder_ = null;
-              urls_ = other.urls_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              urlsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getUrlsFieldBuilder() : null;
-            } else {
-              urlsBuilder_.addAllMessages(other.urls_);
-            }
-          }
+          onChanged();
+        }
+        if (other.hasCursor()) {
+          mergeCursor(other.getCursor());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1222,11 +1334,11 @@ public final class Keyword {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        memento.Keyword.ListKeywordHistoriesResponse parsedMessage = null;
+        memento.Keyword.ListKeywordsResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (memento.Keyword.ListKeywordHistoriesResponse) e.getUnfinishedMessage();
+          parsedMessage = (memento.Keyword.ListKeywordsResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1237,244 +1349,233 @@ public final class Keyword {
       }
       private int bitField0_;
 
-      private java.util.List<memento.Types.Url> urls_ =
-        java.util.Collections.emptyList();
-      private void ensureUrlsIsMutable() {
+      private com.google.protobuf.LazyStringList keywords_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureKeywordsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          urls_ = new java.util.ArrayList<memento.Types.Url>(urls_);
+          keywords_ = new com.google.protobuf.LazyStringArrayList(keywords_);
           bitField0_ |= 0x00000001;
          }
       }
+      /**
+       * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+       * @return A list containing the keywords.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getKeywordsList() {
+        return keywords_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+       * @return The count of keywords.
+       */
+      public int getKeywordsCount() {
+        return keywords_.size();
+      }
+      /**
+       * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+       * @param index The index of the element to return.
+       * @return The keywords at the given index.
+       */
+      public java.lang.String getKeywords(int index) {
+        return keywords_.get(index);
+      }
+      /**
+       * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the keywords at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getKeywordsBytes(int index) {
+        return keywords_.getByteString(index);
+      }
+      /**
+       * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+       * @param index The index to set the value at.
+       * @param value The keywords to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKeywords(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureKeywordsIsMutable();
+        keywords_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+       * @param value The keywords to add.
+       * @return This builder for chaining.
+       */
+      public Builder addKeywords(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureKeywordsIsMutable();
+        keywords_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+       * @param values The keywords to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllKeywords(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureKeywordsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, keywords_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKeywords() {
+        keywords_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+       * @param value The bytes of the keywords to add.
+       * @return This builder for chaining.
+       */
+      public Builder addKeywordsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureKeywordsIsMutable();
+        keywords_.add(value);
+        onChanged();
+        return this;
+      }
 
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          memento.Types.Url, memento.Types.Url.Builder, memento.Types.UrlOrBuilder> urlsBuilder_;
+      private memento.Types.KeywordCursor cursor_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          memento.Types.KeywordCursor, memento.Types.KeywordCursor.Builder, memento.Types.KeywordCursorOrBuilder> cursorBuilder_;
+      /**
+       * <code>.memento.KeywordCursor cursor = 2 [json_name = "cursor"];</code>
+       * @return Whether the cursor field is set.
+       */
+      public boolean hasCursor() {
+        return cursorBuilder_ != null || cursor_ != null;
+      }
+      /**
+       * <code>.memento.KeywordCursor cursor = 2 [json_name = "cursor"];</code>
+       * @return The cursor.
+       */
+      public memento.Types.KeywordCursor getCursor() {
+        if (cursorBuilder_ == null) {
+          return cursor_ == null ? memento.Types.KeywordCursor.getDefaultInstance() : cursor_;
+        } else {
+          return cursorBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.memento.KeywordCursor cursor = 2 [json_name = "cursor"];</code>
+       */
+      public Builder setCursor(memento.Types.KeywordCursor value) {
+        if (cursorBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          cursor_ = value;
+          onChanged();
+        } else {
+          cursorBuilder_.setMessage(value);
+        }
 
-      /**
-       * <code>repeated .memento.Url urls = 1 [json_name = "urls"];</code>
-       */
-      public java.util.List<memento.Types.Url> getUrlsList() {
-        if (urlsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(urls_);
-        } else {
-          return urlsBuilder_.getMessageList();
-        }
+        return this;
       }
       /**
-       * <code>repeated .memento.Url urls = 1 [json_name = "urls"];</code>
+       * <code>.memento.KeywordCursor cursor = 2 [json_name = "cursor"];</code>
        */
-      public int getUrlsCount() {
-        if (urlsBuilder_ == null) {
-          return urls_.size();
+      public Builder setCursor(
+          memento.Types.KeywordCursor.Builder builderForValue) {
+        if (cursorBuilder_ == null) {
+          cursor_ = builderForValue.build();
+          onChanged();
         } else {
-          return urlsBuilder_.getCount();
+          cursorBuilder_.setMessage(builderForValue.build());
         }
+
+        return this;
       }
       /**
-       * <code>repeated .memento.Url urls = 1 [json_name = "urls"];</code>
+       * <code>.memento.KeywordCursor cursor = 2 [json_name = "cursor"];</code>
        */
-      public memento.Types.Url getUrls(int index) {
-        if (urlsBuilder_ == null) {
-          return urls_.get(index);
-        } else {
-          return urlsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .memento.Url urls = 1 [json_name = "urls"];</code>
-       */
-      public Builder setUrls(
-          int index, memento.Types.Url value) {
-        if (urlsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
+      public Builder mergeCursor(memento.Types.KeywordCursor value) {
+        if (cursorBuilder_ == null) {
+          if (cursor_ != null) {
+            cursor_ =
+              memento.Types.KeywordCursor.newBuilder(cursor_).mergeFrom(value).buildPartial();
+          } else {
+            cursor_ = value;
           }
-          ensureUrlsIsMutable();
-          urls_.set(index, value);
           onChanged();
         } else {
-          urlsBuilder_.setMessage(index, value);
+          cursorBuilder_.mergeFrom(value);
         }
+
         return this;
       }
       /**
-       * <code>repeated .memento.Url urls = 1 [json_name = "urls"];</code>
+       * <code>.memento.KeywordCursor cursor = 2 [json_name = "cursor"];</code>
        */
-      public Builder setUrls(
-          int index, memento.Types.Url.Builder builderForValue) {
-        if (urlsBuilder_ == null) {
-          ensureUrlsIsMutable();
-          urls_.set(index, builderForValue.build());
+      public Builder clearCursor() {
+        if (cursorBuilder_ == null) {
+          cursor_ = null;
           onChanged();
         } else {
-          urlsBuilder_.setMessage(index, builderForValue.build());
+          cursor_ = null;
+          cursorBuilder_ = null;
         }
+
         return this;
       }
       /**
-       * <code>repeated .memento.Url urls = 1 [json_name = "urls"];</code>
+       * <code>.memento.KeywordCursor cursor = 2 [json_name = "cursor"];</code>
        */
-      public Builder addUrls(memento.Types.Url value) {
-        if (urlsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureUrlsIsMutable();
-          urls_.add(value);
-          onChanged();
+      public memento.Types.KeywordCursor.Builder getCursorBuilder() {
+        
+        onChanged();
+        return getCursorFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.memento.KeywordCursor cursor = 2 [json_name = "cursor"];</code>
+       */
+      public memento.Types.KeywordCursorOrBuilder getCursorOrBuilder() {
+        if (cursorBuilder_ != null) {
+          return cursorBuilder_.getMessageOrBuilder();
         } else {
-          urlsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .memento.Url urls = 1 [json_name = "urls"];</code>
-       */
-      public Builder addUrls(
-          int index, memento.Types.Url value) {
-        if (urlsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureUrlsIsMutable();
-          urls_.add(index, value);
-          onChanged();
-        } else {
-          urlsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .memento.Url urls = 1 [json_name = "urls"];</code>
-       */
-      public Builder addUrls(
-          memento.Types.Url.Builder builderForValue) {
-        if (urlsBuilder_ == null) {
-          ensureUrlsIsMutable();
-          urls_.add(builderForValue.build());
-          onChanged();
-        } else {
-          urlsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .memento.Url urls = 1 [json_name = "urls"];</code>
-       */
-      public Builder addUrls(
-          int index, memento.Types.Url.Builder builderForValue) {
-        if (urlsBuilder_ == null) {
-          ensureUrlsIsMutable();
-          urls_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          urlsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .memento.Url urls = 1 [json_name = "urls"];</code>
-       */
-      public Builder addAllUrls(
-          java.lang.Iterable<? extends memento.Types.Url> values) {
-        if (urlsBuilder_ == null) {
-          ensureUrlsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, urls_);
-          onChanged();
-        } else {
-          urlsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .memento.Url urls = 1 [json_name = "urls"];</code>
-       */
-      public Builder clearUrls() {
-        if (urlsBuilder_ == null) {
-          urls_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          urlsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .memento.Url urls = 1 [json_name = "urls"];</code>
-       */
-      public Builder removeUrls(int index) {
-        if (urlsBuilder_ == null) {
-          ensureUrlsIsMutable();
-          urls_.remove(index);
-          onChanged();
-        } else {
-          urlsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .memento.Url urls = 1 [json_name = "urls"];</code>
-       */
-      public memento.Types.Url.Builder getUrlsBuilder(
-          int index) {
-        return getUrlsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .memento.Url urls = 1 [json_name = "urls"];</code>
-       */
-      public memento.Types.UrlOrBuilder getUrlsOrBuilder(
-          int index) {
-        if (urlsBuilder_ == null) {
-          return urls_.get(index);  } else {
-          return urlsBuilder_.getMessageOrBuilder(index);
+          return cursor_ == null ?
+              memento.Types.KeywordCursor.getDefaultInstance() : cursor_;
         }
       }
       /**
-       * <code>repeated .memento.Url urls = 1 [json_name = "urls"];</code>
+       * <code>.memento.KeywordCursor cursor = 2 [json_name = "cursor"];</code>
        */
-      public java.util.List<? extends memento.Types.UrlOrBuilder> 
-           getUrlsOrBuilderList() {
-        if (urlsBuilder_ != null) {
-          return urlsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(urls_);
-        }
-      }
-      /**
-       * <code>repeated .memento.Url urls = 1 [json_name = "urls"];</code>
-       */
-      public memento.Types.Url.Builder addUrlsBuilder() {
-        return getUrlsFieldBuilder().addBuilder(
-            memento.Types.Url.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .memento.Url urls = 1 [json_name = "urls"];</code>
-       */
-      public memento.Types.Url.Builder addUrlsBuilder(
-          int index) {
-        return getUrlsFieldBuilder().addBuilder(
-            index, memento.Types.Url.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .memento.Url urls = 1 [json_name = "urls"];</code>
-       */
-      public java.util.List<memento.Types.Url.Builder> 
-           getUrlsBuilderList() {
-        return getUrlsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          memento.Types.Url, memento.Types.Url.Builder, memento.Types.UrlOrBuilder> 
-          getUrlsFieldBuilder() {
-        if (urlsBuilder_ == null) {
-          urlsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              memento.Types.Url, memento.Types.Url.Builder, memento.Types.UrlOrBuilder>(
-                  urls_,
-                  ((bitField0_ & 0x00000001) != 0),
+      private com.google.protobuf.SingleFieldBuilderV3<
+          memento.Types.KeywordCursor, memento.Types.KeywordCursor.Builder, memento.Types.KeywordCursorOrBuilder> 
+          getCursorFieldBuilder() {
+        if (cursorBuilder_ == null) {
+          cursorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              memento.Types.KeywordCursor, memento.Types.KeywordCursor.Builder, memento.Types.KeywordCursorOrBuilder>(
+                  getCursor(),
                   getParentForChildren(),
                   isClean());
-          urls_ = null;
+          cursor_ = null;
         }
-        return urlsBuilder_;
+        return cursorBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1489,109 +1590,96 @@ public final class Keyword {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:memento.ListKeywordHistoriesResponse)
+      // @@protoc_insertion_point(builder_scope:memento.ListKeywordsResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:memento.ListKeywordHistoriesResponse)
-    private static final memento.Keyword.ListKeywordHistoriesResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:memento.ListKeywordsResponse)
+    private static final memento.Keyword.ListKeywordsResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new memento.Keyword.ListKeywordHistoriesResponse();
+      DEFAULT_INSTANCE = new memento.Keyword.ListKeywordsResponse();
     }
 
-    public static memento.Keyword.ListKeywordHistoriesResponse getDefaultInstance() {
+    public static memento.Keyword.ListKeywordsResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ListKeywordHistoriesResponse>
-        PARSER = new com.google.protobuf.AbstractParser<ListKeywordHistoriesResponse>() {
+    private static final com.google.protobuf.Parser<ListKeywordsResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ListKeywordsResponse>() {
       @java.lang.Override
-      public ListKeywordHistoriesResponse parsePartialFrom(
+      public ListKeywordsResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ListKeywordHistoriesResponse(input, extensionRegistry);
+        return new ListKeywordsResponse(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<ListKeywordHistoriesResponse> parser() {
+    public static com.google.protobuf.Parser<ListKeywordsResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ListKeywordHistoriesResponse> getParserForType() {
+    public com.google.protobuf.Parser<ListKeywordsResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public memento.Keyword.ListKeywordHistoriesResponse getDefaultInstanceForType() {
+    public memento.Keyword.ListKeywordsResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface UpdateSolutionURLRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:memento.UpdateSolutionURLRequest)
+  public interface SearchKeywordsRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:memento.SearchKeywordsRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string username = 1 [json_name = "username"];</code>
-     * @return The username.
+     * <code>string regex = 1 [json_name = "regex"];</code>
+     * @return The regex.
      */
-    java.lang.String getUsername();
+    java.lang.String getRegex();
     /**
-     * <code>string username = 1 [json_name = "username"];</code>
-     * @return The bytes for username.
+     * <code>string regex = 1 [json_name = "regex"];</code>
+     * @return The bytes for regex.
      */
     com.google.protobuf.ByteString
-        getUsernameBytes();
+        getRegexBytes();
 
     /**
-     * <code>string keyword = 2 [json_name = "keyword"];</code>
-     * @return The keyword.
+     * <code>string cursor = 2 [json_name = "cursor"];</code>
+     * @return The cursor.
      */
-    java.lang.String getKeyword();
+    java.lang.String getCursor();
     /**
-     * <code>string keyword = 2 [json_name = "keyword"];</code>
-     * @return The bytes for keyword.
+     * <code>string cursor = 2 [json_name = "cursor"];</code>
+     * @return The bytes for cursor.
      */
     com.google.protobuf.ByteString
-        getKeywordBytes();
-
-    /**
-     * <code>string url = 3 [json_name = "url"];</code>
-     * @return The url.
-     */
-    java.lang.String getUrl();
-    /**
-     * <code>string url = 3 [json_name = "url"];</code>
-     * @return The bytes for url.
-     */
-    com.google.protobuf.ByteString
-        getUrlBytes();
+        getCursorBytes();
   }
   /**
-   * Protobuf type {@code memento.UpdateSolutionURLRequest}
+   * Protobuf type {@code memento.SearchKeywordsRequest}
    */
-  public static final class UpdateSolutionURLRequest extends
+  public static final class SearchKeywordsRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:memento.UpdateSolutionURLRequest)
-      UpdateSolutionURLRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:memento.SearchKeywordsRequest)
+      SearchKeywordsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use UpdateSolutionURLRequest.newBuilder() to construct.
-    private UpdateSolutionURLRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use SearchKeywordsRequest.newBuilder() to construct.
+    private SearchKeywordsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private UpdateSolutionURLRequest() {
-      username_ = "";
-      keyword_ = "";
-      url_ = "";
+    private SearchKeywordsRequest() {
+      regex_ = "";
+      cursor_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new UpdateSolutionURLRequest();
+      return new SearchKeywordsRequest();
     }
 
     @java.lang.Override
@@ -1599,7 +1687,7 @@ public final class Keyword {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private UpdateSolutionURLRequest(
+    private SearchKeywordsRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1620,19 +1708,13 @@ public final class Keyword {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              username_ = s;
+              regex_ = s;
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              keyword_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              url_ = s;
+              cursor_ = s;
               break;
             }
             default: {
@@ -1658,125 +1740,87 @@ public final class Keyword {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return memento.Keyword.internal_static_memento_UpdateSolutionURLRequest_descriptor;
+      return memento.Keyword.internal_static_memento_SearchKeywordsRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return memento.Keyword.internal_static_memento_UpdateSolutionURLRequest_fieldAccessorTable
+      return memento.Keyword.internal_static_memento_SearchKeywordsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              memento.Keyword.UpdateSolutionURLRequest.class, memento.Keyword.UpdateSolutionURLRequest.Builder.class);
+              memento.Keyword.SearchKeywordsRequest.class, memento.Keyword.SearchKeywordsRequest.Builder.class);
     }
 
-    public static final int USERNAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object username_;
+    public static final int REGEX_FIELD_NUMBER = 1;
+    private volatile java.lang.Object regex_;
     /**
-     * <code>string username = 1 [json_name = "username"];</code>
-     * @return The username.
+     * <code>string regex = 1 [json_name = "regex"];</code>
+     * @return The regex.
      */
     @java.lang.Override
-    public java.lang.String getUsername() {
-      java.lang.Object ref = username_;
+    public java.lang.String getRegex() {
+      java.lang.Object ref = regex_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        username_ = s;
+        regex_ = s;
         return s;
       }
     }
     /**
-     * <code>string username = 1 [json_name = "username"];</code>
-     * @return The bytes for username.
+     * <code>string regex = 1 [json_name = "regex"];</code>
+     * @return The bytes for regex.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getUsernameBytes() {
-      java.lang.Object ref = username_;
+        getRegexBytes() {
+      java.lang.Object ref = regex_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        username_ = b;
+        regex_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int KEYWORD_FIELD_NUMBER = 2;
-    private volatile java.lang.Object keyword_;
+    public static final int CURSOR_FIELD_NUMBER = 2;
+    private volatile java.lang.Object cursor_;
     /**
-     * <code>string keyword = 2 [json_name = "keyword"];</code>
-     * @return The keyword.
+     * <code>string cursor = 2 [json_name = "cursor"];</code>
+     * @return The cursor.
      */
     @java.lang.Override
-    public java.lang.String getKeyword() {
-      java.lang.Object ref = keyword_;
+    public java.lang.String getCursor() {
+      java.lang.Object ref = cursor_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        keyword_ = s;
+        cursor_ = s;
         return s;
       }
     }
     /**
-     * <code>string keyword = 2 [json_name = "keyword"];</code>
-     * @return The bytes for keyword.
+     * <code>string cursor = 2 [json_name = "cursor"];</code>
+     * @return The bytes for cursor.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getKeywordBytes() {
-      java.lang.Object ref = keyword_;
+        getCursorBytes() {
+      java.lang.Object ref = cursor_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        keyword_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int URL_FIELD_NUMBER = 3;
-    private volatile java.lang.Object url_;
-    /**
-     * <code>string url = 3 [json_name = "url"];</code>
-     * @return The url.
-     */
-    @java.lang.Override
-    public java.lang.String getUrl() {
-      java.lang.Object ref = url_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        url_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string url = 3 [json_name = "url"];</code>
-     * @return The bytes for url.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getUrlBytes() {
-      java.lang.Object ref = url_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        url_ = b;
+        cursor_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1797,14 +1841,11 @@ public final class Keyword {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, username_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(regex_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, regex_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyword_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, keyword_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, url_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cursor_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, cursor_);
       }
       unknownFields.writeTo(output);
     }
@@ -1815,14 +1856,11 @@ public final class Keyword {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, username_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(regex_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, regex_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyword_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, keyword_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, url_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cursor_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, cursor_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1834,17 +1872,15 @@ public final class Keyword {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof memento.Keyword.UpdateSolutionURLRequest)) {
+      if (!(obj instanceof memento.Keyword.SearchKeywordsRequest)) {
         return super.equals(obj);
       }
-      memento.Keyword.UpdateSolutionURLRequest other = (memento.Keyword.UpdateSolutionURLRequest) obj;
+      memento.Keyword.SearchKeywordsRequest other = (memento.Keyword.SearchKeywordsRequest) obj;
 
-      if (!getUsername()
-          .equals(other.getUsername())) return false;
-      if (!getKeyword()
-          .equals(other.getKeyword())) return false;
-      if (!getUrl()
-          .equals(other.getUrl())) return false;
+      if (!getRegex()
+          .equals(other.getRegex())) return false;
+      if (!getCursor()
+          .equals(other.getCursor())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1856,80 +1892,78 @@ public final class Keyword {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getUsername().hashCode();
-      hash = (37 * hash) + KEYWORD_FIELD_NUMBER;
-      hash = (53 * hash) + getKeyword().hashCode();
-      hash = (37 * hash) + URL_FIELD_NUMBER;
-      hash = (53 * hash) + getUrl().hashCode();
+      hash = (37 * hash) + REGEX_FIELD_NUMBER;
+      hash = (53 * hash) + getRegex().hashCode();
+      hash = (37 * hash) + CURSOR_FIELD_NUMBER;
+      hash = (53 * hash) + getCursor().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static memento.Keyword.UpdateSolutionURLRequest parseFrom(
+    public static memento.Keyword.SearchKeywordsRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static memento.Keyword.UpdateSolutionURLRequest parseFrom(
+    public static memento.Keyword.SearchKeywordsRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static memento.Keyword.UpdateSolutionURLRequest parseFrom(
+    public static memento.Keyword.SearchKeywordsRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static memento.Keyword.UpdateSolutionURLRequest parseFrom(
+    public static memento.Keyword.SearchKeywordsRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static memento.Keyword.UpdateSolutionURLRequest parseFrom(byte[] data)
+    public static memento.Keyword.SearchKeywordsRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static memento.Keyword.UpdateSolutionURLRequest parseFrom(
+    public static memento.Keyword.SearchKeywordsRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static memento.Keyword.UpdateSolutionURLRequest parseFrom(java.io.InputStream input)
+    public static memento.Keyword.SearchKeywordsRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static memento.Keyword.UpdateSolutionURLRequest parseFrom(
+    public static memento.Keyword.SearchKeywordsRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static memento.Keyword.UpdateSolutionURLRequest parseDelimitedFrom(java.io.InputStream input)
+    public static memento.Keyword.SearchKeywordsRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static memento.Keyword.UpdateSolutionURLRequest parseDelimitedFrom(
+    public static memento.Keyword.SearchKeywordsRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static memento.Keyword.UpdateSolutionURLRequest parseFrom(
+    public static memento.Keyword.SearchKeywordsRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static memento.Keyword.UpdateSolutionURLRequest parseFrom(
+    public static memento.Keyword.SearchKeywordsRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1942,7 +1976,7 @@ public final class Keyword {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(memento.Keyword.UpdateSolutionURLRequest prototype) {
+    public static Builder newBuilder(memento.Keyword.SearchKeywordsRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1958,26 +1992,26 @@ public final class Keyword {
       return builder;
     }
     /**
-     * Protobuf type {@code memento.UpdateSolutionURLRequest}
+     * Protobuf type {@code memento.SearchKeywordsRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:memento.UpdateSolutionURLRequest)
-        memento.Keyword.UpdateSolutionURLRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:memento.SearchKeywordsRequest)
+        memento.Keyword.SearchKeywordsRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return memento.Keyword.internal_static_memento_UpdateSolutionURLRequest_descriptor;
+        return memento.Keyword.internal_static_memento_SearchKeywordsRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return memento.Keyword.internal_static_memento_UpdateSolutionURLRequest_fieldAccessorTable
+        return memento.Keyword.internal_static_memento_SearchKeywordsRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                memento.Keyword.UpdateSolutionURLRequest.class, memento.Keyword.UpdateSolutionURLRequest.Builder.class);
+                memento.Keyword.SearchKeywordsRequest.class, memento.Keyword.SearchKeywordsRequest.Builder.class);
       }
 
-      // Construct using memento.Keyword.UpdateSolutionURLRequest.newBuilder()
+      // Construct using memento.Keyword.SearchKeywordsRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1995,11 +2029,9 @@ public final class Keyword {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        username_ = "";
+        regex_ = "";
 
-        keyword_ = "";
-
-        url_ = "";
+        cursor_ = "";
 
         return this;
       }
@@ -2007,17 +2039,17 @@ public final class Keyword {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return memento.Keyword.internal_static_memento_UpdateSolutionURLRequest_descriptor;
+        return memento.Keyword.internal_static_memento_SearchKeywordsRequest_descriptor;
       }
 
       @java.lang.Override
-      public memento.Keyword.UpdateSolutionURLRequest getDefaultInstanceForType() {
-        return memento.Keyword.UpdateSolutionURLRequest.getDefaultInstance();
+      public memento.Keyword.SearchKeywordsRequest getDefaultInstanceForType() {
+        return memento.Keyword.SearchKeywordsRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public memento.Keyword.UpdateSolutionURLRequest build() {
-        memento.Keyword.UpdateSolutionURLRequest result = buildPartial();
+      public memento.Keyword.SearchKeywordsRequest build() {
+        memento.Keyword.SearchKeywordsRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2025,11 +2057,10 @@ public final class Keyword {
       }
 
       @java.lang.Override
-      public memento.Keyword.UpdateSolutionURLRequest buildPartial() {
-        memento.Keyword.UpdateSolutionURLRequest result = new memento.Keyword.UpdateSolutionURLRequest(this);
-        result.username_ = username_;
-        result.keyword_ = keyword_;
-        result.url_ = url_;
+      public memento.Keyword.SearchKeywordsRequest buildPartial() {
+        memento.Keyword.SearchKeywordsRequest result = new memento.Keyword.SearchKeywordsRequest(this);
+        result.regex_ = regex_;
+        result.cursor_ = cursor_;
         onBuilt();
         return result;
       }
@@ -2068,26 +2099,22 @@ public final class Keyword {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof memento.Keyword.UpdateSolutionURLRequest) {
-          return mergeFrom((memento.Keyword.UpdateSolutionURLRequest)other);
+        if (other instanceof memento.Keyword.SearchKeywordsRequest) {
+          return mergeFrom((memento.Keyword.SearchKeywordsRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(memento.Keyword.UpdateSolutionURLRequest other) {
-        if (other == memento.Keyword.UpdateSolutionURLRequest.getDefaultInstance()) return this;
-        if (!other.getUsername().isEmpty()) {
-          username_ = other.username_;
+      public Builder mergeFrom(memento.Keyword.SearchKeywordsRequest other) {
+        if (other == memento.Keyword.SearchKeywordsRequest.getDefaultInstance()) return this;
+        if (!other.getRegex().isEmpty()) {
+          regex_ = other.regex_;
           onChanged();
         }
-        if (!other.getKeyword().isEmpty()) {
-          keyword_ = other.keyword_;
-          onChanged();
-        }
-        if (!other.getUrl().isEmpty()) {
-          url_ = other.url_;
+        if (!other.getCursor().isEmpty()) {
+          cursor_ = other.cursor_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -2105,11 +2132,11 @@ public final class Keyword {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        memento.Keyword.UpdateSolutionURLRequest parsedMessage = null;
+        memento.Keyword.SearchKeywordsRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (memento.Keyword.UpdateSolutionURLRequest) e.getUnfinishedMessage();
+          parsedMessage = (memento.Keyword.SearchKeywordsRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2119,230 +2146,154 @@ public final class Keyword {
         return this;
       }
 
-      private java.lang.Object username_ = "";
+      private java.lang.Object regex_ = "";
       /**
-       * <code>string username = 1 [json_name = "username"];</code>
-       * @return The username.
+       * <code>string regex = 1 [json_name = "regex"];</code>
+       * @return The regex.
        */
-      public java.lang.String getUsername() {
-        java.lang.Object ref = username_;
+      public java.lang.String getRegex() {
+        java.lang.Object ref = regex_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          username_ = s;
+          regex_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string username = 1 [json_name = "username"];</code>
-       * @return The bytes for username.
+       * <code>string regex = 1 [json_name = "regex"];</code>
+       * @return The bytes for regex.
        */
       public com.google.protobuf.ByteString
-          getUsernameBytes() {
-        java.lang.Object ref = username_;
+          getRegexBytes() {
+        java.lang.Object ref = regex_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          username_ = b;
+          regex_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string username = 1 [json_name = "username"];</code>
-       * @param value The username to set.
+       * <code>string regex = 1 [json_name = "regex"];</code>
+       * @param value The regex to set.
        * @return This builder for chaining.
        */
-      public Builder setUsername(
+      public Builder setRegex(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        username_ = value;
+        regex_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string username = 1 [json_name = "username"];</code>
+       * <code>string regex = 1 [json_name = "regex"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearUsername() {
+      public Builder clearRegex() {
         
-        username_ = getDefaultInstance().getUsername();
+        regex_ = getDefaultInstance().getRegex();
         onChanged();
         return this;
       }
       /**
-       * <code>string username = 1 [json_name = "username"];</code>
-       * @param value The bytes for username to set.
+       * <code>string regex = 1 [json_name = "regex"];</code>
+       * @param value The bytes for regex to set.
        * @return This builder for chaining.
        */
-      public Builder setUsernameBytes(
+      public Builder setRegexBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        username_ = value;
+        regex_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object keyword_ = "";
+      private java.lang.Object cursor_ = "";
       /**
-       * <code>string keyword = 2 [json_name = "keyword"];</code>
-       * @return The keyword.
+       * <code>string cursor = 2 [json_name = "cursor"];</code>
+       * @return The cursor.
        */
-      public java.lang.String getKeyword() {
-        java.lang.Object ref = keyword_;
+      public java.lang.String getCursor() {
+        java.lang.Object ref = cursor_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          keyword_ = s;
+          cursor_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string keyword = 2 [json_name = "keyword"];</code>
-       * @return The bytes for keyword.
+       * <code>string cursor = 2 [json_name = "cursor"];</code>
+       * @return The bytes for cursor.
        */
       public com.google.protobuf.ByteString
-          getKeywordBytes() {
-        java.lang.Object ref = keyword_;
+          getCursorBytes() {
+        java.lang.Object ref = cursor_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          keyword_ = b;
+          cursor_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string keyword = 2 [json_name = "keyword"];</code>
-       * @param value The keyword to set.
+       * <code>string cursor = 2 [json_name = "cursor"];</code>
+       * @param value The cursor to set.
        * @return This builder for chaining.
        */
-      public Builder setKeyword(
+      public Builder setCursor(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        keyword_ = value;
+        cursor_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string keyword = 2 [json_name = "keyword"];</code>
+       * <code>string cursor = 2 [json_name = "cursor"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearKeyword() {
+      public Builder clearCursor() {
         
-        keyword_ = getDefaultInstance().getKeyword();
+        cursor_ = getDefaultInstance().getCursor();
         onChanged();
         return this;
       }
       /**
-       * <code>string keyword = 2 [json_name = "keyword"];</code>
-       * @param value The bytes for keyword to set.
+       * <code>string cursor = 2 [json_name = "cursor"];</code>
+       * @param value The bytes for cursor to set.
        * @return This builder for chaining.
        */
-      public Builder setKeywordBytes(
+      public Builder setCursorBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        keyword_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object url_ = "";
-      /**
-       * <code>string url = 3 [json_name = "url"];</code>
-       * @return The url.
-       */
-      public java.lang.String getUrl() {
-        java.lang.Object ref = url_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          url_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string url = 3 [json_name = "url"];</code>
-       * @return The bytes for url.
-       */
-      public com.google.protobuf.ByteString
-          getUrlBytes() {
-        java.lang.Object ref = url_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          url_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string url = 3 [json_name = "url"];</code>
-       * @param value The url to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUrl(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        url_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string url = 3 [json_name = "url"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUrl() {
-        
-        url_ = getDefaultInstance().getUrl();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string url = 3 [json_name = "url"];</code>
-       * @param value The bytes for url to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUrlBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        url_ = value;
+        cursor_ = value;
         onChanged();
         return this;
       }
@@ -2359,115 +2310,109 @@ public final class Keyword {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:memento.UpdateSolutionURLRequest)
+      // @@protoc_insertion_point(builder_scope:memento.SearchKeywordsRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:memento.UpdateSolutionURLRequest)
-    private static final memento.Keyword.UpdateSolutionURLRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:memento.SearchKeywordsRequest)
+    private static final memento.Keyword.SearchKeywordsRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new memento.Keyword.UpdateSolutionURLRequest();
+      DEFAULT_INSTANCE = new memento.Keyword.SearchKeywordsRequest();
     }
 
-    public static memento.Keyword.UpdateSolutionURLRequest getDefaultInstance() {
+    public static memento.Keyword.SearchKeywordsRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UpdateSolutionURLRequest>
-        PARSER = new com.google.protobuf.AbstractParser<UpdateSolutionURLRequest>() {
+    private static final com.google.protobuf.Parser<SearchKeywordsRequest>
+        PARSER = new com.google.protobuf.AbstractParser<SearchKeywordsRequest>() {
       @java.lang.Override
-      public UpdateSolutionURLRequest parsePartialFrom(
+      public SearchKeywordsRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UpdateSolutionURLRequest(input, extensionRegistry);
+        return new SearchKeywordsRequest(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<UpdateSolutionURLRequest> parser() {
+    public static com.google.protobuf.Parser<SearchKeywordsRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<UpdateSolutionURLRequest> getParserForType() {
+    public com.google.protobuf.Parser<SearchKeywordsRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public memento.Keyword.UpdateSolutionURLRequest getDefaultInstanceForType() {
+    public memento.Keyword.SearchKeywordsRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface UpdateResolvedURLRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:memento.UpdateResolvedURLRequest)
+  public interface SearchKeywordsResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:memento.SearchKeywordsResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string username = 1 [json_name = "username"];</code>
-     * @return The username.
+     * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+     * @return A list containing the keywords.
      */
-    java.lang.String getUsername();
+    java.util.List<java.lang.String>
+        getKeywordsList();
     /**
-     * <code>string username = 1 [json_name = "username"];</code>
-     * @return The bytes for username.
+     * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+     * @return The count of keywords.
+     */
+    int getKeywordsCount();
+    /**
+     * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+     * @param index The index of the element to return.
+     * @return The keywords at the given index.
+     */
+    java.lang.String getKeywords(int index);
+    /**
+     * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the keywords at the given index.
      */
     com.google.protobuf.ByteString
-        getUsernameBytes();
+        getKeywordsBytes(int index);
 
     /**
-     * <code>string keyword = 2 [json_name = "keyword"];</code>
-     * @return The keyword.
+     * <code>string cursor = 2 [json_name = "cursor"];</code>
+     * @return The cursor.
      */
-    java.lang.String getKeyword();
+    java.lang.String getCursor();
     /**
-     * <code>string keyword = 2 [json_name = "keyword"];</code>
-     * @return The bytes for keyword.
+     * <code>string cursor = 2 [json_name = "cursor"];</code>
+     * @return The bytes for cursor.
      */
     com.google.protobuf.ByteString
-        getKeywordBytes();
-
-    /**
-     * <code>string url = 3 [json_name = "url"];</code>
-     * @return The url.
-     */
-    java.lang.String getUrl();
-    /**
-     * <code>string url = 3 [json_name = "url"];</code>
-     * @return The bytes for url.
-     */
-    com.google.protobuf.ByteString
-        getUrlBytes();
-
-    /**
-     * <code>bool resolved = 4 [json_name = "resolved"];</code>
-     * @return The resolved.
-     */
-    boolean getResolved();
+        getCursorBytes();
   }
   /**
-   * Protobuf type {@code memento.UpdateResolvedURLRequest}
+   * Protobuf type {@code memento.SearchKeywordsResponse}
    */
-  public static final class UpdateResolvedURLRequest extends
+  public static final class SearchKeywordsResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:memento.UpdateResolvedURLRequest)
-      UpdateResolvedURLRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:memento.SearchKeywordsResponse)
+      SearchKeywordsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use UpdateResolvedURLRequest.newBuilder() to construct.
-    private UpdateResolvedURLRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use SearchKeywordsResponse.newBuilder() to construct.
+    private SearchKeywordsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private UpdateResolvedURLRequest() {
-      username_ = "";
-      keyword_ = "";
-      url_ = "";
+    private SearchKeywordsResponse() {
+      keywords_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      cursor_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new UpdateResolvedURLRequest();
+      return new SearchKeywordsResponse();
     }
 
     @java.lang.Override
@@ -2475,7 +2420,7 @@ public final class Keyword {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private UpdateResolvedURLRequest(
+    private SearchKeywordsResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2483,6 +2428,7 @@ public final class Keyword {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -2495,25 +2441,17 @@ public final class Keyword {
               break;
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
-
-              username_ = s;
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                keywords_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              keywords_.add(s);
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              keyword_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              url_ = s;
-              break;
-            }
-            case 32: {
-
-              resolved_ = input.readBool();
+              cursor_ = s;
               break;
             }
             default: {
@@ -2533,146 +2471,97 @@ public final class Keyword {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          keywords_ = keywords_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return memento.Keyword.internal_static_memento_UpdateResolvedURLRequest_descriptor;
+      return memento.Keyword.internal_static_memento_SearchKeywordsResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return memento.Keyword.internal_static_memento_UpdateResolvedURLRequest_fieldAccessorTable
+      return memento.Keyword.internal_static_memento_SearchKeywordsResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              memento.Keyword.UpdateResolvedURLRequest.class, memento.Keyword.UpdateResolvedURLRequest.Builder.class);
+              memento.Keyword.SearchKeywordsResponse.class, memento.Keyword.SearchKeywordsResponse.Builder.class);
     }
 
-    public static final int USERNAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object username_;
+    public static final int KEYWORDS_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList keywords_;
     /**
-     * <code>string username = 1 [json_name = "username"];</code>
-     * @return The username.
+     * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+     * @return A list containing the keywords.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getKeywordsList() {
+      return keywords_;
+    }
+    /**
+     * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+     * @return The count of keywords.
+     */
+    public int getKeywordsCount() {
+      return keywords_.size();
+    }
+    /**
+     * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+     * @param index The index of the element to return.
+     * @return The keywords at the given index.
+     */
+    public java.lang.String getKeywords(int index) {
+      return keywords_.get(index);
+    }
+    /**
+     * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the keywords at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getKeywordsBytes(int index) {
+      return keywords_.getByteString(index);
+    }
+
+    public static final int CURSOR_FIELD_NUMBER = 2;
+    private volatile java.lang.Object cursor_;
+    /**
+     * <code>string cursor = 2 [json_name = "cursor"];</code>
+     * @return The cursor.
      */
     @java.lang.Override
-    public java.lang.String getUsername() {
-      java.lang.Object ref = username_;
+    public java.lang.String getCursor() {
+      java.lang.Object ref = cursor_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        username_ = s;
+        cursor_ = s;
         return s;
       }
     }
     /**
-     * <code>string username = 1 [json_name = "username"];</code>
-     * @return The bytes for username.
+     * <code>string cursor = 2 [json_name = "cursor"];</code>
+     * @return The bytes for cursor.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getUsernameBytes() {
-      java.lang.Object ref = username_;
+        getCursorBytes() {
+      java.lang.Object ref = cursor_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        username_ = b;
+        cursor_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
-    }
-
-    public static final int KEYWORD_FIELD_NUMBER = 2;
-    private volatile java.lang.Object keyword_;
-    /**
-     * <code>string keyword = 2 [json_name = "keyword"];</code>
-     * @return The keyword.
-     */
-    @java.lang.Override
-    public java.lang.String getKeyword() {
-      java.lang.Object ref = keyword_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        keyword_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string keyword = 2 [json_name = "keyword"];</code>
-     * @return The bytes for keyword.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getKeywordBytes() {
-      java.lang.Object ref = keyword_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        keyword_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int URL_FIELD_NUMBER = 3;
-    private volatile java.lang.Object url_;
-    /**
-     * <code>string url = 3 [json_name = "url"];</code>
-     * @return The url.
-     */
-    @java.lang.Override
-    public java.lang.String getUrl() {
-      java.lang.Object ref = url_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        url_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string url = 3 [json_name = "url"];</code>
-     * @return The bytes for url.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getUrlBytes() {
-      java.lang.Object ref = url_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        url_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int RESOLVED_FIELD_NUMBER = 4;
-    private boolean resolved_;
-    /**
-     * <code>bool resolved = 4 [json_name = "resolved"];</code>
-     * @return The resolved.
-     */
-    @java.lang.Override
-    public boolean getResolved() {
-      return resolved_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2689,17 +2578,11 @@ public final class Keyword {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, username_);
+      for (int i = 0; i < keywords_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, keywords_.getRaw(i));
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyword_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, keyword_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, url_);
-      }
-      if (resolved_ != false) {
-        output.writeBool(4, resolved_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cursor_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, cursor_);
       }
       unknownFields.writeTo(output);
     }
@@ -2710,18 +2593,16 @@ public final class Keyword {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, username_);
+      {
+        int dataSize = 0;
+        for (int i = 0; i < keywords_.size(); i++) {
+          dataSize += computeStringSizeNoTag(keywords_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getKeywordsList().size();
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyword_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, keyword_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, url_);
-      }
-      if (resolved_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, resolved_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cursor_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, cursor_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2733,19 +2614,15 @@ public final class Keyword {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof memento.Keyword.UpdateResolvedURLRequest)) {
+      if (!(obj instanceof memento.Keyword.SearchKeywordsResponse)) {
         return super.equals(obj);
       }
-      memento.Keyword.UpdateResolvedURLRequest other = (memento.Keyword.UpdateResolvedURLRequest) obj;
+      memento.Keyword.SearchKeywordsResponse other = (memento.Keyword.SearchKeywordsResponse) obj;
 
-      if (!getUsername()
-          .equals(other.getUsername())) return false;
-      if (!getKeyword()
-          .equals(other.getKeyword())) return false;
-      if (!getUrl()
-          .equals(other.getUrl())) return false;
-      if (getResolved()
-          != other.getResolved()) return false;
+      if (!getKeywordsList()
+          .equals(other.getKeywordsList())) return false;
+      if (!getCursor()
+          .equals(other.getCursor())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2757,83 +2634,80 @@ public final class Keyword {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getUsername().hashCode();
-      hash = (37 * hash) + KEYWORD_FIELD_NUMBER;
-      hash = (53 * hash) + getKeyword().hashCode();
-      hash = (37 * hash) + URL_FIELD_NUMBER;
-      hash = (53 * hash) + getUrl().hashCode();
-      hash = (37 * hash) + RESOLVED_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getResolved());
+      if (getKeywordsCount() > 0) {
+        hash = (37 * hash) + KEYWORDS_FIELD_NUMBER;
+        hash = (53 * hash) + getKeywordsList().hashCode();
+      }
+      hash = (37 * hash) + CURSOR_FIELD_NUMBER;
+      hash = (53 * hash) + getCursor().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static memento.Keyword.UpdateResolvedURLRequest parseFrom(
+    public static memento.Keyword.SearchKeywordsResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static memento.Keyword.UpdateResolvedURLRequest parseFrom(
+    public static memento.Keyword.SearchKeywordsResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static memento.Keyword.UpdateResolvedURLRequest parseFrom(
+    public static memento.Keyword.SearchKeywordsResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static memento.Keyword.UpdateResolvedURLRequest parseFrom(
+    public static memento.Keyword.SearchKeywordsResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static memento.Keyword.UpdateResolvedURLRequest parseFrom(byte[] data)
+    public static memento.Keyword.SearchKeywordsResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static memento.Keyword.UpdateResolvedURLRequest parseFrom(
+    public static memento.Keyword.SearchKeywordsResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static memento.Keyword.UpdateResolvedURLRequest parseFrom(java.io.InputStream input)
+    public static memento.Keyword.SearchKeywordsResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static memento.Keyword.UpdateResolvedURLRequest parseFrom(
+    public static memento.Keyword.SearchKeywordsResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static memento.Keyword.UpdateResolvedURLRequest parseDelimitedFrom(java.io.InputStream input)
+    public static memento.Keyword.SearchKeywordsResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static memento.Keyword.UpdateResolvedURLRequest parseDelimitedFrom(
+    public static memento.Keyword.SearchKeywordsResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static memento.Keyword.UpdateResolvedURLRequest parseFrom(
+    public static memento.Keyword.SearchKeywordsResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static memento.Keyword.UpdateResolvedURLRequest parseFrom(
+    public static memento.Keyword.SearchKeywordsResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2846,7 +2720,7 @@ public final class Keyword {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(memento.Keyword.UpdateResolvedURLRequest prototype) {
+    public static Builder newBuilder(memento.Keyword.SearchKeywordsResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2862,26 +2736,26 @@ public final class Keyword {
       return builder;
     }
     /**
-     * Protobuf type {@code memento.UpdateResolvedURLRequest}
+     * Protobuf type {@code memento.SearchKeywordsResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:memento.UpdateResolvedURLRequest)
-        memento.Keyword.UpdateResolvedURLRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:memento.SearchKeywordsResponse)
+        memento.Keyword.SearchKeywordsResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return memento.Keyword.internal_static_memento_UpdateResolvedURLRequest_descriptor;
+        return memento.Keyword.internal_static_memento_SearchKeywordsResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return memento.Keyword.internal_static_memento_UpdateResolvedURLRequest_fieldAccessorTable
+        return memento.Keyword.internal_static_memento_SearchKeywordsResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                memento.Keyword.UpdateResolvedURLRequest.class, memento.Keyword.UpdateResolvedURLRequest.Builder.class);
+                memento.Keyword.SearchKeywordsResponse.class, memento.Keyword.SearchKeywordsResponse.Builder.class);
       }
 
-      // Construct using memento.Keyword.UpdateResolvedURLRequest.newBuilder()
+      // Construct using memento.Keyword.SearchKeywordsResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2899,13 +2773,9 @@ public final class Keyword {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        username_ = "";
-
-        keyword_ = "";
-
-        url_ = "";
-
-        resolved_ = false;
+        keywords_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        cursor_ = "";
 
         return this;
       }
@@ -2913,17 +2783,17 @@ public final class Keyword {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return memento.Keyword.internal_static_memento_UpdateResolvedURLRequest_descriptor;
+        return memento.Keyword.internal_static_memento_SearchKeywordsResponse_descriptor;
       }
 
       @java.lang.Override
-      public memento.Keyword.UpdateResolvedURLRequest getDefaultInstanceForType() {
-        return memento.Keyword.UpdateResolvedURLRequest.getDefaultInstance();
+      public memento.Keyword.SearchKeywordsResponse getDefaultInstanceForType() {
+        return memento.Keyword.SearchKeywordsResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public memento.Keyword.UpdateResolvedURLRequest build() {
-        memento.Keyword.UpdateResolvedURLRequest result = buildPartial();
+      public memento.Keyword.SearchKeywordsResponse build() {
+        memento.Keyword.SearchKeywordsResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2931,12 +2801,15 @@ public final class Keyword {
       }
 
       @java.lang.Override
-      public memento.Keyword.UpdateResolvedURLRequest buildPartial() {
-        memento.Keyword.UpdateResolvedURLRequest result = new memento.Keyword.UpdateResolvedURLRequest(this);
-        result.username_ = username_;
-        result.keyword_ = keyword_;
-        result.url_ = url_;
-        result.resolved_ = resolved_;
+      public memento.Keyword.SearchKeywordsResponse buildPartial() {
+        memento.Keyword.SearchKeywordsResponse result = new memento.Keyword.SearchKeywordsResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          keywords_ = keywords_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.keywords_ = keywords_;
+        result.cursor_ = cursor_;
         onBuilt();
         return result;
       }
@@ -2975,30 +2848,29 @@ public final class Keyword {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof memento.Keyword.UpdateResolvedURLRequest) {
-          return mergeFrom((memento.Keyword.UpdateResolvedURLRequest)other);
+        if (other instanceof memento.Keyword.SearchKeywordsResponse) {
+          return mergeFrom((memento.Keyword.SearchKeywordsResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(memento.Keyword.UpdateResolvedURLRequest other) {
-        if (other == memento.Keyword.UpdateResolvedURLRequest.getDefaultInstance()) return this;
-        if (!other.getUsername().isEmpty()) {
-          username_ = other.username_;
+      public Builder mergeFrom(memento.Keyword.SearchKeywordsResponse other) {
+        if (other == memento.Keyword.SearchKeywordsResponse.getDefaultInstance()) return this;
+        if (!other.keywords_.isEmpty()) {
+          if (keywords_.isEmpty()) {
+            keywords_ = other.keywords_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureKeywordsIsMutable();
+            keywords_.addAll(other.keywords_);
+          }
           onChanged();
         }
-        if (!other.getKeyword().isEmpty()) {
-          keyword_ = other.keyword_;
+        if (!other.getCursor().isEmpty()) {
+          cursor_ = other.cursor_;
           onChanged();
-        }
-        if (!other.getUrl().isEmpty()) {
-          url_ = other.url_;
-          onChanged();
-        }
-        if (other.getResolved() != false) {
-          setResolved(other.getResolved());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3015,11 +2887,11 @@ public final class Keyword {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        memento.Keyword.UpdateResolvedURLRequest parsedMessage = null;
+        memento.Keyword.SearchKeywordsResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (memento.Keyword.UpdateResolvedURLRequest) e.getUnfinishedMessage();
+          parsedMessage = (memento.Keyword.SearchKeywordsResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3028,262 +2900,190 @@ public final class Keyword {
         }
         return this;
       }
+      private int bitField0_;
 
-      private java.lang.Object username_ = "";
+      private com.google.protobuf.LazyStringList keywords_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureKeywordsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          keywords_ = new com.google.protobuf.LazyStringArrayList(keywords_);
+          bitField0_ |= 0x00000001;
+         }
+      }
       /**
-       * <code>string username = 1 [json_name = "username"];</code>
-       * @return The username.
+       * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+       * @return A list containing the keywords.
        */
-      public java.lang.String getUsername() {
-        java.lang.Object ref = username_;
+      public com.google.protobuf.ProtocolStringList
+          getKeywordsList() {
+        return keywords_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+       * @return The count of keywords.
+       */
+      public int getKeywordsCount() {
+        return keywords_.size();
+      }
+      /**
+       * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+       * @param index The index of the element to return.
+       * @return The keywords at the given index.
+       */
+      public java.lang.String getKeywords(int index) {
+        return keywords_.get(index);
+      }
+      /**
+       * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the keywords at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getKeywordsBytes(int index) {
+        return keywords_.getByteString(index);
+      }
+      /**
+       * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+       * @param index The index to set the value at.
+       * @param value The keywords to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKeywords(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureKeywordsIsMutable();
+        keywords_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+       * @param value The keywords to add.
+       * @return This builder for chaining.
+       */
+      public Builder addKeywords(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureKeywordsIsMutable();
+        keywords_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+       * @param values The keywords to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllKeywords(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureKeywordsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, keywords_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKeywords() {
+        keywords_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string keywords = 1 [json_name = "keywords"];</code>
+       * @param value The bytes of the keywords to add.
+       * @return This builder for chaining.
+       */
+      public Builder addKeywordsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureKeywordsIsMutable();
+        keywords_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object cursor_ = "";
+      /**
+       * <code>string cursor = 2 [json_name = "cursor"];</code>
+       * @return The cursor.
+       */
+      public java.lang.String getCursor() {
+        java.lang.Object ref = cursor_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          username_ = s;
+          cursor_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string username = 1 [json_name = "username"];</code>
-       * @return The bytes for username.
+       * <code>string cursor = 2 [json_name = "cursor"];</code>
+       * @return The bytes for cursor.
        */
       public com.google.protobuf.ByteString
-          getUsernameBytes() {
-        java.lang.Object ref = username_;
+          getCursorBytes() {
+        java.lang.Object ref = cursor_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          username_ = b;
+          cursor_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string username = 1 [json_name = "username"];</code>
-       * @param value The username to set.
+       * <code>string cursor = 2 [json_name = "cursor"];</code>
+       * @param value The cursor to set.
        * @return This builder for chaining.
        */
-      public Builder setUsername(
+      public Builder setCursor(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        username_ = value;
+        cursor_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string username = 1 [json_name = "username"];</code>
+       * <code>string cursor = 2 [json_name = "cursor"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearUsername() {
+      public Builder clearCursor() {
         
-        username_ = getDefaultInstance().getUsername();
+        cursor_ = getDefaultInstance().getCursor();
         onChanged();
         return this;
       }
       /**
-       * <code>string username = 1 [json_name = "username"];</code>
-       * @param value The bytes for username to set.
+       * <code>string cursor = 2 [json_name = "cursor"];</code>
+       * @param value The bytes for cursor to set.
        * @return This builder for chaining.
        */
-      public Builder setUsernameBytes(
+      public Builder setCursorBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        username_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object keyword_ = "";
-      /**
-       * <code>string keyword = 2 [json_name = "keyword"];</code>
-       * @return The keyword.
-       */
-      public java.lang.String getKeyword() {
-        java.lang.Object ref = keyword_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          keyword_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string keyword = 2 [json_name = "keyword"];</code>
-       * @return The bytes for keyword.
-       */
-      public com.google.protobuf.ByteString
-          getKeywordBytes() {
-        java.lang.Object ref = keyword_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          keyword_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string keyword = 2 [json_name = "keyword"];</code>
-       * @param value The keyword to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKeyword(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        keyword_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string keyword = 2 [json_name = "keyword"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKeyword() {
-        
-        keyword_ = getDefaultInstance().getKeyword();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string keyword = 2 [json_name = "keyword"];</code>
-       * @param value The bytes for keyword to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKeywordBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        keyword_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object url_ = "";
-      /**
-       * <code>string url = 3 [json_name = "url"];</code>
-       * @return The url.
-       */
-      public java.lang.String getUrl() {
-        java.lang.Object ref = url_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          url_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string url = 3 [json_name = "url"];</code>
-       * @return The bytes for url.
-       */
-      public com.google.protobuf.ByteString
-          getUrlBytes() {
-        java.lang.Object ref = url_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          url_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string url = 3 [json_name = "url"];</code>
-       * @param value The url to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUrl(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        url_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string url = 3 [json_name = "url"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUrl() {
-        
-        url_ = getDefaultInstance().getUrl();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string url = 3 [json_name = "url"];</code>
-       * @param value The bytes for url to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUrlBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        url_ = value;
-        onChanged();
-        return this;
-      }
-
-      private boolean resolved_ ;
-      /**
-       * <code>bool resolved = 4 [json_name = "resolved"];</code>
-       * @return The resolved.
-       */
-      @java.lang.Override
-      public boolean getResolved() {
-        return resolved_;
-      }
-      /**
-       * <code>bool resolved = 4 [json_name = "resolved"];</code>
-       * @param value The resolved to set.
-       * @return This builder for chaining.
-       */
-      public Builder setResolved(boolean value) {
-        
-        resolved_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool resolved = 4 [json_name = "resolved"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearResolved() {
-        
-        resolved_ = false;
+        cursor_ = value;
         onChanged();
         return this;
       }
@@ -3300,66 +3100,66 @@ public final class Keyword {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:memento.UpdateResolvedURLRequest)
+      // @@protoc_insertion_point(builder_scope:memento.SearchKeywordsResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:memento.UpdateResolvedURLRequest)
-    private static final memento.Keyword.UpdateResolvedURLRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:memento.SearchKeywordsResponse)
+    private static final memento.Keyword.SearchKeywordsResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new memento.Keyword.UpdateResolvedURLRequest();
+      DEFAULT_INSTANCE = new memento.Keyword.SearchKeywordsResponse();
     }
 
-    public static memento.Keyword.UpdateResolvedURLRequest getDefaultInstance() {
+    public static memento.Keyword.SearchKeywordsResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UpdateResolvedURLRequest>
-        PARSER = new com.google.protobuf.AbstractParser<UpdateResolvedURLRequest>() {
+    private static final com.google.protobuf.Parser<SearchKeywordsResponse>
+        PARSER = new com.google.protobuf.AbstractParser<SearchKeywordsResponse>() {
       @java.lang.Override
-      public UpdateResolvedURLRequest parsePartialFrom(
+      public SearchKeywordsResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UpdateResolvedURLRequest(input, extensionRegistry);
+        return new SearchKeywordsResponse(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<UpdateResolvedURLRequest> parser() {
+    public static com.google.protobuf.Parser<SearchKeywordsResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<UpdateResolvedURLRequest> getParserForType() {
+    public com.google.protobuf.Parser<SearchKeywordsResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public memento.Keyword.UpdateResolvedURLRequest getDefaultInstanceForType() {
+    public memento.Keyword.SearchKeywordsResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_memento_ListKeywordHistoriesRequest_descriptor;
+    internal_static_memento_ListKeywordsRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_memento_ListKeywordHistoriesRequest_fieldAccessorTable;
+      internal_static_memento_ListKeywordsRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_memento_ListKeywordHistoriesResponse_descriptor;
+    internal_static_memento_ListKeywordsResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_memento_ListKeywordHistoriesResponse_fieldAccessorTable;
+      internal_static_memento_ListKeywordsResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_memento_UpdateSolutionURLRequest_descriptor;
+    internal_static_memento_SearchKeywordsRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_memento_UpdateSolutionURLRequest_fieldAccessorTable;
+      internal_static_memento_SearchKeywordsRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_memento_UpdateResolvedURLRequest_descriptor;
+    internal_static_memento_SearchKeywordsResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_memento_UpdateResolvedURLRequest_fieldAccessorTable;
+      internal_static_memento_SearchKeywordsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3371,23 +3171,20 @@ public final class Keyword {
     java.lang.String[] descriptorData = {
       "\n\025memento/keyword.proto\022\007memento\032\033google" +
       "/protobuf/empty.proto\032\023memento/types.pro" +
-      "to\"S\n\033ListKeywordHistoriesRequest\022\032\n\010use" +
-      "rname\030\001 \001(\tR\010username\022\030\n\007keyword\030\002 \001(\tR\007" +
-      "keyword\"@\n\034ListKeywordHistoriesResponse\022" +
-      " \n\004urls\030\001 \003(\0132\014.memento.UrlR\004urls\"b\n\030Upd" +
-      "ateSolutionURLRequest\022\032\n\010username\030\001 \001(\tR" +
-      "\010username\022\030\n\007keyword\030\002 \001(\tR\007keyword\022\020\n\003u" +
-      "rl\030\003 \001(\tR\003url\"~\n\030UpdateResolvedURLReques" +
-      "t\022\032\n\010username\030\001 \001(\tR\010username\022\030\n\007keyword" +
-      "\030\002 \001(\tR\007keyword\022\020\n\003url\030\003 \001(\tR\003url\022\032\n\010res" +
-      "olved\030\004 \001(\010R\010resolved2\225\002\n\016KeywordService" +
-      "\022c\n\024ListKeywordHistories\022$.memento.ListK" +
-      "eywordHistoriesRequest\032%.memento.ListKey" +
-      "wordHistoriesResponse\022N\n\021UpdateSolutionU" +
-      "RL\022!.memento.UpdateSolutionURLRequest\032\026." +
-      "google.protobuf.Empty\022N\n\021UpdateResolvedU" +
-      "RL\022!.memento.UpdateResolvedURLRequest\032\026." +
-      "google.protobuf.Emptyb\006proto3"
+      "to\"a\n\023ListKeywordsRequest\022\032\n\010username\030\001 " +
+      "\001(\tR\010username\022.\n\006cursor\030\002 \001(\0132\026.memento." +
+      "KeywordCursorR\006cursor\"b\n\024ListKeywordsRes" +
+      "ponse\022\032\n\010keywords\030\001 \003(\tR\010keywords\022.\n\006cur" +
+      "sor\030\002 \001(\0132\026.memento.KeywordCursorR\006curso" +
+      "r\"E\n\025SearchKeywordsRequest\022\024\n\005regex\030\001 \001(" +
+      "\tR\005regex\022\026\n\006cursor\030\002 \001(\tR\006cursor\"L\n\026Sear" +
+      "chKeywordsResponse\022\032\n\010keywords\030\001 \003(\tR\010ke" +
+      "ywords\022\026\n\006cursor\030\002 \001(\tR\006cursor2\260\001\n\016Keywo" +
+      "rdService\022K\n\014ListKeywords\022\034.memento.List" +
+      "KeywordsRequest\032\035.memento.ListKeywordsRe" +
+      "sponse\022Q\n\016SearchKeywords\022\036.memento.Searc" +
+      "hKeywordsRequest\032\037.memento.SearchKeyword" +
+      "sResponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3395,30 +3192,30 @@ public final class Keyword {
           com.google.protobuf.EmptyProto.getDescriptor(),
           memento.Types.getDescriptor(),
         });
-    internal_static_memento_ListKeywordHistoriesRequest_descriptor =
+    internal_static_memento_ListKeywordsRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_memento_ListKeywordHistoriesRequest_fieldAccessorTable = new
+    internal_static_memento_ListKeywordsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_memento_ListKeywordHistoriesRequest_descriptor,
-        new java.lang.String[] { "Username", "Keyword", });
-    internal_static_memento_ListKeywordHistoriesResponse_descriptor =
+        internal_static_memento_ListKeywordsRequest_descriptor,
+        new java.lang.String[] { "Username", "Cursor", });
+    internal_static_memento_ListKeywordsResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_memento_ListKeywordHistoriesResponse_fieldAccessorTable = new
+    internal_static_memento_ListKeywordsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_memento_ListKeywordHistoriesResponse_descriptor,
-        new java.lang.String[] { "Urls", });
-    internal_static_memento_UpdateSolutionURLRequest_descriptor =
+        internal_static_memento_ListKeywordsResponse_descriptor,
+        new java.lang.String[] { "Keywords", "Cursor", });
+    internal_static_memento_SearchKeywordsRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_memento_UpdateSolutionURLRequest_fieldAccessorTable = new
+    internal_static_memento_SearchKeywordsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_memento_UpdateSolutionURLRequest_descriptor,
-        new java.lang.String[] { "Username", "Keyword", "Url", });
-    internal_static_memento_UpdateResolvedURLRequest_descriptor =
+        internal_static_memento_SearchKeywordsRequest_descriptor,
+        new java.lang.String[] { "Regex", "Cursor", });
+    internal_static_memento_SearchKeywordsResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_memento_UpdateResolvedURLRequest_fieldAccessorTable = new
+    internal_static_memento_SearchKeywordsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_memento_UpdateResolvedURLRequest_descriptor,
-        new java.lang.String[] { "Username", "Keyword", "Url", "Resolved", });
+        internal_static_memento_SearchKeywordsResponse_descriptor,
+        new java.lang.String[] { "Keywords", "Cursor", });
     com.google.protobuf.EmptyProto.getDescriptor();
     memento.Types.getDescriptor();
   }

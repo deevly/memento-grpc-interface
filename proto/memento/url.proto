@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package memento;
+
+import "memento/types.proto";
+
+service UrlService {
+    rpc ListUrls(ListUrlsRequest) returns (ListUrlsResponse);
+    rpc ListUrlsByKeyword(ListUrlsByKeywordRequest) returns (ListUrlsByKeywordResponse);
+}
+
+message ListUrlsRequest {
+    string username = 1;
+    URLCursor cursor = 2;
+}
+
+message ListUrlsResponse {
+    repeated URL urls = 1;
+    URLCursor cursor = 2;
+}
+
+message ListUrlsByKeywordRequest {
+    string username = 1;
+    string keyword = 2;
+    URLCursor cursor = 3;
+}
+
+message ListUrlsByKeywordResponse {
+    repeated URL urls = 1;
+    URLCursor cursor = 2;
+}
