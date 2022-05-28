@@ -14,36 +14,158 @@ public final class Types {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  /**
+   * Protobuf enum {@code memento.SiteDomain}
+   */
+  public enum SiteDomain
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>STACK_OVERFLOW = 0;</code>
+     */
+    STACK_OVERFLOW(0),
+    /**
+     * <code>GITHUB = 1;</code>
+     */
+    GITHUB(1),
+    /**
+     * <code>OTHERS = 2;</code>
+     */
+    OTHERS(2),
+    /**
+     * <code>ALL = 3;</code>
+     */
+    ALL(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>STACK_OVERFLOW = 0;</code>
+     */
+    public static final int STACK_OVERFLOW_VALUE = 0;
+    /**
+     * <code>GITHUB = 1;</code>
+     */
+    public static final int GITHUB_VALUE = 1;
+    /**
+     * <code>OTHERS = 2;</code>
+     */
+    public static final int OTHERS_VALUE = 2;
+    /**
+     * <code>ALL = 3;</code>
+     */
+    public static final int ALL_VALUE = 3;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SiteDomain valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static SiteDomain forNumber(int value) {
+      switch (value) {
+        case 0: return STACK_OVERFLOW;
+        case 1: return GITHUB;
+        case 2: return OTHERS;
+        case 3: return ALL;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<SiteDomain>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        SiteDomain> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<SiteDomain>() {
+            public SiteDomain findValueByNumber(int number) {
+              return SiteDomain.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return memento.Types.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final SiteDomain[] VALUES = values();
+
+    public static SiteDomain valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private SiteDomain(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:memento.SiteDomain)
+  }
+
   public interface URLOrBuilder extends
       // @@protoc_insertion_point(interface_extends:memento.URL)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string address = 1 [json_name = "address"];</code>
+     * <code>.memento.SiteDomain domain = 1 [json_name = "domain"];</code>
+     * @return The enum numeric value on the wire for domain.
+     */
+    int getDomainValue();
+    /**
+     * <code>.memento.SiteDomain domain = 1 [json_name = "domain"];</code>
+     * @return The domain.
+     */
+    memento.Types.SiteDomain getDomain();
+
+    /**
+     * <code>string address = 2 [json_name = "address"];</code>
      * @return The address.
      */
     java.lang.String getAddress();
     /**
-     * <code>string address = 1 [json_name = "address"];</code>
+     * <code>string address = 2 [json_name = "address"];</code>
      * @return The bytes for address.
      */
     com.google.protobuf.ByteString
         getAddressBytes();
-
-    /**
-     * <code>.google.protobuf.Timestamp visit_time = 2 [json_name = "visitTime"];</code>
-     * @return Whether the visitTime field is set.
-     */
-    boolean hasVisitTime();
-    /**
-     * <code>.google.protobuf.Timestamp visit_time = 2 [json_name = "visitTime"];</code>
-     * @return The visitTime.
-     */
-    com.google.protobuf.Timestamp getVisitTime();
-    /**
-     * <code>.google.protobuf.Timestamp visit_time = 2 [json_name = "visitTime"];</code>
-     */
-    com.google.protobuf.TimestampOrBuilder getVisitTimeOrBuilder();
 
     /**
      * <code>string keyword = 3 [json_name = "keyword"];</code>
@@ -56,6 +178,21 @@ public final class Types {
      */
     com.google.protobuf.ByteString
         getKeywordBytes();
+
+    /**
+     * <code>.google.protobuf.Timestamp visit_time = 4 [json_name = "visitTime"];</code>
+     * @return Whether the visitTime field is set.
+     */
+    boolean hasVisitTime();
+    /**
+     * <code>.google.protobuf.Timestamp visit_time = 4 [json_name = "visitTime"];</code>
+     * @return The visitTime.
+     */
+    com.google.protobuf.Timestamp getVisitTime();
+    /**
+     * <code>.google.protobuf.Timestamp visit_time = 4 [json_name = "visitTime"];</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getVisitTimeOrBuilder();
   }
   /**
    * Protobuf type {@code memento.URL}
@@ -70,6 +207,7 @@ public final class Types {
       super(builder);
     }
     private URL() {
+      domain_ = 0;
       address_ = "";
       keyword_ = "";
     }
@@ -104,13 +242,25 @@ public final class Types {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 8: {
+              int rawValue = input.readEnum();
+
+              domain_ = rawValue;
+              break;
+            }
+            case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
               address_ = s;
               break;
             }
-            case 18: {
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              keyword_ = s;
+              break;
+            }
+            case 34: {
               com.google.protobuf.Timestamp.Builder subBuilder = null;
               if (visitTime_ != null) {
                 subBuilder = visitTime_.toBuilder();
@@ -121,12 +271,6 @@ public final class Types {
                 visitTime_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              keyword_ = s;
               break;
             }
             default: {
@@ -163,10 +307,29 @@ public final class Types {
               memento.Types.URL.class, memento.Types.URL.Builder.class);
     }
 
-    public static final int ADDRESS_FIELD_NUMBER = 1;
+    public static final int DOMAIN_FIELD_NUMBER = 1;
+    private int domain_;
+    /**
+     * <code>.memento.SiteDomain domain = 1 [json_name = "domain"];</code>
+     * @return The enum numeric value on the wire for domain.
+     */
+    @java.lang.Override public int getDomainValue() {
+      return domain_;
+    }
+    /**
+     * <code>.memento.SiteDomain domain = 1 [json_name = "domain"];</code>
+     * @return The domain.
+     */
+    @java.lang.Override public memento.Types.SiteDomain getDomain() {
+      @SuppressWarnings("deprecation")
+      memento.Types.SiteDomain result = memento.Types.SiteDomain.valueOf(domain_);
+      return result == null ? memento.Types.SiteDomain.UNRECOGNIZED : result;
+    }
+
+    public static final int ADDRESS_FIELD_NUMBER = 2;
     private volatile java.lang.Object address_;
     /**
-     * <code>string address = 1 [json_name = "address"];</code>
+     * <code>string address = 2 [json_name = "address"];</code>
      * @return The address.
      */
     @java.lang.Override
@@ -183,7 +346,7 @@ public final class Types {
       }
     }
     /**
-     * <code>string address = 1 [json_name = "address"];</code>
+     * <code>string address = 2 [json_name = "address"];</code>
      * @return The bytes for address.
      */
     @java.lang.Override
@@ -199,32 +362,6 @@ public final class Types {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
-    }
-
-    public static final int VISIT_TIME_FIELD_NUMBER = 2;
-    private com.google.protobuf.Timestamp visitTime_;
-    /**
-     * <code>.google.protobuf.Timestamp visit_time = 2 [json_name = "visitTime"];</code>
-     * @return Whether the visitTime field is set.
-     */
-    @java.lang.Override
-    public boolean hasVisitTime() {
-      return visitTime_ != null;
-    }
-    /**
-     * <code>.google.protobuf.Timestamp visit_time = 2 [json_name = "visitTime"];</code>
-     * @return The visitTime.
-     */
-    @java.lang.Override
-    public com.google.protobuf.Timestamp getVisitTime() {
-      return visitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : visitTime_;
-    }
-    /**
-     * <code>.google.protobuf.Timestamp visit_time = 2 [json_name = "visitTime"];</code>
-     */
-    @java.lang.Override
-    public com.google.protobuf.TimestampOrBuilder getVisitTimeOrBuilder() {
-      return getVisitTime();
     }
 
     public static final int KEYWORD_FIELD_NUMBER = 3;
@@ -265,6 +402,32 @@ public final class Types {
       }
     }
 
+    public static final int VISIT_TIME_FIELD_NUMBER = 4;
+    private com.google.protobuf.Timestamp visitTime_;
+    /**
+     * <code>.google.protobuf.Timestamp visit_time = 4 [json_name = "visitTime"];</code>
+     * @return Whether the visitTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasVisitTime() {
+      return visitTime_ != null;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp visit_time = 4 [json_name = "visitTime"];</code>
+     * @return The visitTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getVisitTime() {
+      return visitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : visitTime_;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp visit_time = 4 [json_name = "visitTime"];</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getVisitTimeOrBuilder() {
+      return getVisitTime();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -279,14 +442,17 @@ public final class Types {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, address_);
+      if (domain_ != memento.Types.SiteDomain.STACK_OVERFLOW.getNumber()) {
+        output.writeEnum(1, domain_);
       }
-      if (visitTime_ != null) {
-        output.writeMessage(2, getVisitTime());
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, address_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyword_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, keyword_);
+      }
+      if (visitTime_ != null) {
+        output.writeMessage(4, getVisitTime());
       }
       unknownFields.writeTo(output);
     }
@@ -297,15 +463,19 @@ public final class Types {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, address_);
-      }
-      if (visitTime_ != null) {
+      if (domain_ != memento.Types.SiteDomain.STACK_OVERFLOW.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getVisitTime());
+          .computeEnumSize(1, domain_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, address_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyword_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, keyword_);
+      }
+      if (visitTime_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getVisitTime());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -322,15 +492,16 @@ public final class Types {
       }
       memento.Types.URL other = (memento.Types.URL) obj;
 
+      if (domain_ != other.domain_) return false;
       if (!getAddress()
           .equals(other.getAddress())) return false;
+      if (!getKeyword()
+          .equals(other.getKeyword())) return false;
       if (hasVisitTime() != other.hasVisitTime()) return false;
       if (hasVisitTime()) {
         if (!getVisitTime()
             .equals(other.getVisitTime())) return false;
       }
-      if (!getKeyword()
-          .equals(other.getKeyword())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -342,14 +513,16 @@ public final class Types {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DOMAIN_FIELD_NUMBER;
+      hash = (53 * hash) + domain_;
       hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getAddress().hashCode();
+      hash = (37 * hash) + KEYWORD_FIELD_NUMBER;
+      hash = (53 * hash) + getKeyword().hashCode();
       if (hasVisitTime()) {
         hash = (37 * hash) + VISIT_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getVisitTime().hashCode();
       }
-      hash = (37 * hash) + KEYWORD_FIELD_NUMBER;
-      hash = (53 * hash) + getKeyword().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -483,7 +656,11 @@ public final class Types {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        domain_ = 0;
+
         address_ = "";
+
+        keyword_ = "";
 
         if (visitTimeBuilder_ == null) {
           visitTime_ = null;
@@ -491,8 +668,6 @@ public final class Types {
           visitTime_ = null;
           visitTimeBuilder_ = null;
         }
-        keyword_ = "";
-
         return this;
       }
 
@@ -519,13 +694,14 @@ public final class Types {
       @java.lang.Override
       public memento.Types.URL buildPartial() {
         memento.Types.URL result = new memento.Types.URL(this);
+        result.domain_ = domain_;
         result.address_ = address_;
+        result.keyword_ = keyword_;
         if (visitTimeBuilder_ == null) {
           result.visitTime_ = visitTime_;
         } else {
           result.visitTime_ = visitTimeBuilder_.build();
         }
-        result.keyword_ = keyword_;
         onBuilt();
         return result;
       }
@@ -574,16 +750,19 @@ public final class Types {
 
       public Builder mergeFrom(memento.Types.URL other) {
         if (other == memento.Types.URL.getDefaultInstance()) return this;
+        if (other.domain_ != 0) {
+          setDomainValue(other.getDomainValue());
+        }
         if (!other.getAddress().isEmpty()) {
           address_ = other.address_;
           onChanged();
         }
-        if (other.hasVisitTime()) {
-          mergeVisitTime(other.getVisitTime());
-        }
         if (!other.getKeyword().isEmpty()) {
           keyword_ = other.keyword_;
           onChanged();
+        }
+        if (other.hasVisitTime()) {
+          mergeVisitTime(other.getVisitTime());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -614,9 +793,63 @@ public final class Types {
         return this;
       }
 
+      private int domain_ = 0;
+      /**
+       * <code>.memento.SiteDomain domain = 1 [json_name = "domain"];</code>
+       * @return The enum numeric value on the wire for domain.
+       */
+      @java.lang.Override public int getDomainValue() {
+        return domain_;
+      }
+      /**
+       * <code>.memento.SiteDomain domain = 1 [json_name = "domain"];</code>
+       * @param value The enum numeric value on the wire for domain to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDomainValue(int value) {
+        
+        domain_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.memento.SiteDomain domain = 1 [json_name = "domain"];</code>
+       * @return The domain.
+       */
+      @java.lang.Override
+      public memento.Types.SiteDomain getDomain() {
+        @SuppressWarnings("deprecation")
+        memento.Types.SiteDomain result = memento.Types.SiteDomain.valueOf(domain_);
+        return result == null ? memento.Types.SiteDomain.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.memento.SiteDomain domain = 1 [json_name = "domain"];</code>
+       * @param value The domain to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDomain(memento.Types.SiteDomain value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        domain_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.memento.SiteDomain domain = 1 [json_name = "domain"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDomain() {
+        
+        domain_ = 0;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object address_ = "";
       /**
-       * <code>string address = 1 [json_name = "address"];</code>
+       * <code>string address = 2 [json_name = "address"];</code>
        * @return The address.
        */
       public java.lang.String getAddress() {
@@ -632,7 +865,7 @@ public final class Types {
         }
       }
       /**
-       * <code>string address = 1 [json_name = "address"];</code>
+       * <code>string address = 2 [json_name = "address"];</code>
        * @return The bytes for address.
        */
       public com.google.protobuf.ByteString
@@ -649,7 +882,7 @@ public final class Types {
         }
       }
       /**
-       * <code>string address = 1 [json_name = "address"];</code>
+       * <code>string address = 2 [json_name = "address"];</code>
        * @param value The address to set.
        * @return This builder for chaining.
        */
@@ -664,7 +897,7 @@ public final class Types {
         return this;
       }
       /**
-       * <code>string address = 1 [json_name = "address"];</code>
+       * <code>string address = 2 [json_name = "address"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAddress() {
@@ -674,7 +907,7 @@ public final class Types {
         return this;
       }
       /**
-       * <code>string address = 1 [json_name = "address"];</code>
+       * <code>string address = 2 [json_name = "address"];</code>
        * @param value The bytes for address to set.
        * @return This builder for chaining.
        */
@@ -688,125 +921,6 @@ public final class Types {
         address_ = value;
         onChanged();
         return this;
-      }
-
-      private com.google.protobuf.Timestamp visitTime_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> visitTimeBuilder_;
-      /**
-       * <code>.google.protobuf.Timestamp visit_time = 2 [json_name = "visitTime"];</code>
-       * @return Whether the visitTime field is set.
-       */
-      public boolean hasVisitTime() {
-        return visitTimeBuilder_ != null || visitTime_ != null;
-      }
-      /**
-       * <code>.google.protobuf.Timestamp visit_time = 2 [json_name = "visitTime"];</code>
-       * @return The visitTime.
-       */
-      public com.google.protobuf.Timestamp getVisitTime() {
-        if (visitTimeBuilder_ == null) {
-          return visitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : visitTime_;
-        } else {
-          return visitTimeBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.google.protobuf.Timestamp visit_time = 2 [json_name = "visitTime"];</code>
-       */
-      public Builder setVisitTime(com.google.protobuf.Timestamp value) {
-        if (visitTimeBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          visitTime_ = value;
-          onChanged();
-        } else {
-          visitTimeBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Timestamp visit_time = 2 [json_name = "visitTime"];</code>
-       */
-      public Builder setVisitTime(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
-        if (visitTimeBuilder_ == null) {
-          visitTime_ = builderForValue.build();
-          onChanged();
-        } else {
-          visitTimeBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Timestamp visit_time = 2 [json_name = "visitTime"];</code>
-       */
-      public Builder mergeVisitTime(com.google.protobuf.Timestamp value) {
-        if (visitTimeBuilder_ == null) {
-          if (visitTime_ != null) {
-            visitTime_ =
-              com.google.protobuf.Timestamp.newBuilder(visitTime_).mergeFrom(value).buildPartial();
-          } else {
-            visitTime_ = value;
-          }
-          onChanged();
-        } else {
-          visitTimeBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Timestamp visit_time = 2 [json_name = "visitTime"];</code>
-       */
-      public Builder clearVisitTime() {
-        if (visitTimeBuilder_ == null) {
-          visitTime_ = null;
-          onChanged();
-        } else {
-          visitTime_ = null;
-          visitTimeBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Timestamp visit_time = 2 [json_name = "visitTime"];</code>
-       */
-      public com.google.protobuf.Timestamp.Builder getVisitTimeBuilder() {
-        
-        onChanged();
-        return getVisitTimeFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.google.protobuf.Timestamp visit_time = 2 [json_name = "visitTime"];</code>
-       */
-      public com.google.protobuf.TimestampOrBuilder getVisitTimeOrBuilder() {
-        if (visitTimeBuilder_ != null) {
-          return visitTimeBuilder_.getMessageOrBuilder();
-        } else {
-          return visitTime_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : visitTime_;
-        }
-      }
-      /**
-       * <code>.google.protobuf.Timestamp visit_time = 2 [json_name = "visitTime"];</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-          getVisitTimeFieldBuilder() {
-        if (visitTimeBuilder_ == null) {
-          visitTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                  getVisitTime(),
-                  getParentForChildren(),
-                  isClean());
-          visitTime_ = null;
-        }
-        return visitTimeBuilder_;
       }
 
       private java.lang.Object keyword_ = "";
@@ -883,6 +997,125 @@ public final class Types {
         keyword_ = value;
         onChanged();
         return this;
+      }
+
+      private com.google.protobuf.Timestamp visitTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> visitTimeBuilder_;
+      /**
+       * <code>.google.protobuf.Timestamp visit_time = 4 [json_name = "visitTime"];</code>
+       * @return Whether the visitTime field is set.
+       */
+      public boolean hasVisitTime() {
+        return visitTimeBuilder_ != null || visitTime_ != null;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp visit_time = 4 [json_name = "visitTime"];</code>
+       * @return The visitTime.
+       */
+      public com.google.protobuf.Timestamp getVisitTime() {
+        if (visitTimeBuilder_ == null) {
+          return visitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : visitTime_;
+        } else {
+          return visitTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.Timestamp visit_time = 4 [json_name = "visitTime"];</code>
+       */
+      public Builder setVisitTime(com.google.protobuf.Timestamp value) {
+        if (visitTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          visitTime_ = value;
+          onChanged();
+        } else {
+          visitTimeBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp visit_time = 4 [json_name = "visitTime"];</code>
+       */
+      public Builder setVisitTime(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (visitTimeBuilder_ == null) {
+          visitTime_ = builderForValue.build();
+          onChanged();
+        } else {
+          visitTimeBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp visit_time = 4 [json_name = "visitTime"];</code>
+       */
+      public Builder mergeVisitTime(com.google.protobuf.Timestamp value) {
+        if (visitTimeBuilder_ == null) {
+          if (visitTime_ != null) {
+            visitTime_ =
+              com.google.protobuf.Timestamp.newBuilder(visitTime_).mergeFrom(value).buildPartial();
+          } else {
+            visitTime_ = value;
+          }
+          onChanged();
+        } else {
+          visitTimeBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp visit_time = 4 [json_name = "visitTime"];</code>
+       */
+      public Builder clearVisitTime() {
+        if (visitTimeBuilder_ == null) {
+          visitTime_ = null;
+          onChanged();
+        } else {
+          visitTime_ = null;
+          visitTimeBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp visit_time = 4 [json_name = "visitTime"];</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getVisitTimeBuilder() {
+        
+        onChanged();
+        return getVisitTimeFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.Timestamp visit_time = 4 [json_name = "visitTime"];</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getVisitTimeOrBuilder() {
+        if (visitTimeBuilder_ != null) {
+          return visitTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return visitTime_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : visitTime_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.Timestamp visit_time = 4 [json_name = "visitTime"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getVisitTimeFieldBuilder() {
+        if (visitTimeBuilder_ == null) {
+          visitTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getVisitTime(),
+                  getParentForChildren(),
+                  isClean());
+          visitTime_ = null;
+        }
+        return visitTimeBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -2550,18 +2783,21 @@ public final class Types {
   static {
     java.lang.String[] descriptorData = {
       "\n\023memento/types.proto\022\007memento\032\037google/p" +
-      "rotobuf/timestamp.proto\"t\n\003URL\022\030\n\007addres" +
-      "s\030\001 \001(\tR\007address\0229\n\nvisit_time\030\002 \001(\0132\032.g" +
-      "oogle.protobuf.TimestampR\tvisitTime\022\030\n\007k" +
-      "eyword\030\003 \001(\tR\007keyword\"\211\001\n\tURLCursor\022/\n\004t" +
-      "ype\030\001 \001(\0162\033.memento.URLCursor.SortTypeR\004" +
-      "type\022\024\n\005value\030\002 \001(\tR\005value\"5\n\010SortType\022\023" +
-      "\n\017RECENT_TIME_ASC\020\000\022\024\n\020RECENT_TIME_DESC\020" +
-      "\001\"\266\001\n\rKeywordCursor\0223\n\004type\030\001 \001(\0162\037.meme" +
-      "nto.KeywordCursor.SortTypeR\004type\022\024\n\005valu" +
-      "e\030\002 \001(\tR\005value\"Z\n\010SortType\022\021\n\rURL_COUNT_" +
-      "ASC\020\000\022\022\n\016URL_COUNT_DESC\020\001\022\017\n\013RECENT_TIME" +
-      "\020\002\022\026\n\022ALPHABETICAL_ORDER\020\003b\006proto3"
+      "rotobuf/timestamp.proto\"\241\001\n\003URL\022+\n\006domai" +
+      "n\030\001 \001(\0162\023.memento.SiteDomainR\006domain\022\030\n\007" +
+      "address\030\002 \001(\tR\007address\022\030\n\007keyword\030\003 \001(\tR" +
+      "\007keyword\0229\n\nvisit_time\030\004 \001(\0132\032.google.pr" +
+      "otobuf.TimestampR\tvisitTime\"\211\001\n\tURLCurso" +
+      "r\022/\n\004type\030\001 \001(\0162\033.memento.URLCursor.Sort" +
+      "TypeR\004type\022\024\n\005value\030\002 \001(\tR\005value\"5\n\010Sort" +
+      "Type\022\023\n\017RECENT_TIME_ASC\020\000\022\024\n\020RECENT_TIME" +
+      "_DESC\020\001\"\266\001\n\rKeywordCursor\0223\n\004type\030\001 \001(\0162" +
+      "\037.memento.KeywordCursor.SortTypeR\004type\022\024" +
+      "\n\005value\030\002 \001(\tR\005value\"Z\n\010SortType\022\021\n\rURL_" +
+      "COUNT_ASC\020\000\022\022\n\016URL_COUNT_DESC\020\001\022\017\n\013RECEN" +
+      "T_TIME\020\002\022\026\n\022ALPHABETICAL_ORDER\020\003*A\n\nSite" +
+      "Domain\022\022\n\016STACK_OVERFLOW\020\000\022\n\n\006GITHUB\020\001\022\n" +
+      "\n\006OTHERS\020\002\022\007\n\003ALL\020\003b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2573,7 +2809,7 @@ public final class Types {
     internal_static_memento_URL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_memento_URL_descriptor,
-        new java.lang.String[] { "Address", "VisitTime", "Keyword", });
+        new java.lang.String[] { "Domain", "Address", "Keyword", "VisitTime", });
     internal_static_memento_URLCursor_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_memento_URLCursor_fieldAccessorTable = new

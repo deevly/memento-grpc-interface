@@ -11,7 +11,8 @@ service UrlService {
 
 message ListUrlsRequest {
     string username = 1;
-    URLCursor cursor = 2;
+    SiteDomain domain = 2;
+    URLCursor cursor = 3;
 }
 
 message ListUrlsResponse {
@@ -22,7 +23,8 @@ message ListUrlsResponse {
 message ListUrlsByKeywordRequest {
     string username = 1;
     string keyword = 2;
-    URLCursor cursor = 3;
+    SiteDomain domain = 3;
+    URLCursor cursor = 4;
 }
 
 message ListUrlsByKeywordResponse {
