@@ -12,8 +12,8 @@ message URL {
 
 message URLCursor {
     enum SortType {
-        RECENT_TIME = 0;
-        ALPHABETICAL_ORDER = 1;
+        RECENT_TIME_ASC = 0;
+        RECENT_TIME_DESC = 1;
     }
     SortType type = 1;
     string value = 2;

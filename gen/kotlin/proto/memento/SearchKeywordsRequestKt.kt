@@ -40,7 +40,24 @@ public object SearchKeywordsRequestKt {
     }
 
     /**
-     * <code>string cursor = 2 [json_name = "cursor"];</code>
+     * <code>string username = 2 [json_name = "username"];</code>
+     */
+    public var username: kotlin.String
+      @JvmName("getUsername")
+      get() = _builder.getUsername()
+      @JvmName("setUsername")
+      set(value) {
+        _builder.setUsername(value)
+      }
+    /**
+     * <code>string username = 2 [json_name = "username"];</code>
+     */
+    public fun clearUsername() {
+      _builder.clearUsername()
+    }
+
+    /**
+     * <code>string cursor = 3 [json_name = "cursor"];</code>
      */
     public var cursor: kotlin.String
       @JvmName("getCursor")
@@ -50,7 +67,7 @@ public object SearchKeywordsRequestKt {
         _builder.setCursor(value)
       }
     /**
-     * <code>string cursor = 2 [json_name = "cursor"];</code>
+     * <code>string cursor = 3 [json_name = "cursor"];</code>
      */
     public fun clearCursor() {
       _builder.clearCursor()

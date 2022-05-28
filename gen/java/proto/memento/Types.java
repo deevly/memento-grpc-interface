@@ -1063,24 +1063,24 @@ public final class Types {
     public enum SortType
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
-       * <code>RECENT_TIME = 0;</code>
+       * <code>RECENT_TIME_ASC = 0;</code>
        */
-      RECENT_TIME(0),
+      RECENT_TIME_ASC(0),
       /**
-       * <code>ALPHABETICAL_ORDER = 1;</code>
+       * <code>RECENT_TIME_DESC = 1;</code>
        */
-      ALPHABETICAL_ORDER(1),
+      RECENT_TIME_DESC(1),
       UNRECOGNIZED(-1),
       ;
 
       /**
-       * <code>RECENT_TIME = 0;</code>
+       * <code>RECENT_TIME_ASC = 0;</code>
        */
-      public static final int RECENT_TIME_VALUE = 0;
+      public static final int RECENT_TIME_ASC_VALUE = 0;
       /**
-       * <code>ALPHABETICAL_ORDER = 1;</code>
+       * <code>RECENT_TIME_DESC = 1;</code>
        */
-      public static final int ALPHABETICAL_ORDER_VALUE = 1;
+      public static final int RECENT_TIME_DESC_VALUE = 1;
 
 
       public final int getNumber() {
@@ -1107,8 +1107,8 @@ public final class Types {
        */
       public static SortType forNumber(int value) {
         switch (value) {
-          case 0: return RECENT_TIME;
-          case 1: return ALPHABETICAL_ORDER;
+          case 0: return RECENT_TIME_ASC;
+          case 1: return RECENT_TIME_DESC;
           default: return null;
         }
       }
@@ -1236,7 +1236,7 @@ public final class Types {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (type_ != memento.Types.URLCursor.SortType.RECENT_TIME.getNumber()) {
+      if (type_ != memento.Types.URLCursor.SortType.RECENT_TIME_ASC.getNumber()) {
         output.writeEnum(1, type_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
@@ -1251,7 +1251,7 @@ public final class Types {
       if (size != -1) return size;
 
       size = 0;
-      if (type_ != memento.Types.URLCursor.SortType.RECENT_TIME.getNumber()) {
+      if (type_ != memento.Types.URLCursor.SortType.RECENT_TIME_ASC.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, type_);
       }
@@ -2553,15 +2553,15 @@ public final class Types {
       "rotobuf/timestamp.proto\"t\n\003URL\022\030\n\007addres" +
       "s\030\001 \001(\tR\007address\0229\n\nvisit_time\030\002 \001(\0132\032.g" +
       "oogle.protobuf.TimestampR\tvisitTime\022\030\n\007k" +
-      "eyword\030\003 \001(\tR\007keyword\"\207\001\n\tURLCursor\022/\n\004t" +
+      "eyword\030\003 \001(\tR\007keyword\"\211\001\n\tURLCursor\022/\n\004t" +
       "ype\030\001 \001(\0162\033.memento.URLCursor.SortTypeR\004" +
-      "type\022\024\n\005value\030\002 \001(\tR\005value\"3\n\010SortType\022\017" +
-      "\n\013RECENT_TIME\020\000\022\026\n\022ALPHABETICAL_ORDER\020\001\"" +
-      "\266\001\n\rKeywordCursor\0223\n\004type\030\001 \001(\0162\037.mement" +
-      "o.KeywordCursor.SortTypeR\004type\022\024\n\005value\030" +
-      "\002 \001(\tR\005value\"Z\n\010SortType\022\021\n\rURL_COUNT_AS" +
-      "C\020\000\022\022\n\016URL_COUNT_DESC\020\001\022\017\n\013RECENT_TIME\020\002" +
-      "\022\026\n\022ALPHABETICAL_ORDER\020\003b\006proto3"
+      "type\022\024\n\005value\030\002 \001(\tR\005value\"5\n\010SortType\022\023" +
+      "\n\017RECENT_TIME_ASC\020\000\022\024\n\020RECENT_TIME_DESC\020" +
+      "\001\"\266\001\n\rKeywordCursor\0223\n\004type\030\001 \001(\0162\037.meme" +
+      "nto.KeywordCursor.SortTypeR\004type\022\024\n\005valu" +
+      "e\030\002 \001(\tR\005value\"Z\n\010SortType\022\021\n\rURL_COUNT_" +
+      "ASC\020\000\022\022\n\016URL_COUNT_DESC\020\001\022\017\n\013RECENT_TIME" +
+      "\020\002\022\026\n\022ALPHABETICAL_ORDER\020\003b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
