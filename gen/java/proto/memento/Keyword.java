@@ -1647,12 +1647,24 @@ public final class Keyword {
         getRegexBytes();
 
     /**
-     * <code>string cursor = 2 [json_name = "cursor"];</code>
+     * <code>string username = 2 [json_name = "username"];</code>
+     * @return The username.
+     */
+    java.lang.String getUsername();
+    /**
+     * <code>string username = 2 [json_name = "username"];</code>
+     * @return The bytes for username.
+     */
+    com.google.protobuf.ByteString
+        getUsernameBytes();
+
+    /**
+     * <code>string cursor = 3 [json_name = "cursor"];</code>
      * @return The cursor.
      */
     java.lang.String getCursor();
     /**
-     * <code>string cursor = 2 [json_name = "cursor"];</code>
+     * <code>string cursor = 3 [json_name = "cursor"];</code>
      * @return The bytes for cursor.
      */
     com.google.protobuf.ByteString
@@ -1672,6 +1684,7 @@ public final class Keyword {
     }
     private SearchKeywordsRequest() {
       regex_ = "";
+      username_ = "";
       cursor_ = "";
     }
 
@@ -1712,6 +1725,12 @@ public final class Keyword {
               break;
             }
             case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              username_ = s;
+              break;
+            }
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               cursor_ = s;
@@ -1789,10 +1808,48 @@ public final class Keyword {
       }
     }
 
-    public static final int CURSOR_FIELD_NUMBER = 2;
+    public static final int USERNAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object username_;
+    /**
+     * <code>string username = 2 [json_name = "username"];</code>
+     * @return The username.
+     */
+    @java.lang.Override
+    public java.lang.String getUsername() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        username_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string username = 2 [json_name = "username"];</code>
+     * @return The bytes for username.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUsernameBytes() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        username_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CURSOR_FIELD_NUMBER = 3;
     private volatile java.lang.Object cursor_;
     /**
-     * <code>string cursor = 2 [json_name = "cursor"];</code>
+     * <code>string cursor = 3 [json_name = "cursor"];</code>
      * @return The cursor.
      */
     @java.lang.Override
@@ -1809,7 +1866,7 @@ public final class Keyword {
       }
     }
     /**
-     * <code>string cursor = 2 [json_name = "cursor"];</code>
+     * <code>string cursor = 3 [json_name = "cursor"];</code>
      * @return The bytes for cursor.
      */
     @java.lang.Override
@@ -1844,8 +1901,11 @@ public final class Keyword {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(regex_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, regex_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, username_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cursor_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, cursor_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, cursor_);
       }
       unknownFields.writeTo(output);
     }
@@ -1859,8 +1919,11 @@ public final class Keyword {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(regex_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, regex_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, username_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cursor_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, cursor_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, cursor_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1879,6 +1942,8 @@ public final class Keyword {
 
       if (!getRegex()
           .equals(other.getRegex())) return false;
+      if (!getUsername()
+          .equals(other.getUsername())) return false;
       if (!getCursor()
           .equals(other.getCursor())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -1894,6 +1959,8 @@ public final class Keyword {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + REGEX_FIELD_NUMBER;
       hash = (53 * hash) + getRegex().hashCode();
+      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUsername().hashCode();
       hash = (37 * hash) + CURSOR_FIELD_NUMBER;
       hash = (53 * hash) + getCursor().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -2031,6 +2098,8 @@ public final class Keyword {
         super.clear();
         regex_ = "";
 
+        username_ = "";
+
         cursor_ = "";
 
         return this;
@@ -2060,6 +2129,7 @@ public final class Keyword {
       public memento.Keyword.SearchKeywordsRequest buildPartial() {
         memento.Keyword.SearchKeywordsRequest result = new memento.Keyword.SearchKeywordsRequest(this);
         result.regex_ = regex_;
+        result.username_ = username_;
         result.cursor_ = cursor_;
         onBuilt();
         return result;
@@ -2111,6 +2181,10 @@ public final class Keyword {
         if (other == memento.Keyword.SearchKeywordsRequest.getDefaultInstance()) return this;
         if (!other.getRegex().isEmpty()) {
           regex_ = other.regex_;
+          onChanged();
+        }
+        if (!other.getUsername().isEmpty()) {
+          username_ = other.username_;
           onChanged();
         }
         if (!other.getCursor().isEmpty()) {
@@ -2222,9 +2296,85 @@ public final class Keyword {
         return this;
       }
 
+      private java.lang.Object username_ = "";
+      /**
+       * <code>string username = 2 [json_name = "username"];</code>
+       * @return The username.
+       */
+      public java.lang.String getUsername() {
+        java.lang.Object ref = username_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          username_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string username = 2 [json_name = "username"];</code>
+       * @return The bytes for username.
+       */
+      public com.google.protobuf.ByteString
+          getUsernameBytes() {
+        java.lang.Object ref = username_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          username_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string username = 2 [json_name = "username"];</code>
+       * @param value The username to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUsername(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        username_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string username = 2 [json_name = "username"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUsername() {
+        
+        username_ = getDefaultInstance().getUsername();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string username = 2 [json_name = "username"];</code>
+       * @param value The bytes for username to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUsernameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        username_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object cursor_ = "";
       /**
-       * <code>string cursor = 2 [json_name = "cursor"];</code>
+       * <code>string cursor = 3 [json_name = "cursor"];</code>
        * @return The cursor.
        */
       public java.lang.String getCursor() {
@@ -2240,7 +2390,7 @@ public final class Keyword {
         }
       }
       /**
-       * <code>string cursor = 2 [json_name = "cursor"];</code>
+       * <code>string cursor = 3 [json_name = "cursor"];</code>
        * @return The bytes for cursor.
        */
       public com.google.protobuf.ByteString
@@ -2257,7 +2407,7 @@ public final class Keyword {
         }
       }
       /**
-       * <code>string cursor = 2 [json_name = "cursor"];</code>
+       * <code>string cursor = 3 [json_name = "cursor"];</code>
        * @param value The cursor to set.
        * @return This builder for chaining.
        */
@@ -2272,7 +2422,7 @@ public final class Keyword {
         return this;
       }
       /**
-       * <code>string cursor = 2 [json_name = "cursor"];</code>
+       * <code>string cursor = 3 [json_name = "cursor"];</code>
        * @return This builder for chaining.
        */
       public Builder clearCursor() {
@@ -2282,7 +2432,7 @@ public final class Keyword {
         return this;
       }
       /**
-       * <code>string cursor = 2 [json_name = "cursor"];</code>
+       * <code>string cursor = 3 [json_name = "cursor"];</code>
        * @param value The bytes for cursor to set.
        * @return This builder for chaining.
        */
@@ -3176,15 +3326,16 @@ public final class Keyword {
       "KeywordCursorR\006cursor\"b\n\024ListKeywordsRes" +
       "ponse\022\032\n\010keywords\030\001 \003(\tR\010keywords\022.\n\006cur" +
       "sor\030\002 \001(\0132\026.memento.KeywordCursorR\006curso" +
-      "r\"E\n\025SearchKeywordsRequest\022\024\n\005regex\030\001 \001(" +
-      "\tR\005regex\022\026\n\006cursor\030\002 \001(\tR\006cursor\"L\n\026Sear" +
-      "chKeywordsResponse\022\032\n\010keywords\030\001 \003(\tR\010ke" +
-      "ywords\022\026\n\006cursor\030\002 \001(\tR\006cursor2\260\001\n\016Keywo" +
-      "rdService\022K\n\014ListKeywords\022\034.memento.List" +
-      "KeywordsRequest\032\035.memento.ListKeywordsRe" +
-      "sponse\022Q\n\016SearchKeywords\022\036.memento.Searc" +
-      "hKeywordsRequest\032\037.memento.SearchKeyword" +
-      "sResponseb\006proto3"
+      "r\"a\n\025SearchKeywordsRequest\022\024\n\005regex\030\001 \001(" +
+      "\tR\005regex\022\032\n\010username\030\002 \001(\tR\010username\022\026\n\006" +
+      "cursor\030\003 \001(\tR\006cursor\"L\n\026SearchKeywordsRe" +
+      "sponse\022\032\n\010keywords\030\001 \003(\tR\010keywords\022\026\n\006cu" +
+      "rsor\030\002 \001(\tR\006cursor2\260\001\n\016KeywordService\022K\n" +
+      "\014ListKeywords\022\034.memento.ListKeywordsRequ" +
+      "est\032\035.memento.ListKeywordsResponse\022Q\n\016Se" +
+      "archKeywords\022\036.memento.SearchKeywordsReq" +
+      "uest\032\037.memento.SearchKeywordsResponseb\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3209,7 +3360,7 @@ public final class Keyword {
     internal_static_memento_SearchKeywordsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_memento_SearchKeywordsRequest_descriptor,
-        new java.lang.String[] { "Regex", "Cursor", });
+        new java.lang.String[] { "Regex", "Username", "Cursor", });
     internal_static_memento_SearchKeywordsResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_memento_SearchKeywordsResponse_fieldAccessorTable = new

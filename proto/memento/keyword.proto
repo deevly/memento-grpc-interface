@@ -22,7 +22,8 @@ message ListKeywordsResponse {
 
 message SearchKeywordsRequest {
     string regex = 1;
-    string cursor = 2;
+    string username = 2;
+    string cursor = 3;
 }
 
 message SearchKeywordsResponse {
