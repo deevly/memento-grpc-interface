@@ -40,7 +40,24 @@ public object ListUrlsRequestKt {
     }
 
     /**
-     * <code>.memento.URLCursor cursor = 2 [json_name = "cursor"];</code>
+     * <code>.memento.SiteDomain domain = 2 [json_name = "domain"];</code>
+     */
+    public var domain: memento.Types.SiteDomain
+      @JvmName("getDomain")
+      get() = _builder.getDomain()
+      @JvmName("setDomain")
+      set(value) {
+        _builder.setDomain(value)
+      }
+    /**
+     * <code>.memento.SiteDomain domain = 2 [json_name = "domain"];</code>
+     */
+    public fun clearDomain() {
+      _builder.clearDomain()
+    }
+
+    /**
+     * <code>.memento.URLCursor cursor = 3 [json_name = "cursor"];</code>
      */
     public var cursor: memento.Types.URLCursor
       @JvmName("getCursor")
@@ -50,13 +67,13 @@ public object ListUrlsRequestKt {
         _builder.setCursor(value)
       }
     /**
-     * <code>.memento.URLCursor cursor = 2 [json_name = "cursor"];</code>
+     * <code>.memento.URLCursor cursor = 3 [json_name = "cursor"];</code>
      */
     public fun clearCursor() {
       _builder.clearCursor()
     }
     /**
-     * <code>.memento.URLCursor cursor = 2 [json_name = "cursor"];</code>
+     * <code>.memento.URLCursor cursor = 3 [json_name = "cursor"];</code>
      * @return Whether the cursor field is set.
      */
     public fun hasCursor(): kotlin.Boolean {

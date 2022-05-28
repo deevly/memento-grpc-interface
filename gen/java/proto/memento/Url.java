@@ -31,17 +31,28 @@ public final class Url {
         getUsernameBytes();
 
     /**
-     * <code>.memento.URLCursor cursor = 2 [json_name = "cursor"];</code>
+     * <code>.memento.SiteDomain domain = 2 [json_name = "domain"];</code>
+     * @return The enum numeric value on the wire for domain.
+     */
+    int getDomainValue();
+    /**
+     * <code>.memento.SiteDomain domain = 2 [json_name = "domain"];</code>
+     * @return The domain.
+     */
+    memento.Types.SiteDomain getDomain();
+
+    /**
+     * <code>.memento.URLCursor cursor = 3 [json_name = "cursor"];</code>
      * @return Whether the cursor field is set.
      */
     boolean hasCursor();
     /**
-     * <code>.memento.URLCursor cursor = 2 [json_name = "cursor"];</code>
+     * <code>.memento.URLCursor cursor = 3 [json_name = "cursor"];</code>
      * @return The cursor.
      */
     memento.Types.URLCursor getCursor();
     /**
-     * <code>.memento.URLCursor cursor = 2 [json_name = "cursor"];</code>
+     * <code>.memento.URLCursor cursor = 3 [json_name = "cursor"];</code>
      */
     memento.Types.URLCursorOrBuilder getCursorOrBuilder();
   }
@@ -59,6 +70,7 @@ public final class Url {
     }
     private ListUrlsRequest() {
       username_ = "";
+      domain_ = 0;
     }
 
     @java.lang.Override
@@ -97,7 +109,13 @@ public final class Url {
               username_ = s;
               break;
             }
-            case 18: {
+            case 16: {
+              int rawValue = input.readEnum();
+
+              domain_ = rawValue;
+              break;
+            }
+            case 26: {
               memento.Types.URLCursor.Builder subBuilder = null;
               if (cursor_ != null) {
                 subBuilder = cursor_.toBuilder();
@@ -182,10 +200,29 @@ public final class Url {
       }
     }
 
-    public static final int CURSOR_FIELD_NUMBER = 2;
+    public static final int DOMAIN_FIELD_NUMBER = 2;
+    private int domain_;
+    /**
+     * <code>.memento.SiteDomain domain = 2 [json_name = "domain"];</code>
+     * @return The enum numeric value on the wire for domain.
+     */
+    @java.lang.Override public int getDomainValue() {
+      return domain_;
+    }
+    /**
+     * <code>.memento.SiteDomain domain = 2 [json_name = "domain"];</code>
+     * @return The domain.
+     */
+    @java.lang.Override public memento.Types.SiteDomain getDomain() {
+      @SuppressWarnings("deprecation")
+      memento.Types.SiteDomain result = memento.Types.SiteDomain.valueOf(domain_);
+      return result == null ? memento.Types.SiteDomain.UNRECOGNIZED : result;
+    }
+
+    public static final int CURSOR_FIELD_NUMBER = 3;
     private memento.Types.URLCursor cursor_;
     /**
-     * <code>.memento.URLCursor cursor = 2 [json_name = "cursor"];</code>
+     * <code>.memento.URLCursor cursor = 3 [json_name = "cursor"];</code>
      * @return Whether the cursor field is set.
      */
     @java.lang.Override
@@ -193,7 +230,7 @@ public final class Url {
       return cursor_ != null;
     }
     /**
-     * <code>.memento.URLCursor cursor = 2 [json_name = "cursor"];</code>
+     * <code>.memento.URLCursor cursor = 3 [json_name = "cursor"];</code>
      * @return The cursor.
      */
     @java.lang.Override
@@ -201,7 +238,7 @@ public final class Url {
       return cursor_ == null ? memento.Types.URLCursor.getDefaultInstance() : cursor_;
     }
     /**
-     * <code>.memento.URLCursor cursor = 2 [json_name = "cursor"];</code>
+     * <code>.memento.URLCursor cursor = 3 [json_name = "cursor"];</code>
      */
     @java.lang.Override
     public memento.Types.URLCursorOrBuilder getCursorOrBuilder() {
@@ -225,8 +262,11 @@ public final class Url {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, username_);
       }
+      if (domain_ != memento.Types.SiteDomain.STACK_OVERFLOW.getNumber()) {
+        output.writeEnum(2, domain_);
+      }
       if (cursor_ != null) {
-        output.writeMessage(2, getCursor());
+        output.writeMessage(3, getCursor());
       }
       unknownFields.writeTo(output);
     }
@@ -240,9 +280,13 @@ public final class Url {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, username_);
       }
+      if (domain_ != memento.Types.SiteDomain.STACK_OVERFLOW.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, domain_);
+      }
       if (cursor_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getCursor());
+          .computeMessageSize(3, getCursor());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -261,6 +305,7 @@ public final class Url {
 
       if (!getUsername()
           .equals(other.getUsername())) return false;
+      if (domain_ != other.domain_) return false;
       if (hasCursor() != other.hasCursor()) return false;
       if (hasCursor()) {
         if (!getCursor()
@@ -279,6 +324,8 @@ public final class Url {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + USERNAME_FIELD_NUMBER;
       hash = (53 * hash) + getUsername().hashCode();
+      hash = (37 * hash) + DOMAIN_FIELD_NUMBER;
+      hash = (53 * hash) + domain_;
       if (hasCursor()) {
         hash = (37 * hash) + CURSOR_FIELD_NUMBER;
         hash = (53 * hash) + getCursor().hashCode();
@@ -418,6 +465,8 @@ public final class Url {
         super.clear();
         username_ = "";
 
+        domain_ = 0;
+
         if (cursorBuilder_ == null) {
           cursor_ = null;
         } else {
@@ -451,6 +500,7 @@ public final class Url {
       public memento.Url.ListUrlsRequest buildPartial() {
         memento.Url.ListUrlsRequest result = new memento.Url.ListUrlsRequest(this);
         result.username_ = username_;
+        result.domain_ = domain_;
         if (cursorBuilder_ == null) {
           result.cursor_ = cursor_;
         } else {
@@ -507,6 +557,9 @@ public final class Url {
         if (!other.getUsername().isEmpty()) {
           username_ = other.username_;
           onChanged();
+        }
+        if (other.domain_ != 0) {
+          setDomainValue(other.getDomainValue());
         }
         if (other.hasCursor()) {
           mergeCursor(other.getCursor());
@@ -616,18 +669,72 @@ public final class Url {
         return this;
       }
 
+      private int domain_ = 0;
+      /**
+       * <code>.memento.SiteDomain domain = 2 [json_name = "domain"];</code>
+       * @return The enum numeric value on the wire for domain.
+       */
+      @java.lang.Override public int getDomainValue() {
+        return domain_;
+      }
+      /**
+       * <code>.memento.SiteDomain domain = 2 [json_name = "domain"];</code>
+       * @param value The enum numeric value on the wire for domain to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDomainValue(int value) {
+        
+        domain_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.memento.SiteDomain domain = 2 [json_name = "domain"];</code>
+       * @return The domain.
+       */
+      @java.lang.Override
+      public memento.Types.SiteDomain getDomain() {
+        @SuppressWarnings("deprecation")
+        memento.Types.SiteDomain result = memento.Types.SiteDomain.valueOf(domain_);
+        return result == null ? memento.Types.SiteDomain.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.memento.SiteDomain domain = 2 [json_name = "domain"];</code>
+       * @param value The domain to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDomain(memento.Types.SiteDomain value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        domain_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.memento.SiteDomain domain = 2 [json_name = "domain"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDomain() {
+        
+        domain_ = 0;
+        onChanged();
+        return this;
+      }
+
       private memento.Types.URLCursor cursor_;
       private com.google.protobuf.SingleFieldBuilderV3<
           memento.Types.URLCursor, memento.Types.URLCursor.Builder, memento.Types.URLCursorOrBuilder> cursorBuilder_;
       /**
-       * <code>.memento.URLCursor cursor = 2 [json_name = "cursor"];</code>
+       * <code>.memento.URLCursor cursor = 3 [json_name = "cursor"];</code>
        * @return Whether the cursor field is set.
        */
       public boolean hasCursor() {
         return cursorBuilder_ != null || cursor_ != null;
       }
       /**
-       * <code>.memento.URLCursor cursor = 2 [json_name = "cursor"];</code>
+       * <code>.memento.URLCursor cursor = 3 [json_name = "cursor"];</code>
        * @return The cursor.
        */
       public memento.Types.URLCursor getCursor() {
@@ -638,7 +745,7 @@ public final class Url {
         }
       }
       /**
-       * <code>.memento.URLCursor cursor = 2 [json_name = "cursor"];</code>
+       * <code>.memento.URLCursor cursor = 3 [json_name = "cursor"];</code>
        */
       public Builder setCursor(memento.Types.URLCursor value) {
         if (cursorBuilder_ == null) {
@@ -654,7 +761,7 @@ public final class Url {
         return this;
       }
       /**
-       * <code>.memento.URLCursor cursor = 2 [json_name = "cursor"];</code>
+       * <code>.memento.URLCursor cursor = 3 [json_name = "cursor"];</code>
        */
       public Builder setCursor(
           memento.Types.URLCursor.Builder builderForValue) {
@@ -668,7 +775,7 @@ public final class Url {
         return this;
       }
       /**
-       * <code>.memento.URLCursor cursor = 2 [json_name = "cursor"];</code>
+       * <code>.memento.URLCursor cursor = 3 [json_name = "cursor"];</code>
        */
       public Builder mergeCursor(memento.Types.URLCursor value) {
         if (cursorBuilder_ == null) {
@@ -686,7 +793,7 @@ public final class Url {
         return this;
       }
       /**
-       * <code>.memento.URLCursor cursor = 2 [json_name = "cursor"];</code>
+       * <code>.memento.URLCursor cursor = 3 [json_name = "cursor"];</code>
        */
       public Builder clearCursor() {
         if (cursorBuilder_ == null) {
@@ -700,7 +807,7 @@ public final class Url {
         return this;
       }
       /**
-       * <code>.memento.URLCursor cursor = 2 [json_name = "cursor"];</code>
+       * <code>.memento.URLCursor cursor = 3 [json_name = "cursor"];</code>
        */
       public memento.Types.URLCursor.Builder getCursorBuilder() {
         
@@ -708,7 +815,7 @@ public final class Url {
         return getCursorFieldBuilder().getBuilder();
       }
       /**
-       * <code>.memento.URLCursor cursor = 2 [json_name = "cursor"];</code>
+       * <code>.memento.URLCursor cursor = 3 [json_name = "cursor"];</code>
        */
       public memento.Types.URLCursorOrBuilder getCursorOrBuilder() {
         if (cursorBuilder_ != null) {
@@ -719,7 +826,7 @@ public final class Url {
         }
       }
       /**
-       * <code>.memento.URLCursor cursor = 2 [json_name = "cursor"];</code>
+       * <code>.memento.URLCursor cursor = 3 [json_name = "cursor"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           memento.Types.URLCursor, memento.Types.URLCursor.Builder, memento.Types.URLCursorOrBuilder> 
@@ -1814,17 +1921,28 @@ public final class Url {
         getKeywordBytes();
 
     /**
-     * <code>.memento.URLCursor cursor = 3 [json_name = "cursor"];</code>
+     * <code>.memento.SiteDomain domain = 3 [json_name = "domain"];</code>
+     * @return The enum numeric value on the wire for domain.
+     */
+    int getDomainValue();
+    /**
+     * <code>.memento.SiteDomain domain = 3 [json_name = "domain"];</code>
+     * @return The domain.
+     */
+    memento.Types.SiteDomain getDomain();
+
+    /**
+     * <code>.memento.URLCursor cursor = 4 [json_name = "cursor"];</code>
      * @return Whether the cursor field is set.
      */
     boolean hasCursor();
     /**
-     * <code>.memento.URLCursor cursor = 3 [json_name = "cursor"];</code>
+     * <code>.memento.URLCursor cursor = 4 [json_name = "cursor"];</code>
      * @return The cursor.
      */
     memento.Types.URLCursor getCursor();
     /**
-     * <code>.memento.URLCursor cursor = 3 [json_name = "cursor"];</code>
+     * <code>.memento.URLCursor cursor = 4 [json_name = "cursor"];</code>
      */
     memento.Types.URLCursorOrBuilder getCursorOrBuilder();
   }
@@ -1843,6 +1961,7 @@ public final class Url {
     private ListUrlsByKeywordRequest() {
       username_ = "";
       keyword_ = "";
+      domain_ = 0;
     }
 
     @java.lang.Override
@@ -1887,7 +2006,13 @@ public final class Url {
               keyword_ = s;
               break;
             }
-            case 26: {
+            case 24: {
+              int rawValue = input.readEnum();
+
+              domain_ = rawValue;
+              break;
+            }
+            case 34: {
               memento.Types.URLCursor.Builder subBuilder = null;
               if (cursor_ != null) {
                 subBuilder = cursor_.toBuilder();
@@ -2010,10 +2135,29 @@ public final class Url {
       }
     }
 
-    public static final int CURSOR_FIELD_NUMBER = 3;
+    public static final int DOMAIN_FIELD_NUMBER = 3;
+    private int domain_;
+    /**
+     * <code>.memento.SiteDomain domain = 3 [json_name = "domain"];</code>
+     * @return The enum numeric value on the wire for domain.
+     */
+    @java.lang.Override public int getDomainValue() {
+      return domain_;
+    }
+    /**
+     * <code>.memento.SiteDomain domain = 3 [json_name = "domain"];</code>
+     * @return The domain.
+     */
+    @java.lang.Override public memento.Types.SiteDomain getDomain() {
+      @SuppressWarnings("deprecation")
+      memento.Types.SiteDomain result = memento.Types.SiteDomain.valueOf(domain_);
+      return result == null ? memento.Types.SiteDomain.UNRECOGNIZED : result;
+    }
+
+    public static final int CURSOR_FIELD_NUMBER = 4;
     private memento.Types.URLCursor cursor_;
     /**
-     * <code>.memento.URLCursor cursor = 3 [json_name = "cursor"];</code>
+     * <code>.memento.URLCursor cursor = 4 [json_name = "cursor"];</code>
      * @return Whether the cursor field is set.
      */
     @java.lang.Override
@@ -2021,7 +2165,7 @@ public final class Url {
       return cursor_ != null;
     }
     /**
-     * <code>.memento.URLCursor cursor = 3 [json_name = "cursor"];</code>
+     * <code>.memento.URLCursor cursor = 4 [json_name = "cursor"];</code>
      * @return The cursor.
      */
     @java.lang.Override
@@ -2029,7 +2173,7 @@ public final class Url {
       return cursor_ == null ? memento.Types.URLCursor.getDefaultInstance() : cursor_;
     }
     /**
-     * <code>.memento.URLCursor cursor = 3 [json_name = "cursor"];</code>
+     * <code>.memento.URLCursor cursor = 4 [json_name = "cursor"];</code>
      */
     @java.lang.Override
     public memento.Types.URLCursorOrBuilder getCursorOrBuilder() {
@@ -2056,8 +2200,11 @@ public final class Url {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyword_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, keyword_);
       }
+      if (domain_ != memento.Types.SiteDomain.STACK_OVERFLOW.getNumber()) {
+        output.writeEnum(3, domain_);
+      }
       if (cursor_ != null) {
-        output.writeMessage(3, getCursor());
+        output.writeMessage(4, getCursor());
       }
       unknownFields.writeTo(output);
     }
@@ -2074,9 +2221,13 @@ public final class Url {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyword_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, keyword_);
       }
+      if (domain_ != memento.Types.SiteDomain.STACK_OVERFLOW.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, domain_);
+      }
       if (cursor_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getCursor());
+          .computeMessageSize(4, getCursor());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2097,6 +2248,7 @@ public final class Url {
           .equals(other.getUsername())) return false;
       if (!getKeyword()
           .equals(other.getKeyword())) return false;
+      if (domain_ != other.domain_) return false;
       if (hasCursor() != other.hasCursor()) return false;
       if (hasCursor()) {
         if (!getCursor()
@@ -2117,6 +2269,8 @@ public final class Url {
       hash = (53 * hash) + getUsername().hashCode();
       hash = (37 * hash) + KEYWORD_FIELD_NUMBER;
       hash = (53 * hash) + getKeyword().hashCode();
+      hash = (37 * hash) + DOMAIN_FIELD_NUMBER;
+      hash = (53 * hash) + domain_;
       if (hasCursor()) {
         hash = (37 * hash) + CURSOR_FIELD_NUMBER;
         hash = (53 * hash) + getCursor().hashCode();
@@ -2258,6 +2412,8 @@ public final class Url {
 
         keyword_ = "";
 
+        domain_ = 0;
+
         if (cursorBuilder_ == null) {
           cursor_ = null;
         } else {
@@ -2292,6 +2448,7 @@ public final class Url {
         memento.Url.ListUrlsByKeywordRequest result = new memento.Url.ListUrlsByKeywordRequest(this);
         result.username_ = username_;
         result.keyword_ = keyword_;
+        result.domain_ = domain_;
         if (cursorBuilder_ == null) {
           result.cursor_ = cursor_;
         } else {
@@ -2352,6 +2509,9 @@ public final class Url {
         if (!other.getKeyword().isEmpty()) {
           keyword_ = other.keyword_;
           onChanged();
+        }
+        if (other.domain_ != 0) {
+          setDomainValue(other.getDomainValue());
         }
         if (other.hasCursor()) {
           mergeCursor(other.getCursor());
@@ -2537,18 +2697,72 @@ public final class Url {
         return this;
       }
 
+      private int domain_ = 0;
+      /**
+       * <code>.memento.SiteDomain domain = 3 [json_name = "domain"];</code>
+       * @return The enum numeric value on the wire for domain.
+       */
+      @java.lang.Override public int getDomainValue() {
+        return domain_;
+      }
+      /**
+       * <code>.memento.SiteDomain domain = 3 [json_name = "domain"];</code>
+       * @param value The enum numeric value on the wire for domain to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDomainValue(int value) {
+        
+        domain_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.memento.SiteDomain domain = 3 [json_name = "domain"];</code>
+       * @return The domain.
+       */
+      @java.lang.Override
+      public memento.Types.SiteDomain getDomain() {
+        @SuppressWarnings("deprecation")
+        memento.Types.SiteDomain result = memento.Types.SiteDomain.valueOf(domain_);
+        return result == null ? memento.Types.SiteDomain.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.memento.SiteDomain domain = 3 [json_name = "domain"];</code>
+       * @param value The domain to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDomain(memento.Types.SiteDomain value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        domain_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.memento.SiteDomain domain = 3 [json_name = "domain"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDomain() {
+        
+        domain_ = 0;
+        onChanged();
+        return this;
+      }
+
       private memento.Types.URLCursor cursor_;
       private com.google.protobuf.SingleFieldBuilderV3<
           memento.Types.URLCursor, memento.Types.URLCursor.Builder, memento.Types.URLCursorOrBuilder> cursorBuilder_;
       /**
-       * <code>.memento.URLCursor cursor = 3 [json_name = "cursor"];</code>
+       * <code>.memento.URLCursor cursor = 4 [json_name = "cursor"];</code>
        * @return Whether the cursor field is set.
        */
       public boolean hasCursor() {
         return cursorBuilder_ != null || cursor_ != null;
       }
       /**
-       * <code>.memento.URLCursor cursor = 3 [json_name = "cursor"];</code>
+       * <code>.memento.URLCursor cursor = 4 [json_name = "cursor"];</code>
        * @return The cursor.
        */
       public memento.Types.URLCursor getCursor() {
@@ -2559,7 +2773,7 @@ public final class Url {
         }
       }
       /**
-       * <code>.memento.URLCursor cursor = 3 [json_name = "cursor"];</code>
+       * <code>.memento.URLCursor cursor = 4 [json_name = "cursor"];</code>
        */
       public Builder setCursor(memento.Types.URLCursor value) {
         if (cursorBuilder_ == null) {
@@ -2575,7 +2789,7 @@ public final class Url {
         return this;
       }
       /**
-       * <code>.memento.URLCursor cursor = 3 [json_name = "cursor"];</code>
+       * <code>.memento.URLCursor cursor = 4 [json_name = "cursor"];</code>
        */
       public Builder setCursor(
           memento.Types.URLCursor.Builder builderForValue) {
@@ -2589,7 +2803,7 @@ public final class Url {
         return this;
       }
       /**
-       * <code>.memento.URLCursor cursor = 3 [json_name = "cursor"];</code>
+       * <code>.memento.URLCursor cursor = 4 [json_name = "cursor"];</code>
        */
       public Builder mergeCursor(memento.Types.URLCursor value) {
         if (cursorBuilder_ == null) {
@@ -2607,7 +2821,7 @@ public final class Url {
         return this;
       }
       /**
-       * <code>.memento.URLCursor cursor = 3 [json_name = "cursor"];</code>
+       * <code>.memento.URLCursor cursor = 4 [json_name = "cursor"];</code>
        */
       public Builder clearCursor() {
         if (cursorBuilder_ == null) {
@@ -2621,7 +2835,7 @@ public final class Url {
         return this;
       }
       /**
-       * <code>.memento.URLCursor cursor = 3 [json_name = "cursor"];</code>
+       * <code>.memento.URLCursor cursor = 4 [json_name = "cursor"];</code>
        */
       public memento.Types.URLCursor.Builder getCursorBuilder() {
         
@@ -2629,7 +2843,7 @@ public final class Url {
         return getCursorFieldBuilder().getBuilder();
       }
       /**
-       * <code>.memento.URLCursor cursor = 3 [json_name = "cursor"];</code>
+       * <code>.memento.URLCursor cursor = 4 [json_name = "cursor"];</code>
        */
       public memento.Types.URLCursorOrBuilder getCursorOrBuilder() {
         if (cursorBuilder_ != null) {
@@ -2640,7 +2854,7 @@ public final class Url {
         }
       }
       /**
-       * <code>.memento.URLCursor cursor = 3 [json_name = "cursor"];</code>
+       * <code>.memento.URLCursor cursor = 4 [json_name = "cursor"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           memento.Types.URLCursor, memento.Types.URLCursor.Builder, memento.Types.URLCursorOrBuilder> 
@@ -3736,22 +3950,24 @@ public final class Url {
   static {
     java.lang.String[] descriptorData = {
       "\n\021memento/url.proto\022\007memento\032\023memento/ty" +
-      "pes.proto\"Y\n\017ListUrlsRequest\022\032\n\010username" +
-      "\030\001 \001(\tR\010username\022*\n\006cursor\030\002 \001(\0132\022.memen" +
-      "to.URLCursorR\006cursor\"`\n\020ListUrlsResponse" +
-      "\022 \n\004urls\030\001 \003(\0132\014.memento.URLR\004urls\022*\n\006cu" +
-      "rsor\030\002 \001(\0132\022.memento.URLCursorR\006cursor\"|" +
-      "\n\030ListUrlsByKeywordRequest\022\032\n\010username\030\001" +
-      " \001(\tR\010username\022\030\n\007keyword\030\002 \001(\tR\007keyword" +
-      "\022*\n\006cursor\030\003 \001(\0132\022.memento.URLCursorR\006cu" +
-      "rsor\"i\n\031ListUrlsByKeywordResponse\022 \n\004url" +
-      "s\030\001 \003(\0132\014.memento.URLR\004urls\022*\n\006cursor\030\002 " +
-      "\001(\0132\022.memento.URLCursorR\006cursor2\251\001\n\nUrlS" +
-      "ervice\022?\n\010ListUrls\022\030.memento.ListUrlsReq" +
-      "uest\032\031.memento.ListUrlsResponse\022Z\n\021ListU" +
-      "rlsByKeyword\022!.memento.ListUrlsByKeyword" +
-      "Request\032\".memento.ListUrlsByKeywordRespo" +
-      "nseb\006proto3"
+      "pes.proto\"\206\001\n\017ListUrlsRequest\022\032\n\010usernam" +
+      "e\030\001 \001(\tR\010username\022+\n\006domain\030\002 \001(\0162\023.meme" +
+      "nto.SiteDomainR\006domain\022*\n\006cursor\030\003 \001(\0132\022" +
+      ".memento.URLCursorR\006cursor\"`\n\020ListUrlsRe" +
+      "sponse\022 \n\004urls\030\001 \003(\0132\014.memento.URLR\004urls" +
+      "\022*\n\006cursor\030\002 \001(\0132\022.memento.URLCursorR\006cu" +
+      "rsor\"\251\001\n\030ListUrlsByKeywordRequest\022\032\n\010use" +
+      "rname\030\001 \001(\tR\010username\022\030\n\007keyword\030\002 \001(\tR\007" +
+      "keyword\022+\n\006domain\030\003 \001(\0162\023.memento.SiteDo" +
+      "mainR\006domain\022*\n\006cursor\030\004 \001(\0132\022.memento.U" +
+      "RLCursorR\006cursor\"i\n\031ListUrlsByKeywordRes" +
+      "ponse\022 \n\004urls\030\001 \003(\0132\014.memento.URLR\004urls\022" +
+      "*\n\006cursor\030\002 \001(\0132\022.memento.URLCursorR\006cur" +
+      "sor2\251\001\n\nUrlService\022?\n\010ListUrls\022\030.memento" +
+      ".ListUrlsRequest\032\031.memento.ListUrlsRespo" +
+      "nse\022Z\n\021ListUrlsByKeyword\022!.memento.ListU" +
+      "rlsByKeywordRequest\032\".memento.ListUrlsBy" +
+      "KeywordResponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3763,7 +3979,7 @@ public final class Url {
     internal_static_memento_ListUrlsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_memento_ListUrlsRequest_descriptor,
-        new java.lang.String[] { "Username", "Cursor", });
+        new java.lang.String[] { "Username", "Domain", "Cursor", });
     internal_static_memento_ListUrlsResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_memento_ListUrlsResponse_fieldAccessorTable = new
@@ -3775,7 +3991,7 @@ public final class Url {
     internal_static_memento_ListUrlsByKeywordRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_memento_ListUrlsByKeywordRequest_descriptor,
-        new java.lang.String[] { "Username", "Keyword", "Cursor", });
+        new java.lang.String[] { "Username", "Keyword", "Domain", "Cursor", });
     internal_static_memento_ListUrlsByKeywordResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_memento_ListUrlsByKeywordResponse_fieldAccessorTable = new
