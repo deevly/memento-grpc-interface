@@ -32,7 +32,7 @@ message KeywordCursor {
 }
 
 enum SiteDomain {
-    STACK_OVERFLOW = 0;
+    STACKOF = 0;
     GITHUB = 1;
     OTHERS = 2;
     ALL = 3;
