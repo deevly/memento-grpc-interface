@@ -20,9 +20,9 @@ public final class Types {
   public enum SiteDomain
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>STACK_OVERFLOW = 0;</code>
+     * <code>STACKOF = 0;</code>
      */
-    STACK_OVERFLOW(0),
+    STACKOF(0),
     /**
      * <code>GITHUB = 1;</code>
      */
@@ -39,9 +39,9 @@ public final class Types {
     ;
 
     /**
-     * <code>STACK_OVERFLOW = 0;</code>
+     * <code>STACKOF = 0;</code>
      */
-    public static final int STACK_OVERFLOW_VALUE = 0;
+    public static final int STACKOF_VALUE = 0;
     /**
      * <code>GITHUB = 1;</code>
      */
@@ -80,7 +80,7 @@ public final class Types {
      */
     public static SiteDomain forNumber(int value) {
       switch (value) {
-        case 0: return STACK_OVERFLOW;
+        case 0: return STACKOF;
         case 1: return GITHUB;
         case 2: return OTHERS;
         case 3: return ALL;
@@ -442,7 +442,7 @@ public final class Types {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (domain_ != memento.Types.SiteDomain.STACK_OVERFLOW.getNumber()) {
+      if (domain_ != memento.Types.SiteDomain.STACKOF.getNumber()) {
         output.writeEnum(1, domain_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
@@ -463,7 +463,7 @@ public final class Types {
       if (size != -1) return size;
 
       size = 0;
-      if (domain_ != memento.Types.SiteDomain.STACK_OVERFLOW.getNumber()) {
+      if (domain_ != memento.Types.SiteDomain.STACKOF.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, domain_);
       }
@@ -2795,9 +2795,9 @@ public final class Types {
       "\037.memento.KeywordCursor.SortTypeR\004type\022\024" +
       "\n\005value\030\002 \001(\tR\005value\"Z\n\010SortType\022\021\n\rURL_" +
       "COUNT_ASC\020\000\022\022\n\016URL_COUNT_DESC\020\001\022\017\n\013RECEN" +
-      "T_TIME\020\002\022\026\n\022ALPHABETICAL_ORDER\020\003*A\n\nSite" +
-      "Domain\022\022\n\016STACK_OVERFLOW\020\000\022\n\n\006GITHUB\020\001\022\n" +
-      "\n\006OTHERS\020\002\022\007\n\003ALL\020\003b\006proto3"
+      "T_TIME\020\002\022\026\n\022ALPHABETICAL_ORDER\020\003*:\n\nSite" +
+      "Domain\022\013\n\007STACKOF\020\000\022\n\n\006GITHUB\020\001\022\n\n\006OTHER" +
+      "S\020\002\022\007\n\003ALL\020\003b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

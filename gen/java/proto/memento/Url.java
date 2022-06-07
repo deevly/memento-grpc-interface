@@ -262,7 +262,7 @@ public final class Url {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, username_);
       }
-      if (domain_ != memento.Types.SiteDomain.STACK_OVERFLOW.getNumber()) {
+      if (domain_ != memento.Types.SiteDomain.STACKOF.getNumber()) {
         output.writeEnum(2, domain_);
       }
       if (cursor_ != null) {
@@ -280,7 +280,7 @@ public final class Url {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, username_);
       }
-      if (domain_ != memento.Types.SiteDomain.STACK_OVERFLOW.getNumber()) {
+      if (domain_ != memento.Types.SiteDomain.STACKOF.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, domain_);
       }
@@ -2200,7 +2200,7 @@ public final class Url {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyword_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, keyword_);
       }
-      if (domain_ != memento.Types.SiteDomain.STACK_OVERFLOW.getNumber()) {
+      if (domain_ != memento.Types.SiteDomain.STACKOF.getNumber()) {
         output.writeEnum(3, domain_);
       }
       if (cursor_ != null) {
@@ -2221,7 +2221,7 @@ public final class Url {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(keyword_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, keyword_);
       }
-      if (domain_ != memento.Types.SiteDomain.STACK_OVERFLOW.getNumber()) {
+      if (domain_ != memento.Types.SiteDomain.STACKOF.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, domain_);
       }
