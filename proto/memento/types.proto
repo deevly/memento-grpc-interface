@@ -32,8 +32,8 @@ message KeywordCursor {
 }
 
 enum SiteDomain {
-    STACKOF = 0;
-    GITHUB = 1;
-    OTHERS = 2;
-    ALL = 3;
+    ALL = 0;
+    STACKOF = 1;
+    GITHUB = 2;
+    OTHERS = 3;
 }
