@@ -1,0 +1,12 @@
+{
+  "name": "ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Seongpyo Hong <seongpio.hong@linecorp.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@protobuf-ts/plugin": "^2.7.0"
+  }
+}

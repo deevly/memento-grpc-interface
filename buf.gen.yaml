@@ -8,3 +8,9 @@ plugins:
     out: gen/java/proto
   - remote: buf.build/grpc/plugins/java:v1.46.0-1
     out: gen/java/proto
+  - name: ts
+    out: gen/ts/proto
+    path: ./bin/ts/node_modules/@protobuf-ts/plugin/bin/protoc-gen-ts
+    opt:
+      - long_type_number
+      - generate_dependencies
