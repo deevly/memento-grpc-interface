@@ -11,6 +11,11 @@ message URL {
     google.protobuf.Timestamp visit_time = 4;
 }
 
+message KeywordResult {
+    string keyword = 1;
+    int32 count = 2;
+}
+
 message URLCursor {
     enum SortType {
         RECENT_TIME_ASC = 0;
@@ -22,10 +27,8 @@ message URLCursor {
 
 message KeywordCursor {
     enum SortType {
-        URL_COUNT_ASC = 0;
-        URL_COUNT_DESC = 1;
-        RECENT_TIME = 2;
-        ALPHABETICAL_ORDER = 3;
+        URL_COUNT_DESC = 0;
+        ALPHABETICAL_ORDER = 1;
     }
     SortType type = 1;
     string value = 2;

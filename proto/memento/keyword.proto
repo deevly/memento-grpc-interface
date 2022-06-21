@@ -16,17 +16,14 @@ message ListKeywordsRequest {
 }
 
 message ListKeywordsResponse {
-    repeated string keywords = 1;
-    KeywordCursor cursor = 2;
+    repeated KeywordResult keywords = 1;
 }
 
 message SearchKeywordsRequest {
     string regex = 1;
     string username = 2;
-    string cursor = 3;
 }
 
 message SearchKeywordsResponse {
-    repeated string keywords = 1;
-    string cursor = 2;
+    repeated KeywordResult keywords = 1;
 }

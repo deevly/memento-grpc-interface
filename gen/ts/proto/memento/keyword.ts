@@ -12,6 +12,7 @@ import type { PartialMessage } from "@protobuf-ts/runtime";
 import { reflectionMergePartial } from "@protobuf-ts/runtime";
 import { MESSAGE_TYPE } from "@protobuf-ts/runtime";
 import { MessageType } from "@protobuf-ts/runtime";
+import { KeywordResult } from "./types";
 import { KeywordCursor } from "./types";
 /**
  * @generated from protobuf message memento.ListKeywordsRequest
@@ -31,13 +32,9 @@ export interface ListKeywordsRequest {
  */
 export interface ListKeywordsResponse {
     /**
-     * @generated from protobuf field: repeated string keywords = 1;
+     * @generated from protobuf field: repeated memento.KeywordResult keywords = 1;
      */
-    keywords: string[];
-    /**
-     * @generated from protobuf field: memento.KeywordCursor cursor = 2;
-     */
-    cursor?: KeywordCursor;
+    keywords: KeywordResult[];
 }
 /**
  * @generated from protobuf message memento.SearchKeywordsRequest
@@ -51,23 +48,15 @@ export interface SearchKeywordsRequest {
      * @generated from protobuf field: string username = 2;
      */
     username: string;
-    /**
-     * @generated from protobuf field: string cursor = 3;
-     */
-    cursor: string;
 }
 /**
  * @generated from protobuf message memento.SearchKeywordsResponse
  */
 export interface SearchKeywordsResponse {
     /**
-     * @generated from protobuf field: repeated string keywords = 1;
+     * @generated from protobuf field: repeated memento.KeywordResult keywords = 1;
      */
-    keywords: string[];
-    /**
-     * @generated from protobuf field: string cursor = 2;
-     */
-    cursor: string;
+    keywords: KeywordResult[];
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class ListKeywordsRequest$Type extends MessageType<ListKeywordsRequest> {
@@ -127,8 +116,7 @@ export const ListKeywordsRequest = new ListKeywordsRequest$Type();
 class ListKeywordsResponse$Type extends MessageType<ListKeywordsResponse> {
     constructor() {
         super("memento.ListKeywordsResponse", [
-            { no: 1, name: "keywords", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ },
-            { no: 2, name: "cursor", kind: "message", T: () => KeywordCursor }
+            { no: 1, name: "keywords", kind: "message", repeat: 1 /*RepeatType.PACKED*/, T: () => KeywordResult }
         ]);
     }
     create(value?: PartialMessage<ListKeywordsResponse>): ListKeywordsResponse {
@@ -143,11 +131,8 @@ class ListKeywordsResponse$Type extends MessageType<ListKeywordsResponse> {
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* repeated string keywords */ 1:
-                    message.keywords.push(reader.string());
-                    break;
-                case /* memento.KeywordCursor cursor */ 2:
-                    message.cursor = KeywordCursor.internalBinaryRead(reader, reader.uint32(), options, message.cursor);
+                case /* repeated memento.KeywordResult keywords */ 1:
+                    message.keywords.push(KeywordResult.internalBinaryRead(reader, reader.uint32(), options));
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -161,12 +146,9 @@ class ListKeywordsResponse$Type extends MessageType<ListKeywordsResponse> {
         return message;
     }
     internalBinaryWrite(message: ListKeywordsResponse, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* repeated string keywords = 1; */
+        /* repeated memento.KeywordResult keywords = 1; */
         for (let i = 0; i < message.keywords.length; i++)
-            writer.tag(1, WireType.LengthDelimited).string(message.keywords[i]);
-        /* memento.KeywordCursor cursor = 2; */
-        if (message.cursor)
-            KeywordCursor.internalBinaryWrite(message.cursor, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+            KeywordResult.internalBinaryWrite(message.keywords[i], writer.tag(1, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -182,12 +164,11 @@ class SearchKeywordsRequest$Type extends MessageType<SearchKeywordsRequest> {
     constructor() {
         super("memento.SearchKeywordsRequest", [
             { no: 1, name: "regex", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 2, name: "username", kind: "scalar", T: 9 /*ScalarType.STRING*/ },
-            { no: 3, name: "cursor", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+            { no: 2, name: "username", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
         ]);
     }
     create(value?: PartialMessage<SearchKeywordsRequest>): SearchKeywordsRequest {
-        const message = { regex: "", username: "", cursor: "" };
+        const message = { regex: "", username: "" };
         globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
         if (value !== undefined)
             reflectionMergePartial<SearchKeywordsRequest>(this, message, value);
@@ -203,9 +184,6 @@ class SearchKeywordsRequest$Type extends MessageType<SearchKeywordsRequest> {
                     break;
                 case /* string username */ 2:
                     message.username = reader.string();
-                    break;
-                case /* string cursor */ 3:
-                    message.cursor = reader.string();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -225,9 +203,6 @@ class SearchKeywordsRequest$Type extends MessageType<SearchKeywordsRequest> {
         /* string username = 2; */
         if (message.username !== "")
             writer.tag(2, WireType.LengthDelimited).string(message.username);
-        /* string cursor = 3; */
-        if (message.cursor !== "")
-            writer.tag(3, WireType.LengthDelimited).string(message.cursor);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -242,12 +217,11 @@ export const SearchKeywordsRequest = new SearchKeywordsRequest$Type();
 class SearchKeywordsResponse$Type extends MessageType<SearchKeywordsResponse> {
     constructor() {
         super("memento.SearchKeywordsResponse", [
-            { no: 1, name: "keywords", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 9 /*ScalarType.STRING*/ },
-            { no: 2, name: "cursor", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+            { no: 1, name: "keywords", kind: "message", repeat: 1 /*RepeatType.PACKED*/, T: () => KeywordResult }
         ]);
     }
     create(value?: PartialMessage<SearchKeywordsResponse>): SearchKeywordsResponse {
-        const message = { keywords: [], cursor: "" };
+        const message = { keywords: [] };
         globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
         if (value !== undefined)
             reflectionMergePartial<SearchKeywordsResponse>(this, message, value);
@@ -258,11 +232,8 @@ class SearchKeywordsResponse$Type extends MessageType<SearchKeywordsResponse> {
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* repeated string keywords */ 1:
-                    message.keywords.push(reader.string());
-                    break;
-                case /* string cursor */ 2:
-                    message.cursor = reader.string();
+                case /* repeated memento.KeywordResult keywords */ 1:
+                    message.keywords.push(KeywordResult.internalBinaryRead(reader, reader.uint32(), options));
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -276,12 +247,9 @@ class SearchKeywordsResponse$Type extends MessageType<SearchKeywordsResponse> {
         return message;
     }
     internalBinaryWrite(message: SearchKeywordsResponse, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* repeated string keywords = 1; */
+        /* repeated memento.KeywordResult keywords = 1; */
         for (let i = 0; i < message.keywords.length; i++)
-            writer.tag(1, WireType.LengthDelimited).string(message.keywords[i]);
-        /* string cursor = 2; */
-        if (message.cursor !== "")
-            writer.tag(2, WireType.LengthDelimited).string(message.cursor);
+            KeywordResult.internalBinaryWrite(message.keywords[i], writer.tag(1, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
