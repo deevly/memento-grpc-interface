@@ -55,23 +55,6 @@ public object SearchKeywordsRequestKt {
     public fun clearUsername() {
       _builder.clearUsername()
     }
-
-    /**
-     * <code>string cursor = 3 [json_name = "cursor"];</code>
-     */
-    public var cursor: kotlin.String
-      @JvmName("getCursor")
-      get() = _builder.getCursor()
-      @JvmName("setCursor")
-      set(value) {
-        _builder.setCursor(value)
-      }
-    /**
-     * <code>string cursor = 3 [json_name = "cursor"];</code>
-     */
-    public fun clearCursor() {
-      _builder.clearCursor()
-    }
   }
 }
 @kotlin.jvm.JvmSynthetic
