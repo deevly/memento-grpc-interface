@@ -2,5 +2,3 @@
 .idea/
 gen/java/gen.iml
 gen/kotlin/kotlin.iml
-
-**/node_modules/
