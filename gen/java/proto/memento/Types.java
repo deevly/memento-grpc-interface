@@ -2611,16 +2611,16 @@ public final class Types {
     memento.Types.KeywordCursor.SortType getType();
 
     /**
-     * <code>string value = 2 [json_name = "value"];</code>
-     * @return The value.
+     * <code>string date = 2 [json_name = "date"];</code>
+     * @return The date.
      */
-    java.lang.String getValue();
+    java.lang.String getDate();
     /**
-     * <code>string value = 2 [json_name = "value"];</code>
-     * @return The bytes for value.
+     * <code>string date = 2 [json_name = "date"];</code>
+     * @return The bytes for date.
      */
     com.google.protobuf.ByteString
-        getValueBytes();
+        getDateBytes();
   }
   /**
    * Protobuf type {@code memento.KeywordCursor}
@@ -2636,7 +2636,7 @@ public final class Types {
     }
     private KeywordCursor() {
       type_ = 0;
-      value_ = "";
+      date_ = "";
     }
 
     @java.lang.Override
@@ -2678,7 +2678,7 @@ public final class Types {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              value_ = s;
+              date_ = s;
               break;
             }
             default: {
@@ -2728,6 +2728,10 @@ public final class Types {
        * <code>ALPHABETICAL_ORDER = 1;</code>
        */
       ALPHABETICAL_ORDER(1),
+      /**
+       * <code>VISITED_TIME = 2;</code>
+       */
+      VISITED_TIME(2),
       UNRECOGNIZED(-1),
       ;
 
@@ -2739,6 +2743,10 @@ public final class Types {
        * <code>ALPHABETICAL_ORDER = 1;</code>
        */
       public static final int ALPHABETICAL_ORDER_VALUE = 1;
+      /**
+       * <code>VISITED_TIME = 2;</code>
+       */
+      public static final int VISITED_TIME_VALUE = 2;
 
 
       public final int getNumber() {
@@ -2767,6 +2775,7 @@ public final class Types {
         switch (value) {
           case 0: return URL_COUNT_DESC;
           case 1: return ALPHABETICAL_ORDER;
+          case 2: return VISITED_TIME;
           default: return null;
         }
       }
@@ -2842,38 +2851,38 @@ public final class Types {
       return result == null ? memento.Types.KeywordCursor.SortType.UNRECOGNIZED : result;
     }
 
-    public static final int VALUE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object value_;
+    public static final int DATE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object date_;
     /**
-     * <code>string value = 2 [json_name = "value"];</code>
-     * @return The value.
+     * <code>string date = 2 [json_name = "date"];</code>
+     * @return The date.
      */
     @java.lang.Override
-    public java.lang.String getValue() {
-      java.lang.Object ref = value_;
+    public java.lang.String getDate() {
+      java.lang.Object ref = date_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        value_ = s;
+        date_ = s;
         return s;
       }
     }
     /**
-     * <code>string value = 2 [json_name = "value"];</code>
-     * @return The bytes for value.
+     * <code>string date = 2 [json_name = "date"];</code>
+     * @return The bytes for date.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getValueBytes() {
-      java.lang.Object ref = value_;
+        getDateBytes() {
+      java.lang.Object ref = date_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        value_ = b;
+        date_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -2897,8 +2906,8 @@ public final class Types {
       if (type_ != memento.Types.KeywordCursor.SortType.URL_COUNT_DESC.getNumber()) {
         output.writeEnum(1, type_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, value_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(date_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, date_);
       }
       unknownFields.writeTo(output);
     }
@@ -2913,8 +2922,8 @@ public final class Types {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, type_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(value_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, value_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(date_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, date_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2932,8 +2941,8 @@ public final class Types {
       memento.Types.KeywordCursor other = (memento.Types.KeywordCursor) obj;
 
       if (type_ != other.type_) return false;
-      if (!getValue()
-          .equals(other.getValue())) return false;
+      if (!getDate()
+          .equals(other.getDate())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2947,8 +2956,8 @@ public final class Types {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + type_;
-      hash = (37 * hash) + VALUE_FIELD_NUMBER;
-      hash = (53 * hash) + getValue().hashCode();
+      hash = (37 * hash) + DATE_FIELD_NUMBER;
+      hash = (53 * hash) + getDate().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3084,7 +3093,7 @@ public final class Types {
         super.clear();
         type_ = 0;
 
-        value_ = "";
+        date_ = "";
 
         return this;
       }
@@ -3113,7 +3122,7 @@ public final class Types {
       public memento.Types.KeywordCursor buildPartial() {
         memento.Types.KeywordCursor result = new memento.Types.KeywordCursor(this);
         result.type_ = type_;
-        result.value_ = value_;
+        result.date_ = date_;
         onBuilt();
         return result;
       }
@@ -3165,8 +3174,8 @@ public final class Types {
         if (other.type_ != 0) {
           setTypeValue(other.getTypeValue());
         }
-        if (!other.getValue().isEmpty()) {
-          value_ = other.value_;
+        if (!other.getDate().isEmpty()) {
+          date_ = other.date_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -3252,78 +3261,78 @@ public final class Types {
         return this;
       }
 
-      private java.lang.Object value_ = "";
+      private java.lang.Object date_ = "";
       /**
-       * <code>string value = 2 [json_name = "value"];</code>
-       * @return The value.
+       * <code>string date = 2 [json_name = "date"];</code>
+       * @return The date.
        */
-      public java.lang.String getValue() {
-        java.lang.Object ref = value_;
+      public java.lang.String getDate() {
+        java.lang.Object ref = date_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          value_ = s;
+          date_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string value = 2 [json_name = "value"];</code>
-       * @return The bytes for value.
+       * <code>string date = 2 [json_name = "date"];</code>
+       * @return The bytes for date.
        */
       public com.google.protobuf.ByteString
-          getValueBytes() {
-        java.lang.Object ref = value_;
+          getDateBytes() {
+        java.lang.Object ref = date_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          value_ = b;
+          date_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string value = 2 [json_name = "value"];</code>
-       * @param value The value to set.
+       * <code>string date = 2 [json_name = "date"];</code>
+       * @param value The date to set.
        * @return This builder for chaining.
        */
-      public Builder setValue(
+      public Builder setDate(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        value_ = value;
+        date_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string value = 2 [json_name = "value"];</code>
+       * <code>string date = 2 [json_name = "date"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearValue() {
+      public Builder clearDate() {
         
-        value_ = getDefaultInstance().getValue();
+        date_ = getDefaultInstance().getDate();
         onChanged();
         return this;
       }
       /**
-       * <code>string value = 2 [json_name = "value"];</code>
-       * @param value The bytes for value to set.
+       * <code>string date = 2 [json_name = "date"];</code>
+       * @param value The bytes for date to set.
        * @return This builder for chaining.
        */
-      public Builder setValueBytes(
+      public Builder setDateBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        value_ = value;
+        date_ = value;
         onChanged();
         return this;
       }
@@ -3419,13 +3428,13 @@ public final class Types {
       "\002 \001(\005R\005count\"\211\001\n\tURLCursor\022/\n\004type\030\001 \001(\016" +
       "2\033.memento.URLCursor.SortTypeR\004type\022\024\n\005v" +
       "alue\030\002 \001(\tR\005value\"5\n\010SortType\022\023\n\017RECENT_" +
-      "TIME_ASC\020\000\022\024\n\020RECENT_TIME_DESC\020\001\"\222\001\n\rKey" +
+      "TIME_ASC\020\000\022\024\n\020RECENT_TIME_DESC\020\001\"\242\001\n\rKey" +
       "wordCursor\0223\n\004type\030\001 \001(\0162\037.memento.Keywo" +
-      "rdCursor.SortTypeR\004type\022\024\n\005value\030\002 \001(\tR\005" +
-      "value\"6\n\010SortType\022\022\n\016URL_COUNT_DESC\020\000\022\026\n" +
-      "\022ALPHABETICAL_ORDER\020\001*:\n\nSiteDomain\022\007\n\003A" +
-      "LL\020\000\022\013\n\007STACKOF\020\001\022\n\n\006GITHUB\020\002\022\n\n\006OTHERS\020" +
-      "\003b\006proto3"
+      "rdCursor.SortTypeR\004type\022\022\n\004date\030\002 \001(\tR\004d" +
+      "ate\"H\n\010SortType\022\022\n\016URL_COUNT_DESC\020\000\022\026\n\022A" +
+      "LPHABETICAL_ORDER\020\001\022\020\n\014VISITED_TIME\020\002*:\n" +
+      "\nSiteDomain\022\007\n\003ALL\020\000\022\013\n\007STACKOF\020\001\022\n\n\006GIT" +
+      "HUB\020\002\022\n\n\006OTHERS\020\003b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3455,7 +3464,7 @@ public final class Types {
     internal_static_memento_KeywordCursor_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_memento_KeywordCursor_descriptor,
-        new java.lang.String[] { "Type", "Value", });
+        new java.lang.String[] { "Type", "Date", });
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

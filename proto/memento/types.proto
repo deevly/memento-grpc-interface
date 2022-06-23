@@ -29,9 +29,10 @@ message KeywordCursor {
     enum SortType {
         URL_COUNT_DESC = 0;
         ALPHABETICAL_ORDER = 1;
+        VISITED_TIME = 2;
     }
     SortType type = 1;
-    string value = 2;
+    string date = 2;
 }
 
 enum SiteDomain {

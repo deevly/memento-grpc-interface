@@ -40,20 +40,20 @@ public object KeywordCursorKt {
     }
 
     /**
-     * <code>string value = 2 [json_name = "value"];</code>
+     * <code>string date = 2 [json_name = "date"];</code>
      */
-    public var value: kotlin.String
-      @JvmName("getValue")
-      get() = _builder.getValue()
-      @JvmName("setValue")
+    public var date: kotlin.String
+      @JvmName("getDate")
+      get() = _builder.getDate()
+      @JvmName("setDate")
       set(value) {
-        _builder.setValue(value)
+        _builder.setDate(value)
       }
     /**
-     * <code>string value = 2 [json_name = "value"];</code>
+     * <code>string date = 2 [json_name = "date"];</code>
      */
-    public fun clearValue() {
-      _builder.clearValue()
+    public fun clearDate() {
+      _builder.clearDate()
     }
   }
 }
