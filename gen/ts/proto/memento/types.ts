@@ -81,9 +81,9 @@ export interface KeywordCursor {
      */
     type: KeywordCursor_SortType;
     /**
-     * @generated from protobuf field: string value = 2;
+     * @generated from protobuf field: string date = 2;
      */
-    value: string;
+    date: string;
 }
 /**
  * @generated from protobuf enum memento.KeywordCursor.SortType
@@ -96,7 +96,11 @@ export enum KeywordCursor_SortType {
     /**
      * @generated from protobuf enum value: ALPHABETICAL_ORDER = 1;
      */
-    ALPHABETICAL_ORDER = 1
+    ALPHABETICAL_ORDER = 1,
+    /**
+     * @generated from protobuf enum value: VISITED_TIME = 2;
+     */
+    VISITED_TIME = 2
 }
 /**
  * @generated from protobuf enum memento.SiteDomain
@@ -300,11 +304,11 @@ class KeywordCursor$Type extends MessageType<KeywordCursor> {
     constructor() {
         super("memento.KeywordCursor", [
             { no: 1, name: "type", kind: "enum", T: () => ["memento.KeywordCursor.SortType", KeywordCursor_SortType] },
-            { no: 2, name: "value", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+            { no: 2, name: "date", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
         ]);
     }
     create(value?: PartialMessage<KeywordCursor>): KeywordCursor {
-        const message = { type: 0, value: "" };
+        const message = { type: 0, date: "" };
         globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
         if (value !== undefined)
             reflectionMergePartial<KeywordCursor>(this, message, value);
@@ -318,8 +322,8 @@ class KeywordCursor$Type extends MessageType<KeywordCursor> {
                 case /* memento.KeywordCursor.SortType type */ 1:
                     message.type = reader.int32();
                     break;
-                case /* string value */ 2:
-                    message.value = reader.string();
+                case /* string date */ 2:
+                    message.date = reader.string();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -336,9 +340,9 @@ class KeywordCursor$Type extends MessageType<KeywordCursor> {
         /* memento.KeywordCursor.SortType type = 1; */
         if (message.type !== 0)
             writer.tag(1, WireType.Varint).int32(message.type);
-        /* string value = 2; */
-        if (message.value !== "")
-            writer.tag(2, WireType.LengthDelimited).string(message.value);
+        /* string date = 2; */
+        if (message.date !== "")
+            writer.tag(2, WireType.LengthDelimited).string(message.date);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
