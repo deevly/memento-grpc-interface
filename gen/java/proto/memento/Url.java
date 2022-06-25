@@ -899,27 +899,27 @@ public final class Url {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+     * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
      */
-    java.util.List<memento.Types.URL> 
+    java.util.List<memento.Types.URLResult> 
         getUrlsList();
     /**
-     * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+     * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
      */
-    memento.Types.URL getUrls(int index);
+    memento.Types.URLResult getUrls(int index);
     /**
-     * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+     * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
      */
     int getUrlsCount();
     /**
-     * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+     * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
      */
-    java.util.List<? extends memento.Types.URLOrBuilder> 
+    java.util.List<? extends memento.Types.URLResultOrBuilder> 
         getUrlsOrBuilderList();
     /**
-     * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+     * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
      */
-    memento.Types.URLOrBuilder getUrlsOrBuilder(
+    memento.Types.URLResultOrBuilder getUrlsOrBuilder(
         int index);
 
     /**
@@ -986,11 +986,11 @@ public final class Url {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                urls_ = new java.util.ArrayList<memento.Types.URL>();
+                urls_ = new java.util.ArrayList<memento.Types.URLResult>();
                 mutable_bitField0_ |= 0x00000001;
               }
               urls_.add(
-                  input.readMessage(memento.Types.URL.parser(), extensionRegistry));
+                  input.readMessage(memento.Types.URLResult.parser(), extensionRegistry));
               break;
             }
             case 18: {
@@ -1044,41 +1044,41 @@ public final class Url {
     }
 
     public static final int URLS_FIELD_NUMBER = 1;
-    private java.util.List<memento.Types.URL> urls_;
+    private java.util.List<memento.Types.URLResult> urls_;
     /**
-     * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+     * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
      */
     @java.lang.Override
-    public java.util.List<memento.Types.URL> getUrlsList() {
+    public java.util.List<memento.Types.URLResult> getUrlsList() {
       return urls_;
     }
     /**
-     * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+     * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends memento.Types.URLOrBuilder> 
+    public java.util.List<? extends memento.Types.URLResultOrBuilder> 
         getUrlsOrBuilderList() {
       return urls_;
     }
     /**
-     * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+     * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
      */
     @java.lang.Override
     public int getUrlsCount() {
       return urls_.size();
     }
     /**
-     * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+     * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
      */
     @java.lang.Override
-    public memento.Types.URL getUrls(int index) {
+    public memento.Types.URLResult getUrls(int index) {
       return urls_.get(index);
     }
     /**
-     * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+     * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
      */
     @java.lang.Override
-    public memento.Types.URLOrBuilder getUrlsOrBuilder(
+    public memento.Types.URLResultOrBuilder getUrlsOrBuilder(
         int index) {
       return urls_.get(index);
     }
@@ -1481,22 +1481,22 @@ public final class Url {
       }
       private int bitField0_;
 
-      private java.util.List<memento.Types.URL> urls_ =
+      private java.util.List<memento.Types.URLResult> urls_ =
         java.util.Collections.emptyList();
       private void ensureUrlsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          urls_ = new java.util.ArrayList<memento.Types.URL>(urls_);
+          urls_ = new java.util.ArrayList<memento.Types.URLResult>(urls_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          memento.Types.URL, memento.Types.URL.Builder, memento.Types.URLOrBuilder> urlsBuilder_;
+          memento.Types.URLResult, memento.Types.URLResult.Builder, memento.Types.URLResultOrBuilder> urlsBuilder_;
 
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
-      public java.util.List<memento.Types.URL> getUrlsList() {
+      public java.util.List<memento.Types.URLResult> getUrlsList() {
         if (urlsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(urls_);
         } else {
@@ -1504,7 +1504,7 @@ public final class Url {
         }
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
       public int getUrlsCount() {
         if (urlsBuilder_ == null) {
@@ -1514,9 +1514,9 @@ public final class Url {
         }
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
-      public memento.Types.URL getUrls(int index) {
+      public memento.Types.URLResult getUrls(int index) {
         if (urlsBuilder_ == null) {
           return urls_.get(index);
         } else {
@@ -1524,10 +1524,10 @@ public final class Url {
         }
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
       public Builder setUrls(
-          int index, memento.Types.URL value) {
+          int index, memento.Types.URLResult value) {
         if (urlsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1541,10 +1541,10 @@ public final class Url {
         return this;
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
       public Builder setUrls(
-          int index, memento.Types.URL.Builder builderForValue) {
+          int index, memento.Types.URLResult.Builder builderForValue) {
         if (urlsBuilder_ == null) {
           ensureUrlsIsMutable();
           urls_.set(index, builderForValue.build());
@@ -1555,9 +1555,9 @@ public final class Url {
         return this;
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
-      public Builder addUrls(memento.Types.URL value) {
+      public Builder addUrls(memento.Types.URLResult value) {
         if (urlsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1571,10 +1571,10 @@ public final class Url {
         return this;
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
       public Builder addUrls(
-          int index, memento.Types.URL value) {
+          int index, memento.Types.URLResult value) {
         if (urlsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1588,10 +1588,10 @@ public final class Url {
         return this;
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
       public Builder addUrls(
-          memento.Types.URL.Builder builderForValue) {
+          memento.Types.URLResult.Builder builderForValue) {
         if (urlsBuilder_ == null) {
           ensureUrlsIsMutable();
           urls_.add(builderForValue.build());
@@ -1602,10 +1602,10 @@ public final class Url {
         return this;
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
       public Builder addUrls(
-          int index, memento.Types.URL.Builder builderForValue) {
+          int index, memento.Types.URLResult.Builder builderForValue) {
         if (urlsBuilder_ == null) {
           ensureUrlsIsMutable();
           urls_.add(index, builderForValue.build());
@@ -1616,10 +1616,10 @@ public final class Url {
         return this;
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
       public Builder addAllUrls(
-          java.lang.Iterable<? extends memento.Types.URL> values) {
+          java.lang.Iterable<? extends memento.Types.URLResult> values) {
         if (urlsBuilder_ == null) {
           ensureUrlsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -1631,7 +1631,7 @@ public final class Url {
         return this;
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
       public Builder clearUrls() {
         if (urlsBuilder_ == null) {
@@ -1644,7 +1644,7 @@ public final class Url {
         return this;
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
       public Builder removeUrls(int index) {
         if (urlsBuilder_ == null) {
@@ -1657,16 +1657,16 @@ public final class Url {
         return this;
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
-      public memento.Types.URL.Builder getUrlsBuilder(
+      public memento.Types.URLResult.Builder getUrlsBuilder(
           int index) {
         return getUrlsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
-      public memento.Types.URLOrBuilder getUrlsOrBuilder(
+      public memento.Types.URLResultOrBuilder getUrlsOrBuilder(
           int index) {
         if (urlsBuilder_ == null) {
           return urls_.get(index);  } else {
@@ -1674,9 +1674,9 @@ public final class Url {
         }
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
-      public java.util.List<? extends memento.Types.URLOrBuilder> 
+      public java.util.List<? extends memento.Types.URLResultOrBuilder> 
            getUrlsOrBuilderList() {
         if (urlsBuilder_ != null) {
           return urlsBuilder_.getMessageOrBuilderList();
@@ -1685,33 +1685,33 @@ public final class Url {
         }
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
-      public memento.Types.URL.Builder addUrlsBuilder() {
+      public memento.Types.URLResult.Builder addUrlsBuilder() {
         return getUrlsFieldBuilder().addBuilder(
-            memento.Types.URL.getDefaultInstance());
+            memento.Types.URLResult.getDefaultInstance());
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
-      public memento.Types.URL.Builder addUrlsBuilder(
+      public memento.Types.URLResult.Builder addUrlsBuilder(
           int index) {
         return getUrlsFieldBuilder().addBuilder(
-            index, memento.Types.URL.getDefaultInstance());
+            index, memento.Types.URLResult.getDefaultInstance());
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
-      public java.util.List<memento.Types.URL.Builder> 
+      public java.util.List<memento.Types.URLResult.Builder> 
            getUrlsBuilderList() {
         return getUrlsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          memento.Types.URL, memento.Types.URL.Builder, memento.Types.URLOrBuilder> 
+          memento.Types.URLResult, memento.Types.URLResult.Builder, memento.Types.URLResultOrBuilder> 
           getUrlsFieldBuilder() {
         if (urlsBuilder_ == null) {
           urlsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              memento.Types.URL, memento.Types.URL.Builder, memento.Types.URLOrBuilder>(
+              memento.Types.URLResult, memento.Types.URLResult.Builder, memento.Types.URLResultOrBuilder>(
                   urls_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -2927,27 +2927,27 @@ public final class Url {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+     * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
      */
-    java.util.List<memento.Types.URL> 
+    java.util.List<memento.Types.URLResult> 
         getUrlsList();
     /**
-     * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+     * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
      */
-    memento.Types.URL getUrls(int index);
+    memento.Types.URLResult getUrls(int index);
     /**
-     * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+     * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
      */
     int getUrlsCount();
     /**
-     * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+     * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
      */
-    java.util.List<? extends memento.Types.URLOrBuilder> 
+    java.util.List<? extends memento.Types.URLResultOrBuilder> 
         getUrlsOrBuilderList();
     /**
-     * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+     * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
      */
-    memento.Types.URLOrBuilder getUrlsOrBuilder(
+    memento.Types.URLResultOrBuilder getUrlsOrBuilder(
         int index);
 
     /**
@@ -3014,11 +3014,11 @@ public final class Url {
               break;
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                urls_ = new java.util.ArrayList<memento.Types.URL>();
+                urls_ = new java.util.ArrayList<memento.Types.URLResult>();
                 mutable_bitField0_ |= 0x00000001;
               }
               urls_.add(
-                  input.readMessage(memento.Types.URL.parser(), extensionRegistry));
+                  input.readMessage(memento.Types.URLResult.parser(), extensionRegistry));
               break;
             }
             case 18: {
@@ -3072,41 +3072,41 @@ public final class Url {
     }
 
     public static final int URLS_FIELD_NUMBER = 1;
-    private java.util.List<memento.Types.URL> urls_;
+    private java.util.List<memento.Types.URLResult> urls_;
     /**
-     * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+     * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
      */
     @java.lang.Override
-    public java.util.List<memento.Types.URL> getUrlsList() {
+    public java.util.List<memento.Types.URLResult> getUrlsList() {
       return urls_;
     }
     /**
-     * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+     * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends memento.Types.URLOrBuilder> 
+    public java.util.List<? extends memento.Types.URLResultOrBuilder> 
         getUrlsOrBuilderList() {
       return urls_;
     }
     /**
-     * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+     * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
      */
     @java.lang.Override
     public int getUrlsCount() {
       return urls_.size();
     }
     /**
-     * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+     * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
      */
     @java.lang.Override
-    public memento.Types.URL getUrls(int index) {
+    public memento.Types.URLResult getUrls(int index) {
       return urls_.get(index);
     }
     /**
-     * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+     * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
      */
     @java.lang.Override
-    public memento.Types.URLOrBuilder getUrlsOrBuilder(
+    public memento.Types.URLResultOrBuilder getUrlsOrBuilder(
         int index) {
       return urls_.get(index);
     }
@@ -3509,22 +3509,22 @@ public final class Url {
       }
       private int bitField0_;
 
-      private java.util.List<memento.Types.URL> urls_ =
+      private java.util.List<memento.Types.URLResult> urls_ =
         java.util.Collections.emptyList();
       private void ensureUrlsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          urls_ = new java.util.ArrayList<memento.Types.URL>(urls_);
+          urls_ = new java.util.ArrayList<memento.Types.URLResult>(urls_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          memento.Types.URL, memento.Types.URL.Builder, memento.Types.URLOrBuilder> urlsBuilder_;
+          memento.Types.URLResult, memento.Types.URLResult.Builder, memento.Types.URLResultOrBuilder> urlsBuilder_;
 
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
-      public java.util.List<memento.Types.URL> getUrlsList() {
+      public java.util.List<memento.Types.URLResult> getUrlsList() {
         if (urlsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(urls_);
         } else {
@@ -3532,7 +3532,7 @@ public final class Url {
         }
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
       public int getUrlsCount() {
         if (urlsBuilder_ == null) {
@@ -3542,9 +3542,9 @@ public final class Url {
         }
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
-      public memento.Types.URL getUrls(int index) {
+      public memento.Types.URLResult getUrls(int index) {
         if (urlsBuilder_ == null) {
           return urls_.get(index);
         } else {
@@ -3552,10 +3552,10 @@ public final class Url {
         }
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
       public Builder setUrls(
-          int index, memento.Types.URL value) {
+          int index, memento.Types.URLResult value) {
         if (urlsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3569,10 +3569,10 @@ public final class Url {
         return this;
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
       public Builder setUrls(
-          int index, memento.Types.URL.Builder builderForValue) {
+          int index, memento.Types.URLResult.Builder builderForValue) {
         if (urlsBuilder_ == null) {
           ensureUrlsIsMutable();
           urls_.set(index, builderForValue.build());
@@ -3583,9 +3583,9 @@ public final class Url {
         return this;
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
-      public Builder addUrls(memento.Types.URL value) {
+      public Builder addUrls(memento.Types.URLResult value) {
         if (urlsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3599,10 +3599,10 @@ public final class Url {
         return this;
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
       public Builder addUrls(
-          int index, memento.Types.URL value) {
+          int index, memento.Types.URLResult value) {
         if (urlsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3616,10 +3616,10 @@ public final class Url {
         return this;
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
       public Builder addUrls(
-          memento.Types.URL.Builder builderForValue) {
+          memento.Types.URLResult.Builder builderForValue) {
         if (urlsBuilder_ == null) {
           ensureUrlsIsMutable();
           urls_.add(builderForValue.build());
@@ -3630,10 +3630,10 @@ public final class Url {
         return this;
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
       public Builder addUrls(
-          int index, memento.Types.URL.Builder builderForValue) {
+          int index, memento.Types.URLResult.Builder builderForValue) {
         if (urlsBuilder_ == null) {
           ensureUrlsIsMutable();
           urls_.add(index, builderForValue.build());
@@ -3644,10 +3644,10 @@ public final class Url {
         return this;
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
       public Builder addAllUrls(
-          java.lang.Iterable<? extends memento.Types.URL> values) {
+          java.lang.Iterable<? extends memento.Types.URLResult> values) {
         if (urlsBuilder_ == null) {
           ensureUrlsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -3659,7 +3659,7 @@ public final class Url {
         return this;
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
       public Builder clearUrls() {
         if (urlsBuilder_ == null) {
@@ -3672,7 +3672,7 @@ public final class Url {
         return this;
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
       public Builder removeUrls(int index) {
         if (urlsBuilder_ == null) {
@@ -3685,16 +3685,16 @@ public final class Url {
         return this;
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
-      public memento.Types.URL.Builder getUrlsBuilder(
+      public memento.Types.URLResult.Builder getUrlsBuilder(
           int index) {
         return getUrlsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
-      public memento.Types.URLOrBuilder getUrlsOrBuilder(
+      public memento.Types.URLResultOrBuilder getUrlsOrBuilder(
           int index) {
         if (urlsBuilder_ == null) {
           return urls_.get(index);  } else {
@@ -3702,9 +3702,9 @@ public final class Url {
         }
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
-      public java.util.List<? extends memento.Types.URLOrBuilder> 
+      public java.util.List<? extends memento.Types.URLResultOrBuilder> 
            getUrlsOrBuilderList() {
         if (urlsBuilder_ != null) {
           return urlsBuilder_.getMessageOrBuilderList();
@@ -3713,33 +3713,33 @@ public final class Url {
         }
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
-      public memento.Types.URL.Builder addUrlsBuilder() {
+      public memento.Types.URLResult.Builder addUrlsBuilder() {
         return getUrlsFieldBuilder().addBuilder(
-            memento.Types.URL.getDefaultInstance());
+            memento.Types.URLResult.getDefaultInstance());
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
-      public memento.Types.URL.Builder addUrlsBuilder(
+      public memento.Types.URLResult.Builder addUrlsBuilder(
           int index) {
         return getUrlsFieldBuilder().addBuilder(
-            index, memento.Types.URL.getDefaultInstance());
+            index, memento.Types.URLResult.getDefaultInstance());
       }
       /**
-       * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+       * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
        */
-      public java.util.List<memento.Types.URL.Builder> 
+      public java.util.List<memento.Types.URLResult.Builder> 
            getUrlsBuilderList() {
         return getUrlsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          memento.Types.URL, memento.Types.URL.Builder, memento.Types.URLOrBuilder> 
+          memento.Types.URLResult, memento.Types.URLResult.Builder, memento.Types.URLResultOrBuilder> 
           getUrlsFieldBuilder() {
         if (urlsBuilder_ == null) {
           urlsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              memento.Types.URL, memento.Types.URL.Builder, memento.Types.URLOrBuilder>(
+              memento.Types.URLResult, memento.Types.URLResult.Builder, memento.Types.URLResultOrBuilder>(
                   urls_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -3953,21 +3953,21 @@ public final class Url {
       "pes.proto\"\206\001\n\017ListUrlsRequest\022\032\n\010usernam" +
       "e\030\001 \001(\tR\010username\022+\n\006domain\030\002 \001(\0162\023.meme" +
       "nto.SiteDomainR\006domain\022*\n\006cursor\030\003 \001(\0132\022" +
-      ".memento.URLCursorR\006cursor\"`\n\020ListUrlsRe" +
-      "sponse\022 \n\004urls\030\001 \003(\0132\014.memento.URLR\004urls" +
-      "\022*\n\006cursor\030\002 \001(\0132\022.memento.URLCursorR\006cu" +
-      "rsor\"\251\001\n\030ListUrlsByKeywordRequest\022\032\n\010use" +
-      "rname\030\001 \001(\tR\010username\022\030\n\007keyword\030\002 \001(\tR\007" +
-      "keyword\022+\n\006domain\030\003 \001(\0162\023.memento.SiteDo" +
-      "mainR\006domain\022*\n\006cursor\030\004 \001(\0132\022.memento.U" +
-      "RLCursorR\006cursor\"i\n\031ListUrlsByKeywordRes" +
-      "ponse\022 \n\004urls\030\001 \003(\0132\014.memento.URLR\004urls\022" +
-      "*\n\006cursor\030\002 \001(\0132\022.memento.URLCursorR\006cur" +
-      "sor2\251\001\n\nUrlService\022?\n\010ListUrls\022\030.memento" +
-      ".ListUrlsRequest\032\031.memento.ListUrlsRespo" +
-      "nse\022Z\n\021ListUrlsByKeyword\022!.memento.ListU" +
-      "rlsByKeywordRequest\032\".memento.ListUrlsBy" +
-      "KeywordResponseb\006proto3"
+      ".memento.URLCursorR\006cursor\"f\n\020ListUrlsRe" +
+      "sponse\022&\n\004urls\030\001 \003(\0132\022.memento.URLResult" +
+      "R\004urls\022*\n\006cursor\030\002 \001(\0132\022.memento.URLCurs" +
+      "orR\006cursor\"\251\001\n\030ListUrlsByKeywordRequest\022" +
+      "\032\n\010username\030\001 \001(\tR\010username\022\030\n\007keyword\030\002" +
+      " \001(\tR\007keyword\022+\n\006domain\030\003 \001(\0162\023.memento." +
+      "SiteDomainR\006domain\022*\n\006cursor\030\004 \001(\0132\022.mem" +
+      "ento.URLCursorR\006cursor\"o\n\031ListUrlsByKeyw" +
+      "ordResponse\022&\n\004urls\030\001 \003(\0132\022.memento.URLR" +
+      "esultR\004urls\022*\n\006cursor\030\002 \001(\0132\022.memento.UR" +
+      "LCursorR\006cursor2\251\001\n\nUrlService\022?\n\010ListUr" +
+      "ls\022\030.memento.ListUrlsRequest\032\031.memento.L" +
+      "istUrlsResponse\022Z\n\021ListUrlsByKeyword\022!.m" +
+      "emento.ListUrlsByKeywordRequest\032\".mement" +
+      "o.ListUrlsByKeywordResponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
