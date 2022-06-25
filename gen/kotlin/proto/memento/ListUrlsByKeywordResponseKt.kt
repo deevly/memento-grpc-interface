@@ -29,67 +29,67 @@ public object ListUrlsByKeywordResponseKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class UrlsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+     * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
      */
-     public val urls: com.google.protobuf.kotlin.DslList<memento.Types.URL, UrlsProxy>
+     public val urls: com.google.protobuf.kotlin.DslList<memento.Types.URLResult, UrlsProxy>
       @kotlin.jvm.JvmSynthetic
       get() = com.google.protobuf.kotlin.DslList(
         _builder.getUrlsList()
       )
     /**
-     * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+     * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
      * @param value The urls to add.
      */
     @kotlin.jvm.JvmSynthetic
     @kotlin.jvm.JvmName("addUrls")
-    public fun com.google.protobuf.kotlin.DslList<memento.Types.URL, UrlsProxy>.add(value: memento.Types.URL) {
+    public fun com.google.protobuf.kotlin.DslList<memento.Types.URLResult, UrlsProxy>.add(value: memento.Types.URLResult) {
       _builder.addUrls(value)
     }
     /**
-     * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+     * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
      * @param value The urls to add.
      */
     @kotlin.jvm.JvmSynthetic
     @kotlin.jvm.JvmName("plusAssignUrls")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<memento.Types.URL, UrlsProxy>.plusAssign(value: memento.Types.URL) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<memento.Types.URLResult, UrlsProxy>.plusAssign(value: memento.Types.URLResult) {
       add(value)
     }
     /**
-     * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+     * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
      * @param values The urls to add.
      */
     @kotlin.jvm.JvmSynthetic
     @kotlin.jvm.JvmName("addAllUrls")
-    public fun com.google.protobuf.kotlin.DslList<memento.Types.URL, UrlsProxy>.addAll(values: kotlin.collections.Iterable<memento.Types.URL>) {
+    public fun com.google.protobuf.kotlin.DslList<memento.Types.URLResult, UrlsProxy>.addAll(values: kotlin.collections.Iterable<memento.Types.URLResult>) {
       _builder.addAllUrls(values)
     }
     /**
-     * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+     * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
      * @param values The urls to add.
      */
     @kotlin.jvm.JvmSynthetic
     @kotlin.jvm.JvmName("plusAssignAllUrls")
     @Suppress("NOTHING_TO_INLINE")
-    public inline operator fun com.google.protobuf.kotlin.DslList<memento.Types.URL, UrlsProxy>.plusAssign(values: kotlin.collections.Iterable<memento.Types.URL>) {
+    public inline operator fun com.google.protobuf.kotlin.DslList<memento.Types.URLResult, UrlsProxy>.plusAssign(values: kotlin.collections.Iterable<memento.Types.URLResult>) {
       addAll(values)
     }
     /**
-     * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+     * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
      * @param index The index to set the value at.
      * @param value The urls to set.
      */
     @kotlin.jvm.JvmSynthetic
     @kotlin.jvm.JvmName("setUrls")
-    public operator fun com.google.protobuf.kotlin.DslList<memento.Types.URL, UrlsProxy>.set(index: kotlin.Int, value: memento.Types.URL) {
+    public operator fun com.google.protobuf.kotlin.DslList<memento.Types.URLResult, UrlsProxy>.set(index: kotlin.Int, value: memento.Types.URLResult) {
       _builder.setUrls(index, value)
     }
     /**
-     * <code>repeated .memento.URL urls = 1 [json_name = "urls"];</code>
+     * <code>repeated .memento.URLResult urls = 1 [json_name = "urls"];</code>
      */
     @kotlin.jvm.JvmSynthetic
     @kotlin.jvm.JvmName("clearUrls")
-    public fun com.google.protobuf.kotlin.DslList<memento.Types.URL, UrlsProxy>.clear() {
+    public fun com.google.protobuf.kotlin.DslList<memento.Types.URLResult, UrlsProxy>.clear() {
       _builder.clearUrls()
     }
 

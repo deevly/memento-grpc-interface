@@ -55,9 +55,36 @@ public object KeywordResultKt {
     public fun clearCount() {
       _builder.clearCount()
     }
+
+    /**
+     * <code>.google.protobuf.Timestamp visit_time = 3 [json_name = "visitTime"];</code>
+     */
+    public var visitTime: com.google.protobuf.Timestamp
+      @JvmName("getVisitTime")
+      get() = _builder.getVisitTime()
+      @JvmName("setVisitTime")
+      set(value) {
+        _builder.setVisitTime(value)
+      }
+    /**
+     * <code>.google.protobuf.Timestamp visit_time = 3 [json_name = "visitTime"];</code>
+     */
+    public fun clearVisitTime() {
+      _builder.clearVisitTime()
+    }
+    /**
+     * <code>.google.protobuf.Timestamp visit_time = 3 [json_name = "visitTime"];</code>
+     * @return Whether the visitTime field is set.
+     */
+    public fun hasVisitTime(): kotlin.Boolean {
+      return _builder.hasVisitTime()
+    }
   }
 }
 @kotlin.jvm.JvmSynthetic
 public inline fun memento.Types.KeywordResult.copy(block: memento.KeywordResultKt.Dsl.() -> kotlin.Unit): memento.Types.KeywordResult =
   memento.KeywordResultKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+
+val memento.Types.KeywordResultOrBuilder.visitTimeOrNull: com.google.protobuf.Timestamp?
+  get() = if (hasVisitTime()) getVisitTime() else null
 

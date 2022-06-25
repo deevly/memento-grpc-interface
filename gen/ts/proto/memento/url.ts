@@ -12,7 +12,7 @@ import type { PartialMessage } from "@protobuf-ts/runtime";
 import { reflectionMergePartial } from "@protobuf-ts/runtime";
 import { MESSAGE_TYPE } from "@protobuf-ts/runtime";
 import { MessageType } from "@protobuf-ts/runtime";
-import { URL } from "./types";
+import { URLResult } from "./types";
 import { URLCursor } from "./types";
 import { SiteDomain } from "./types";
 /**
@@ -37,9 +37,9 @@ export interface ListUrlsRequest {
  */
 export interface ListUrlsResponse {
     /**
-     * @generated from protobuf field: repeated memento.URL urls = 1;
+     * @generated from protobuf field: repeated memento.URLResult urls = 1;
      */
-    urls: URL[];
+    urls: URLResult[];
     /**
      * @generated from protobuf field: memento.URLCursor cursor = 2;
      */
@@ -71,9 +71,9 @@ export interface ListUrlsByKeywordRequest {
  */
 export interface ListUrlsByKeywordResponse {
     /**
-     * @generated from protobuf field: repeated memento.URL urls = 1;
+     * @generated from protobuf field: repeated memento.URLResult urls = 1;
      */
-    urls: URL[];
+    urls: URLResult[];
     /**
      * @generated from protobuf field: memento.URLCursor cursor = 2;
      */
@@ -144,7 +144,7 @@ export const ListUrlsRequest = new ListUrlsRequest$Type();
 class ListUrlsResponse$Type extends MessageType<ListUrlsResponse> {
     constructor() {
         super("memento.ListUrlsResponse", [
-            { no: 1, name: "urls", kind: "message", repeat: 1 /*RepeatType.PACKED*/, T: () => URL },
+            { no: 1, name: "urls", kind: "message", repeat: 1 /*RepeatType.PACKED*/, T: () => URLResult },
             { no: 2, name: "cursor", kind: "message", T: () => URLCursor }
         ]);
     }
@@ -160,8 +160,8 @@ class ListUrlsResponse$Type extends MessageType<ListUrlsResponse> {
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* repeated memento.URL urls */ 1:
-                    message.urls.push(URL.internalBinaryRead(reader, reader.uint32(), options));
+                case /* repeated memento.URLResult urls */ 1:
+                    message.urls.push(URLResult.internalBinaryRead(reader, reader.uint32(), options));
                     break;
                 case /* memento.URLCursor cursor */ 2:
                     message.cursor = URLCursor.internalBinaryRead(reader, reader.uint32(), options, message.cursor);
@@ -178,9 +178,9 @@ class ListUrlsResponse$Type extends MessageType<ListUrlsResponse> {
         return message;
     }
     internalBinaryWrite(message: ListUrlsResponse, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* repeated memento.URL urls = 1; */
+        /* repeated memento.URLResult urls = 1; */
         for (let i = 0; i < message.urls.length; i++)
-            URL.internalBinaryWrite(message.urls[i], writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+            URLResult.internalBinaryWrite(message.urls[i], writer.tag(1, WireType.LengthDelimited).fork(), options).join();
         /* memento.URLCursor cursor = 2; */
         if (message.cursor)
             URLCursor.internalBinaryWrite(message.cursor, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
@@ -266,7 +266,7 @@ export const ListUrlsByKeywordRequest = new ListUrlsByKeywordRequest$Type();
 class ListUrlsByKeywordResponse$Type extends MessageType<ListUrlsByKeywordResponse> {
     constructor() {
         super("memento.ListUrlsByKeywordResponse", [
-            { no: 1, name: "urls", kind: "message", repeat: 1 /*RepeatType.PACKED*/, T: () => URL },
+            { no: 1, name: "urls", kind: "message", repeat: 1 /*RepeatType.PACKED*/, T: () => URLResult },
             { no: 2, name: "cursor", kind: "message", T: () => URLCursor }
         ]);
     }
@@ -282,8 +282,8 @@ class ListUrlsByKeywordResponse$Type extends MessageType<ListUrlsByKeywordRespon
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* repeated memento.URL urls */ 1:
-                    message.urls.push(URL.internalBinaryRead(reader, reader.uint32(), options));
+                case /* repeated memento.URLResult urls */ 1:
+                    message.urls.push(URLResult.internalBinaryRead(reader, reader.uint32(), options));
                     break;
                 case /* memento.URLCursor cursor */ 2:
                     message.cursor = URLCursor.internalBinaryRead(reader, reader.uint32(), options, message.cursor);
@@ -300,9 +300,9 @@ class ListUrlsByKeywordResponse$Type extends MessageType<ListUrlsByKeywordRespon
         return message;
     }
     internalBinaryWrite(message: ListUrlsByKeywordResponse, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* repeated memento.URL urls = 1; */
+        /* repeated memento.URLResult urls = 1; */
         for (let i = 0; i < message.urls.length; i++)
-            URL.internalBinaryWrite(message.urls[i], writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+            URLResult.internalBinaryWrite(message.urls[i], writer.tag(1, WireType.LengthDelimited).fork(), options).join();
         /* memento.URLCursor cursor = 2; */
         if (message.cursor)
             URLCursor.internalBinaryWrite(message.cursor, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
